@@ -134,7 +134,7 @@ if (is_dir($APP_DOKUWIKI_DIR)) {
 <!-- Box for tt-rss -->
 <?php
 $APP_TTRSS_DIR = 'tt-rss';
-$APP_TTRSS_HTML = '<a href="/tt-rss" class="title" style="background-image:url(img/tt-rss.png)"> 
+$APP_TTRSS_HTML = '<a href="/tt-rss" class="title" style="background-image:url(img/tt-rss.jpg)"> 
 <div class="app"> 
 <h1>Tiny Tiny RSS</h1> 
 <p>Lecteur de flux RSS</p> 
