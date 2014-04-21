@@ -1,0 +1,91 @@
+##services
+ntp
+
+##mumble
+mumble-server
+
+##web server
+apache2
+libapache2-mod-php5
+libapache2-mod-security2
+mysql-server
+php5-mysql
+php5
+php-apc
+php5-gd
+php5-sqlite
+php5-curl
+php5-imagick
+php5-intl
+php5-mcrypt
+
+##Disk Utils
+dosfstools
+cryptsetup
+ntfs-3g
+usbmount
+
+##MTA
+postfix
+##Other MTAS
+#mta
+#exim4-base
+#exim4-daemon-light
+#exim4-config
+#sendmail
+
+#Network services
+ntp
+openvpn
+#inadyn
+
+#Media
+sox
+imagemagick
+
+#Hardware support
+usbutils
+hdparm
+lshw
+smartmontools
+
+#File format support
+p7zip-full
+zip
+
+#Terminal toolkit
+colortail
+colordiff
+less
+mutt
+htop
+iotop
+ncdu
+dfc
+ranger
+atool
+highlight
+bash-completion
+elinks
+mlocate
+nano
+
+##Admin tools
+logwatch
+goaccess
+lynis
+rkhunter
+chkrootkit
+tiger
+debsums
+libdate-manip-perl
+obnam
+iftop
+lnav
+nethogs
+apt-file
+command-not-found
+unattended-upgrades
+
+#Misc
+#logstalgia
