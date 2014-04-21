@@ -1,0 +1,3 @@
+#Weekly log analysis
+59 23 * * 5	root	logwatch --range 'between -7 days and today' --filename /var/log/last-logwatch
+

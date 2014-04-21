@@ -1,0 +1,3 @@
+#Does nothing
+#This replaces the default logwatch cron job
+#See /etc/cron.weekly/logwatch for the custom cron job used instead of this
