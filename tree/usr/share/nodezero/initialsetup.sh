@@ -34,8 +34,8 @@ service mysql stop
 echo "
 Generating SSL keys and certificates..."
 make-ssl-cert generate-default-snakeoil --force-overwrite
-prosodyctl cert generate
-
+#prosodyctl cert generate #This only works on 0.9+
+openssl req -new -x509 -days 365 -nodes -out "/var/lib/prosody/$NZ_FQDN.crt" -newkey rsa:2048 -keyout "/var/lib/prosody/$NZ_FQDN.key" -batch
 
 echo "
 Generating SSH keys for remote access..."
