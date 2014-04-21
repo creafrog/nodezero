@@ -85,7 +85,7 @@ hostname "$NZ_FQDN"
 }
 
 _NzSSHKeygen() { #Generate ssh keys, send them to user's home dir
-ssh-keygen -b 2048 -t ecdsa -f ~/nodezero-key-ecdsa
+ssh-keygen -b 521 -t ecdsa -f ~/nodezero-key-ecdsa
 if [ ! -d /home/${NZ_USER}/.ssh/ ]; then mkdir -p /home/${NZ_USER}/.ssh/; fi
 cat ~/nodezero-key-ecdsa.pub >| ~/.ssh/authorized_keys
 echo "Please copy /home/${NZ_USER}/nodezero-key-ecdsa and /home/${NZ_USER}/nodezero-key-ecdsa.pub to your remote computer and restart the SSH service." #TODO automate it
