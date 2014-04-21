@@ -1,5 +1,5 @@
 #NodeZero
-![](wiki/images/nodezero-home.png)
+![](doc/images/nodezero-home.png)
 
 
 ##Goals
