@@ -1,6 +1,6 @@
-Name: Bumpy-Booby bug tracking system
-Url: https://github.com/piero-la-lune/Bumpy-Booby
-Tag: master
-Description:
-PostInstallCommand:
-WwwDir: bugs
+AppName="Bumpy-Booby bug tracking system"
+AppUrl="https://github.com/piero-la-lune/Bumpy-Booby"
+AppTag="master"
+AppDescription=""
+AppPostInstallCommand=""
+AppWwwDir="bugs"

@@ -1,6 +1,6 @@
-Name: TT-RSS RSS aggregator
-Url: https://github.com/gothfox/Tiny-Tiny-RSS
-Tag: 1.12
-Description:
-PostInstallCommand:
-WwwDir: tt-rss
+AppName="TT-RSS RSS aggregator"
+AppUrl="https://github.com/gothfox/Tiny-Tiny-RSS"
+AppTag="1.12"
+AppDescription=""
+AppPostInstallCommand=""
+AppWwwDir="tt-rss"

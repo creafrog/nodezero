@@ -1,6 +1,6 @@
-Name: ZeroBin pastebin
-Url: https://github.com/sebsauvage/ZeroBin
-Tag: 0.19
-Description:
-PostInstallCommand:
-WwwDir: paste
+AppName="ZeroBin pastebin"
+AppUrl="https://github.com/sebsauvage/ZeroBin"
+AppTag="0.19"
+AppDescription=""
+AppPostInstallCommand=""
+AppWwwDir="paste"

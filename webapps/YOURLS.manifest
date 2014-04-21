@@ -1,6 +1,6 @@
-Name: YOURLS URL shortener
-Url: https://github.com/YOURLS/YOURLS
-Tag: 1.7
-Description:
-PostInstallCommand:
-WwwDir: url
+AppName="YOURLS URL shortener"
+AppUrl="https://github.com/YOURLS/YOURLS"
+AppTag="1.7"
+AppDescription=""
+AppPostInstallCommand="" #TODO: edit config.php
+AppWwwDir="url"

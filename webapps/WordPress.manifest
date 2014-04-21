@@ -1,6 +1,6 @@
-Name: WordPress blog engine
-Url: https://github.com/WordPress/WordPress
-Tag: 3.9
-Description:
-PostInstallCommand:
-WwwDir: wordpress
+AppName="WordPress blog engine"
+AppUrl="https://github.com/WordPress/WordPress"
+AppTag="3.9"
+AppDescription=""
+AppPostInstallCommand=""
+AppWwwDir="wordpress"

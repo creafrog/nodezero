@@ -1,5 +1,5 @@
-Name: Shaarli link sharing/bookmarking service
-Url: https://gitmasterv0.7.4
-Description:
-PostInstallCommand:
-WwwDir: links
+AppName="Shaarli link sharing/bookmarking service"
+AppUrl="master"
+AppDescription=""
+AppPostInstallCommand=""
+AppWwwDir="links"

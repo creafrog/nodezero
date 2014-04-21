@@ -1,6 +1,6 @@
-Name: Roundcube webmail client
-Url: https://github.com/roundcube/roundcubemail
-Tag: 1.0.0
-Description:
-PostInstallCommand:
-WwwDir: mail
+AppName="Roundcube webmail client"
+AppUrl="https://github.com/roundcube/roundcubemail"
+AppTag="1.0.0é"
+AppDescription=""
+AppPostInstallCommand=""
+AppWwwDir="mail"

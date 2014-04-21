@@ -1,6 +1,6 @@
-Name: Owncloud file, contacts and calendar sync sevice
-Url: https://github.com/owncloud/core
-Tag: v6.0.2
-Description:
-PostInstallCommand:
-WwwDir: owncloud
+AppName="Owncloud file, contacts and calendar sync sevice"
+AppUrl="https://github.com/owncloud/core"
+AppTag="v6.0.2"
+AppDescription=""
+AppPostInstallCommand=""
+AppWwwDir="owncloud"

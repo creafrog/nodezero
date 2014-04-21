@@ -1,6 +1,6 @@
-Name: Markdown-edit markdown editor
-Url: https://github.com/georgeosddev/markdown-edit
-Tag: master
-Description:
-PostInstallCommand:
-WwwDir: markdown-edit
+AppName="Markdown-edit markdown editor"
+AppUrl="https://github.com/georgeosddev/markdown-edit"
+AppTag="master"
+AppDescription=""
+AppPostInstallCommand=""
+AppWwwDir="markdown-edit"

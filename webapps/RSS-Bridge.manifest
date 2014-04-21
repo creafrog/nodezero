@@ -1,6 +1,6 @@
-Name: RSS-Bridge RSS feed creator
-Url: http://git.hoa.ro/arthur/rss-bridge-portal.git
-Tag: v1.0.1
-Description:
-PostInstallCommand:
-WwwDir: rss-bridge
+AppName="RSS-Bridge RSS feed creator"
+AppUrl="http://git.hoa.ro/arthur/rss-bridge-portal.git"
+AppTag="v1.0.1"
+AppDescription=""
+AppPostInstallCommand=""
+AppWwwDir="rss-bridge"
