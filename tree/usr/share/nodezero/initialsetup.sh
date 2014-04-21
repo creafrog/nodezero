@@ -24,6 +24,7 @@ _NzEditConfig
 
 echo "
 Installing required packages..."
+aptitude update
 egrep -v "^#"  "${NZ_PATH}/packages.list" | egrep -v "^$" | tr "\n" " " | xargs aptitude -y install
 
 service apache2 stop
