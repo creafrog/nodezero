@@ -1,6 +1,9 @@
-Name: MinigalNano image gallery
-Url: https://github.com/sebsauvage/MinigalNano
-Tag: master
-Description:
-PostInstallCommand:
-WwwDir: images
+AppName="MinigalNano image gallery"
+AppUrl="https://github.com/sebsauvage/MinigalNano"
+AppTag="master"
+AppDescription=""
+AppPostInstallCommand="mkdir $APACHE_DOCUMENTROOT/images/photos; \
+cp $NZ_PATH/additions/images/README.md $APACHE_DOCUMENTROOT/images/photos/; \
+chmod g+rwx $APACHE_DOCUMENTROOT/images/photos; \
+ln -s $APACHE_DOCUMENTROOT/images/photos/ /home/$NZ_MAIN_USER/WebPhotos/"
+AppWwwDir="images"
