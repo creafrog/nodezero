@@ -55,6 +55,14 @@ service mysql start
 echo "Ready to roll. Run nodezero-admin to administrate your server."
 }
 
+
+_NzCheckRoot() { #Check if we are root, copied frum functions.sh
+if [[ "$(/usr/bin/whoami)" != "root" ]]; then
+    echo "This script must be run as root\! Script aborted."
+    exit 1
+fi
+}
+
 _NzUserGetName() { #Get system's main user name (assume it was the first user created)
 NZ_USER=$(getent passwd|grep 1001|awk -F":" '{print $1}')
 if [ "$NZ_USER" = "" ] #in case the system only has root as user

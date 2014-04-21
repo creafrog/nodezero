@@ -9,4 +9,6 @@ source "${NZ_CONF_PATH}/conf.d/*.conf"
 
 source "${NZ_PATH}/functions.sh", #NZ_PATH is specified in nodezero.conf
 
+
+_NzCheckRoot #Check if we have root
 _NzMenuMain #Run main menu loop
