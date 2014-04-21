@@ -85,10 +85,18 @@ hostname "$NZ_FQDN"
 }
 
 _NzSSHKeygen() { #Generate ssh keys, send them to user's home dir
-ssh-keygen -b 521 -t ecdsa -f ~/nodezero-key-ecdsa
-if [ ! -d /home/${NZ_USER}/.ssh/ ]; then mkdir -p /home/${NZ_USER}/.ssh/; fi
-cat ~/nodezero-key-ecdsa.pub >| ~/.ssh/authorized_keys
-echo "Please copy /home/${NZ_USER}/nodezero-key-ecdsa and /home/${NZ_USER}/nodezero-key-ecdsa.pub to your remote computer and restart the SSH service." #TODO automate it
+if [ "$NZ_USER" = "root" ]
+then
+	if [ ! -d /root/.ssh/ ]; then mkdir -p /root/.ssh/; fi
+	ssh-keygen -b 521 -t ecdsa -f /root/nodezero-key-ecdsa
+	cat /root/nodezero-key-ecdsa.pub >| /root/.ssh/authorized_keys	
+	echo "Please copy /root/nodezero-key-ecdsa and /root/nodezero-key-ecdsa.pub to your remote computer and restart the SSH service." #TODO automate it
+else
+	if [ ! -d /home/${NZ_USER}/.ssh/ ]; then mkdir -p /home/${NZ_USER}/.ssh/; fi
+	ssh-keygen -b 521 -t ecdsa -f /home/${NZ_USER}/nodezero-key-ecdsa
+	cat /home/${NZ_USER}/nodezero-key-ecdsa.pub >| /home/${NZ_USER}/.ssh/authorized_keys
+	echo "Please copy /home/${NZ_USER}/nodezero-key-ecdsa and /home/${NZ_USER}/nodezero-key-ecdsa.pub to your remote computer and restart the SSH service." #TODO automate it
+fi
 }
 
 
