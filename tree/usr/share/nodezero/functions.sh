@@ -15,10 +15,11 @@ until [ "$selection" = "0" ]; do
      echo "2 - User Account Menu"
      echo "3 - Backup Menu"
      echo "4 - Troubleshooting Menu"
-     echo "5 - Prosody Instant Messaging server configuration"
-     echo "6 - Other services configuration"
-     echo "7 - Power off"
-     echo "8 - Reboot"
+     echo "5 - Edit main configuration file"
+     echo "6 - Prosody Instant Messaging server configuration"
+     echo "7 - Other services configuration"
+     echo "8 - Power off"
+     echo "9 - Reboot"
      echo ""
      echo "0 - Exit program"
      echo ""
@@ -30,10 +31,11 @@ until [ "$selection" = "0" ]; do
          2 ) _NzMenuUserAccount;; #OK
          3 ) _NzMenuBackup;; #OK
          4 ) _NzMenuTroubleshooting;; #OK
-         5 ) _NzMenurosody;; #OK
-         6 ) _NzMenuServices;; #OK
-         7 ) _NzPoweroff;; #TODO in common.sh
-         8 ) _NzReboot;; #TODO in common.sh
+         5 ) _NzEditConfig;;
+         6 ) _NzMenuProsody;; #OK
+         7 ) _NzMenuServices;; #OK
+         8 ) _NzPoweroff;; #TODO in common.sh
+         9 ) _NzReboot;; #TODO in common.sh
          0 ) return 0;;
          * ) echo "Please enter a valid number"
      esac
@@ -548,6 +550,10 @@ fi
 #List all available Nodezero shell scripts
 _NzListFunctions() {
 grep -roh "^_.*()" $NODEZERO_PATH/
+}
+
+_NzEditConfig() {
+$EDITOR ${NZ_CONF_PATH}/nodezero.conf
 }
 
 #Create symlinks to zenphoto and Dokuwiki data dirs in the main user's (UID 1000) home directory
