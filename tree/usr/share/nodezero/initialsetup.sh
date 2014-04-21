@@ -44,8 +44,8 @@ _NzSSHKeygen
 echo "
 Updating Prosody configuration..."
 sed -i "s/VirtualHost \"your_fqdn_here\"/VirtualHost \"$NZ_FQDN\"/g" /etc/prosody/prosody.cfg.lua
-sed -i "s/\tkey = \"/etc/prosody/certs/server.key\";/\tkey = \"/etc/prosody/certs/$NZ_FQDN.key\";/g" /etc/prosody/prosody.cfg.lua
-sed -i "s/\tcertificate = \"/etc/prosody/certs/server.cert\";/\tcertificate = \"/etc/prosody/certs/$NZ_FQDN.crt\";/g" /etc/prosody/prosody.cfg.lua
+sed -i "s|\tkey = \"/etc/prosody/certs/server.key\";|\tkey = \"/etc/prosody/certs/$NZ_FQDN.key\";|g" /etc/prosody/prosody.cfg.lua
+sed -i "s|\tcertificate = \"/etc/prosody/certs/server.cert\";|\tcertificate = \"/etc/prosody/certs/$NZ_FQDN.crt\";|g" /etc/prosody/prosody.cfg.lua
 
 echo "
 Securing mysql installation..."
