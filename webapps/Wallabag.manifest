@@ -1,0 +1,6 @@
+Name: Wallabag read-it-later application
+Url: https://github.com/wallabag/wallabag
+Tag: 1.6.1b
+Description:
+PostInstallCommand:
+WwwDir: wallabag

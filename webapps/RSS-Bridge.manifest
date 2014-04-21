@@ -1,0 +1,6 @@
+Name: RSS-Bridge RSS feed creator
+Url: http://git.hoa.ro/arthur/rss-bridge-portal.git
+Tag: v1.0.1
+Description:
+PostInstallCommand:
+WwwDir: rss-bridge

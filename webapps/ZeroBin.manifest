@@ -1,0 +1,6 @@
+Name: ZeroBin pastebin
+Url: https://github.com/sebsauvage/ZeroBin
+Tag: 0.19
+Description:
+PostInstallCommand:
+WwwDir: paste

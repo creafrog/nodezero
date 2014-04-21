@@ -1,0 +1,6 @@
+Name: Markdown-edit markdown editor
+Url: https://github.com/georgeosddev/markdown-edit
+Tag: master
+Description:
+PostInstallCommand:
+WwwDir: markdown-edit

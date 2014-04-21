@@ -1,0 +1,6 @@
+Name: Chyrp blog engine
+Url: https://github.com/chyrp/chyrp/
+Tag: v2.5.0
+Description:
+PostInstallCommand:
+WwwDir: blog

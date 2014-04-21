@@ -1,0 +1,6 @@
+Name: FileTea file sharing service
+Url: https://github.com/elima/FileTea
+Tag: 0.1.16
+Description:
+PostInstallCommand:
+WwwDir: filetea

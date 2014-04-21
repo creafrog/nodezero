@@ -1,0 +1,6 @@
+Name: YOURLS URL shortener
+Url: https://github.com/YOURLS/YOURLS
+Tag: 1.7
+Description:
+PostInstallCommand:
+WwwDir: url

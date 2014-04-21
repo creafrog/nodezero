@@ -1,0 +1,6 @@
+Name: MinigalNano image gallery
+Url: https://github.com/sebsauvage/MinigalNano
+Tag: master
+Description:
+PostInstallCommand:
+WwwDir: images

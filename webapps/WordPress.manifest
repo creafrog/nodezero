@@ -1,0 +1,6 @@
+Name: WordPress blog engine
+Url: https://github.com/WordPress/WordPress
+Tag: 3.9
+Description:
+PostInstallCommand:
+WwwDir: wordpress

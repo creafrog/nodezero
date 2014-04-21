@@ -1,0 +1,6 @@
+Name: MapBBCode map edition, sharing and conversion
+Url: https://github.com/MapBBCode/share.mapbbcode.org
+Tag: master
+Description:
+PostInstallCommand:
+WwwDir: maps
