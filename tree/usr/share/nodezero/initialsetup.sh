@@ -55,23 +55,29 @@ service mysql start
 echo "Ready to roll. Run nodezero-admin to administrate your server."
 }
 
-_NzUserGetName() {
+_NzUserGetName() { #Get system's main user name (assume it was the first user created)
 NZ_USER=$(getent passwd|grep 1001|awk -F":" '{print $1}')
+if [ "$NZ_USER" = "" ] #in case the system only has root as user
+	then NZ_USER="root"
+	sed -i 's/"^PermitRootLogin no"/"PermitRootLogin yes"/g' /etc/ssh/sshd_config #Allow root SSH logins
+	echo "No unprivilegied user account detected. Allowing root SSH logins..."
+fi
 }
 
 
-_NzEditConfig() {
+_NzEditConfig() { #Edit main config file, copied from functions.sh
 $EDITOR ${NZ_CONF_PATH}/nodezero.conf
 source "${NZ_CONF_PATH}/nodezero.conf"
+echo "Updating hostname...."
 echo "$NZ_FQDN" >| /etc/hostname
 hostname "$NZ_FQDN"
 }
 
-_NzSSHKeygen() {
+_NzSSHKeygen() { #Generate ssh keys, send them to user's home dir
 ssh-keygen -b 2048 -t ecdsa -f ~/nodezero-key-ecdsa
-if [ ! -d ~/.ssh/ ]; then mkdir -p ~/.ssh/; fi
+if [ ! -d /home/${NZ_USER}/.ssh/ ]; then mkdir -p /home/${NZ_USER}/.ssh/; fi
 cat ~/nodezero-key-ecdsa.pub >| ~/.ssh/authorized_keys
-echo "Please copy ~/nodezero-key-ecdsa and ~/nodezero-key-ecdsa.pub to your remote computer and restart the SSH service. #TODO automate it"
+echo "Please copy /home/${NZ_USER}/nodezero-key-ecdsa and /home/${NZ_USER}/nodezero-key-ecdsa.pub to your remote computer and restart the SSH service." #TODO automate it
 }
 
 
