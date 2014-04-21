@@ -1,11 +1,9 @@
-##services
-ntp
-
-##mumble
+## Mumble server 
 mumble-server
 
-##web server
+## Web server
 apache2
+ssl-cert
 libapache2-mod-php5
 libapache2-mod-security2
 mysql-server
@@ -19,6 +17,9 @@ php5-imagick
 php5-intl
 php5-mcrypt
 
+## XMPP Server
+prosody
+
 ##Disk Utils
 dosfstools
 cryptsetup
@@ -26,7 +27,7 @@ ntfs-3g
 usbmount
 
 ##MTA
-postfix
+#postfix
 ##Other MTAS
 #mta
 #exim4-base
@@ -34,34 +35,30 @@ postfix
 #exim4-config
 #sendmail
 
-#Network services
+## Other Network services
 ntp
-openvpn
+#openvpn
 #inadyn
 
-#Media
+## Media utilities
 sox
 imagemagick
 
-#Hardware support
+## Hardware support
 usbutils
 hdparm
 lshw
 smartmontools
 
-#File format support
+## File formats support
 p7zip-full
 zip
 
-#Terminal toolkit
+## Terminal utilities
 colortail
 colordiff
 less
 mutt
-htop
-iotop
-ncdu
-dfc
 ranger
 atool
 highlight
@@ -80,12 +77,16 @@ tiger
 debsums
 libdate-manip-perl
 obnam
-iftop
 lnav
-nethogs
 apt-file
 command-not-found
 unattended-upgrades
+htop
+iotop
+iftop
+ncdu
+dfc
+nethogs
 
 #Misc
 #logstalgia

@@ -554,6 +554,9 @@ grep -roh "^_.*()" $NODEZERO_PATH/
 
 _NzEditConfig() {
 $EDITOR ${NZ_CONF_PATH}/nodezero.conf
+source "${NZ_CONF_PATH}/nodezero.conf"
+echo "$NZ_FQDN" >| /etc/hostname
+hostname "$NZ_FQDN"
 }
 
 #Create symlinks to zenphoto and Dokuwiki data dirs in the main user's (UID 1000) home directory
