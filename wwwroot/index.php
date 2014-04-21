@@ -152,7 +152,6 @@ if (is_dir($APP_TTRSS_DIR)) {
 <div class="app">
 <h1>HTTPS</h1>
 <p>Accédez au site en version sécurisée</p>
-<p style="font-size: 80%;">Ce site utilise un <a style="padding-bottom: 0px; float: none;" href="doc/https.html">certificat auto-signé</a></p>
 </div>
 </a>
 
