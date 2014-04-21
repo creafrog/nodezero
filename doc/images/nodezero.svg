@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="312.88367"
+   height="250.00226"
+   id="svg7716"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Nouveau document 156">
+  <defs
+     id="defs7718" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="156.39657"
+     inkscape:cy="124.99702"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="10"
+     fit-margin-left="10"
+     fit-margin-right="10"
+     fit-margin-bottom="10"
+     inkscape:window-width="528"
+     inkscape:window-height="430"
+     inkscape:window-x="209"
+     inkscape:window-y="134"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7721">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-218.60343,-407.35694)">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot7677"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(1.5390658,0,0,1.2737541,86.476476,381.10371)"><flowRegion
+         id="flowRegion7679"><rect
+           id="rect7681"
+           width="410.12192"
+           height="284.86301"
+           x="90.913727"
+           y="66.4533" /></flowRegion><flowPara
+         id="flowPara7683"
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#cccccc;font-family:RoboKoz;-inkscape-font-specification:RoboKoz">0</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path7647"
+       sodipodi:cx="378.30212"
+       sodipodi:cy="587.69202"
+       sodipodi:rx="114.65231"
+       sodipodi:ry="124.24876"
+       d="m 492.95444,587.69202 c 0,68.62069 -51.33159,124.24875 -114.65232,124.24875 -63.32072,0 -114.65231,-55.62806 -114.65231,-124.24875 0,-68.6207 51.33159,-124.24876 114.65231,-124.24876 63.32073,0 114.65232,55.62806 114.65232,124.24876 z"
+       transform="matrix(0.98583557,0,0,0.91090006,33.529296,-2.9665106)" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot7649"
+       style="font-size:180px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Roboto;-inkscape-font-specification:Roboto"
+       transform="matrix(1.2851626,0,0,1.3606039,222.51742,174.0286)"><flowRegion
+         id="flowRegion7651"><rect
+           id="rect7653"
+           width="195.96959"
+           height="282.84274"
+           x="102.02541"
+           y="164.4381"
+           style="font-size:180px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Roboto;-inkscape-font-specification:Roboto" /></flowRegion><flowPara
+         id="flowPara7655">0</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot7685"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(211.00848,258.82761)"><flowRegion
+         id="flowRegion7687"><rect
+           id="rect7689"
+           width="153.54318"
+           height="141.42136"
+           x="92.934036"
+           y="207.87465" /></flowRegion><flowPara
+         id="flowPara7691"
+         style="font-size:98px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Rufscript;-inkscape-font-specification:Rufscript">n</flowPara></flowRoot>  </g>
+</svg>
