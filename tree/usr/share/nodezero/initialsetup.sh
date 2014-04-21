@@ -10,7 +10,7 @@ fi
 
 _NzSetupMain() {
 _NzUserGetName
-sed -i "s/^export NZ_USER=/export NZ_USER=\"$NZ_USER\" #Main user name" "${NZ_CONF_PATH}/nodezero.conf"
+sed -i "s/^export NZ_USER=/export NZ_USER=\"$NZ_USER\" #Main user name/g" "${NZ_CONF_PATH}/nodezero.conf"
 
 echo "
 ###################################################
