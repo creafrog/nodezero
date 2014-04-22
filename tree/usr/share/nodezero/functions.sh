@@ -287,6 +287,10 @@ _NzProsodyAdduser() {
 echo "Please enter the desired username for the new account:"
 read PROSODY_NEW_USERNAME
 prosodyctl adduser "${PROSODY_NEW_USERNAME}@${NZ_FQDN}"
+if [ $? = 0 ]
+	then echo "Done. You can now login with an XMPP client. Username: ${PROSODY_NEW_USERNAME} , Domain: ${NZ_FQDN} , Password: you just entered it. Press any key to continue."
+read -n 1
+fi
 }
 
 _NzProsodyGetUserlist() {
