@@ -99,5 +99,8 @@ else
 fi
 }
 
+_NzSecureMysql() { #Copied from functions.sh
+mysql_secure_installation
+}
 
 _NzSetupMain
