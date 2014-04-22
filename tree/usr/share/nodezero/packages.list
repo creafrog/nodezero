@@ -5,7 +5,7 @@ mumble-server
 apache2
 ssl-cert
 libapache2-mod-php5
-libapache2-mod-security2
+libapache2-modsecurity
 mysql-server
 php5-mysql
 php5
