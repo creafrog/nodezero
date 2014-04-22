@@ -89,6 +89,7 @@ ncdu
 dfc
 nethogs
 sudo
+ufw
 
 #Misc
 #logstalgia
