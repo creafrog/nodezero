@@ -1,0 +1,7 @@
+AppName="Daux.io"
+AppUrl="https://github.com/justinwalsh/daux.io"
+AppTag="master"
+AppDescription="documentation generator that uses simple Markdown files"
+AppWwwDir="doc"
+AppPostInstallCommand="ln -s $APACHE_DOCUMENTROOT/$AppWwwDir/docs/ /home/${NZ_USER}/WebDocs; \
+chown $NZ_USER:$APACHE_GROUP /home/${NZ_USER}/WebDocs; \" #TODO: edit config
