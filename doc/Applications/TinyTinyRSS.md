@@ -27,7 +27,6 @@ De plus, le RSS est simple à utiliser grâce à son format et ses spécificatio
   * [RSS - Comment ça marche](http://www.commentcamarche.net/contents/www/rss.php3)
   * [Comment S'abonner au Flux RSS D'une Page Facebook ? [Tutoriel] | Emarketinglicious](http://www.emarketinglicious.fr/social-media/comment-abonner-au-flux-rss-page-facebook-tutoriel)
   * [Aggrégateurs (lecteurs de fils) RSS - Comment ça marche](http://www.commentcamarche.net/faq/3339-agregateurs-rss-lecteurs-de-fils-rss)
-  * [gritttt-rss](https://github.com/nhoening/gritttt-rss) - More features for TT-RSS ([Official site](http://gritttt-rss.nicolashoening.de/))
   * [The real reason Google wants to kill RSS - Boing Boing](http://boingboing.net/2013/07/03/the-real-reason-google-wants-t.html)
 
 
@@ -67,40 +66,14 @@ De plus, le RSS est simple à utiliser grâce à son format et ses spécificatio
     * - Install difficile
 
 
-
-**Insert screenshots here**
-
-
 ###Trucs & Astuces
 ####Logiciels supplémentaires
-Voir la page http://tt-rss.org/redmine/projects/tt-rss/wiki/RelatedSoftware
+ * [RelatedSoftware - Tiny Tiny RSS](http://tt-rss.org/redmine/projects/tt-rss/wiki/RelatedSoftware)
+ * [gritttt-rss](https://github.com/nhoening/gritttt-rss) - More features for TT-RSS ([Official site](http://gritttt-rss.nicolashoening.de/))
 
 ####Partager des liens
 Il est possible de partager des liens sur différents réseaux (facebook, twitter, google+, et bien d'autres) depuis tt-rss.
-
-##### Plugins
  * Quelques plugins permettant de partager des articles sont disponibles dans la page `Préférences` de tt-rss, sous le menu `Plugins`.
 Par exemple, si vous activez le plugin `twitter`, il sera possible de cliquer sur le bouton twitter dans chaque article pour le partager sur Twitter.
  * D'autres plugins intéressants sont disponibles sur http://tt-rss.org/redmine/projects/tt-rss/wiki/Plugins
-
-##### IFTTT
-
-###### Création de la recette IFTTT
-Cette méthode est plus compliquée à configurer (la première fois) mais je la trouve plus simple à utiliser à la longue.
-Elle requiert une inscription sur https://ifttt.com/ qui est un service d'automatisation de tâches. On dépond donc d'un service extérieur, mais comme c'est pour partager des liens sur d'autres services extérieurs, ca ira.
- * Rendez vous dans le flux spécial `Articles publiés` de votre installation Tiny Tiny RSS, et cliquez sur l'icône ![](../images/rss.svg) en haut à droite (sous le menu `Actions...`).
- * Le programme affiche une adresse de flux **public** pour vos articles publiés. Copiez-la quelque part.
- * Inscrivez vous sur https://ifttt.com/ et sélectionnez `Create a Recipe`
- * Cliquez sur if **this** et choisissez le canal `Feed` comme source, et `New feed item` comme déclencheur (_trigger_).
- * Dans la case `Feed URL`, collez l'adresse de votre flux public copié juste avant, et validez.
- * Cliquez sur **that** pour choisir une action à effectuer lorsque vous ajoutez un lien à votre flux d'éléments publiés.
- * Choisissez un canal (par ex. `Facebook` ou `Twitter`) pour la publication.
- * Choisissez ensuite une action (par ex. `Create a link post`, remplissez les champs demandés (vous pouvez laisser les réglages par défaut) et validez.
-
-###### Partage d'éléments
-Il suffit maintenant de cliquer sur le bouton de partage de votre article dans TT-rss (le bouton ![](../images/rss.svg) à gauche de l'article, à côté de l'étoile) pour les ajouter à vos éléments publiés.
-Voilà. A chaque fois que la _recipe_ IFTTT se déclenchera (temporisée, une fois par heure _à vérifier_), IFTTT postera les nouveaux éléments de votre flux public sur le canal que vous avez choisi (la liste complète des canaux est [ici](https://ifttt.com/channels)).
-
-##### Autres solutions
-Vous pouvez partager manuellement des liens avec ces bookmarklets: (https://github.com/nodiscc/notes/tree/master/bookmarklets.md)
-
+ * Vous pouvez aussi vous rendre dans le flux spécial `Articles publiés` de votre installation Tiny Tiny RSS (qui regroupe tous les articles pour lesquels vous avez cliqué sur l'icône `Publier` puis sur l'icône ![](../images/rss.svg) en haut à droite (sous le menu `Actions...`), puis effectuer une action à parit de ce flux avec le service [IFTTT](https://ifttt.com). Voir [IFTTT : automatiser des tâches courantes sur le web](http://www.commentcamarche.net/faq/34648-ifttt-automatiser-des-taches-courantes-sur-le-web)

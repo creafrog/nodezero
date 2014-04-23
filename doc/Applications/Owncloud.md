@@ -36,13 +36,14 @@ Owncloud est un projet de gestion de vos données sur internet. Ses fonctionnali
   * [Laverna](https://laverna.cc/) - Laverna is a JavaScript note taking application with Markdown editor and encryption support. Consider it like open source alternative to Evernote ([SOurce on Github](https://github.com/Laverna/laverna), [Demo](https://laverna.cc/index.html#notes))
 
 
-####Gestion de calendriers/carnets d'adresses
+####Gestion de calendriers/carnets d'adresses/listes de tâches
   * [Radicale](http://radicale.org/) - A Simple Calendar and Contact Server
     * [Radicale Howto](http://www.techrepublic.com/blog/opensource/create-an-easy-to-use-linux-calendar-sharing-server/2042)
   * [calypso](http://keithp.com/calypso/) - a python-based CalDAV/CardDAV server
   * [AgenDAV](http://agendav.org/) - Multilanguage CalDAV web client with a rich AJAX interface and shared calendars support (FIXME à tester)
   * [Baïkal](http://baikal.codr.fr/) - Lightweight CalDAV+CardDAV server
     * [Installez votre synchronisateurs de contacts chez vous avec Baikal | IdleBlog](http://blog.idleman.fr/?p=2337)
+  * [tasks.php](https://github.com/RaymiiOrg/tasks.php) - A simple task/todo list manager
   * [egroupware](http://www.egroupware.org/) - calendrier, répertoire, bloc notes,  planning, outils de gestion de projets, solution de gestion de la relation client, outil de gestion des connaissances, Wiki, CMS.
 
 ####Stockage de fichiers
