@@ -84,7 +84,7 @@ tiger
 debsums
 libdate-manip-perl
 obnam
-lnav
+#lnav
 apt-file
 command-not-found
 unattended-upgrades
