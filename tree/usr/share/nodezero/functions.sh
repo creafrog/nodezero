@@ -43,7 +43,7 @@ done
 }
 
 #### TOOLS MENU
-_NzMenuTools() {
+_NzMenuTools() { #TODO: lnav, goaccess
 selection=
 until [ "$selection" = "0" ]; do
      echo ""
@@ -92,7 +92,7 @@ done
 }
 
 #### USER ACCOUNT MENU
-_NzMenuUserAccount() {
+_NzMenuUserAccount() { #TODO: password change mechanism
 selection=
 until [ "$selection" = "0" ]; do
      echo ""
@@ -153,7 +153,7 @@ until [ "$selection" = "0" ]; do
      echo "1 - Clear dokuwiki cache"
      echo "2 - Restore correct file permissions"
      echo "3 - Clear PHP APC Cache"
-     echo "4 - Edit access permissions for the web server files"
+     echo "4 - Edit access permissions for the web server files" #TODO: no
      echo "5 - Cleanup stale install files"
      echo "6 - Cleanup APT packages cache and stale config files"
      echo "7 - Disable Owncloud maintenance mode."
@@ -206,7 +206,7 @@ done
 }
 
 #### OTHER SERVICES CONFIGURATION MENU
-_NzMenuServices() {
+_NzMenuServices() { #TODO
 selection=
 until [ "$selection" = "0" ]; do
 echo "
@@ -459,7 +459,7 @@ _NzRunRanger() {
 }
 
 _NzShowMotd() {
-
+#TODO: uptime, hostname, OS/kernel, disk/ram/cpu usage graph over time, IP addresses, Internet traffic over time, disk I/O, top 5 processes, load average, 
 }
 
 _NzEditMotd() {

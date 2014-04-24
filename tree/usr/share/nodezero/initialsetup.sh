@@ -49,7 +49,7 @@ sed -i "s|\tcertificate = \"/etc/prosody/certs/server.cert\";|\tcertificate = \"
 
 echo "
 Securing mysql installation..."
-_NzSecureMysql
+_NzSecureMysql #TODO: mysql must be started before
 
 service apache2 start
 service prosody start
@@ -70,7 +70,7 @@ _NzUserGetName() { #Get system's main user name (assume it was the first user cr
 NZ_USER=$(getent passwd|grep 1001|awk -F":" '{print $1}')
 if [ "$NZ_USER" = "" ] #in case the system only has root as user
 	then NZ_USER="root"
-	sed -i 's/"^PermitRootLogin no"/"PermitRootLogin yes"/g' /etc/ssh/sshd_config #Allow root SSH logins
+	sed -i 's/"^PermitRootLogin no"/"PermitRootLogin yes"/g' /etc/ssh/sshd_config #Allow root SSH  logins #TODO: doesn't work
 	echo "No unprivilegied user account detected. Allowing root SSH logins..."
 fi
 }
