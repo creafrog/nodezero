@@ -17,6 +17,9 @@ php5-imagick
 php5-intl
 php5-mcrypt
 
+## SSH Server
+openssh-server
+
 ## XMPP Server
 prosody
 lua-sec
@@ -67,6 +70,9 @@ bash-completion
 elinks
 mlocate
 nano
+wget
+curl
+lsof
 
 ##Admin tools
 logwatch
@@ -90,6 +96,10 @@ dfc
 nethogs
 sudo
 ufw
+parted
+macchanger
+iptables
+hostname
 
 #Misc
 #logstalgia
