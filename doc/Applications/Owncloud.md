@@ -34,6 +34,7 @@ Owncloud est un projet de gestion de vos données sur internet. Ses fonctionnali
 ####Gestion de fichiers texte/documents
   * [Jotter](https://github.com/yosko/jotter) - Jotter is a lightweight, no database, powerful web notebook that lets you create and manage notes online safely, quickly & easily. ([Demo](http://tools.yosko.net/demos/jotter/) - login/pass: demo/demo)
   * [Laverna](https://laverna.cc/) - Laverna is a JavaScript note taking application with Markdown editor and encryption support. Consider it like open source alternative to Evernote ([SOurce on Github](https://github.com/Laverna/laverna), [Demo](https://laverna.cc/index.html#notes))
+ * [OpenNote](https://github.com/FoxUSA/OpenNote) - OpenNote was built to be an open web-based alternative to Microsoft OneNote (T) and EverNote
 
 
 ####Gestion de calendriers/carnets d'adresses/listes de tâches

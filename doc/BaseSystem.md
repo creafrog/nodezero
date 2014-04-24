@@ -1,4 +1,16 @@
 #Système de base
+
+##Console d'administration
+La consiole d'administration est disponible en se connectant via SSH à votre serveur et en lancant la commande `nodezero-admin`. Elle permet d'effectuer diverss tâches:
+ * Monitoring/surveillance de l'état du serveur: Usage disque, usage des ressources (RAM, CPU, réseau, _uptime_), processus en cours, tentatives de connection, vérifications de sécurité.
+ * Administration: permissions d'accès aux dossiers/fichiers, mises à jour de logiciels, nettoyage de fichiers temporaires, visualisation/copie/suppression de fichiers, redémarrage/extinction...
+ * Sauvegardes: sauvegarde des données du serveur, bases de données, fichiers utilisateur
+ * Gestion des services: activation/désactivation de services, utilisateurs du serveur de messagerie instantanée, dépannage, modification de mots de passe
+
+###Voir aussi
+ * [linux-dash](https://github.com/afaqurk/linux-dash) - A drop-in, low-overhead monitoring web dashboard for a linux machine ([Demo](http://afaq.dreamhosters.com/linux-dash/))
+ * [pyDash](https://github.com/k3oni/pydash) - Small web-based monitoring dashboard for linux ([Demo](http://pydash.hostechs.com/main/) - _admin/admin_)
+
 ##Serveur Web Apache
 Le logiciel libre Apache HTTP Server (Apache) est un [serveur HTTP](https://fr.wikipedia.org/wiki/Serveur_HTTP) (serveur Web) créé et maintenu au sein de la fondation Apache. C'est le serveur HTTP le plus populaire du World Wide Web.
 
