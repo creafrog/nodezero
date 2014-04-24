@@ -1,0 +1,6 @@
+AppName="Piwik"
+AppUrl="https://github.com/piwik/piwik"
+AppTag="2.2.0"
+AppDescription="Web analytics"
+AppPostInstallCommand=""
+AppWwwDir="piwik"
