@@ -1,6 +1,6 @@
-AppName="TT-RSS RSS aggregator"
+AppName="TT-RSS"
 AppUrl="https://github.com/gothfox/Tiny-Tiny-RSS"
 AppTag="1.12"
-AppDescription=""
+AppDescription="RSS feed reader and aggregator"
 AppPostInstallCommand=""
 AppWwwDir="tt-rss"

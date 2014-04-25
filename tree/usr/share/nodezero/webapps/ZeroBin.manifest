@@ -1,6 +1,6 @@
-AppName="ZeroBin pastebin"
+AppName="ZeroBin"
 AppUrl="https://github.com/sebsauvage/ZeroBin"
 AppTag="0.19"
-AppDescription=""
+AppDescription="Encrypted pastebin"
 AppPostInstallCommand=""
 AppWwwDir="paste"

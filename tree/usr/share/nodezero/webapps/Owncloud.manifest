@@ -1,6 +1,6 @@
-AppName="Owncloud file, contacts and calendar sync sevice"
+AppName="Owncloud"
 AppUrl="https://github.com/owncloud/core"
 AppTag="v6.0.2"
-AppDescription=""
+AppDescription="Edit, store, share and synchronize files, contacts and calendars"
 AppPostInstallCommand=""
 AppWwwDir="owncloud"

@@ -1,6 +1,6 @@
-AppName="Converse.js XMPP chat client"
+AppName="Converse.js"
 AppUrl="https://github.com/jcbrand/converse.js"
 AppTag="v0.7.4"
-AppDescription=""
+AppDescription="XMPP webchat client"
 AppPostInstallCommand=""
 AppWwwDir="chat"
