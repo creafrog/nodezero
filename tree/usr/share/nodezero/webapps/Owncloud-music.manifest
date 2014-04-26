@@ -1,0 +1,6 @@
+AppName="Owncloud music app"
+AppUrl="https://github.com/owncloud/music"
+AppTag="v0.1.9.1-rc"
+AppDescription="play music files in Owncloud"
+AppPostInstallCommand=""
+AppWwwDir="owncloud/apps/music"

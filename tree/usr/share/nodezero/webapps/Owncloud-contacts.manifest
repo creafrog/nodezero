@@ -1,0 +1,6 @@
+AppName="Owncloud contacts app"
+AppUrl="https://github.com/owncloud/contacts"
+AppTag="v6.0.2"
+AppDescription="synchronize and manage contacts and address books with Owncloud"
+AppPostInstallCommand=""
+AppWwwDir="owncloud/apps/contacts"

@@ -1,0 +1,6 @@
+AppName="Owncloud pictures app"
+AppUrl="https://github.com/owncloud/gallery"
+AppTag="master"
+AppDescription="browse image galleries with Owncloud"
+AppPostInstallCommand=""
+AppWwwDir="owncloud/apps/gallery"

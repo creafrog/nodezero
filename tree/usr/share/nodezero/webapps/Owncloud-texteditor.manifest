@@ -1,0 +1,6 @@
+AppName="Owncloud text editor app"
+AppUrl="https://github.com/owncloud/files_texteditor"
+AppTag="v6.0.1"
+AppDescription="a text editor for Owncloud"
+AppPostInstallCommand=""
+AppWwwDir="owncloud/apps/files_texteditor"

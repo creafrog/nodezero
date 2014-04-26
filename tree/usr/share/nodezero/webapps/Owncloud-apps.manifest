@@ -1,0 +1,6 @@
+AppName="Owncloud apps"
+AppUrl="https://github.com/owncloud/apps"
+AppTag="v6.0.2"
+AppDescription="standard applications for owncloud"
+AppPostInstallCommand=""
+AppWwwDir="owncloud/apps"

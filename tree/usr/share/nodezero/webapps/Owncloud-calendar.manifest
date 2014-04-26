@@ -1,0 +1,6 @@
+AppName="Owncloud calendar app"
+AppUrl="https://github.com/owncloud/calendar"
+AppTag="v6.0.2"
+AppDescription="manage, synchronize and share calendras with Owncloud"
+AppPostInstallCommand=""
+AppWwwDir="owncloud/apps/calendar"
