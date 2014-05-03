@@ -1,6 +1,0 @@
-AppName="Owncloud videos app"
-AppUrl="https://github.com/owncloud/videos"
-AppTag="master"
-AppDescription="a video browser for Owncloud"
-AppPostInstallCommand=""
-AppWwwDir="owncloud/apps/video"

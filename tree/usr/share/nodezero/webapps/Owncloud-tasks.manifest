@@ -1,6 +1,0 @@
-AppName="Owncloud tasks app"
-AppUrl="https://github.com/raimund-schluessler/tasks_enhanced"
-AppTag="v6.0.1"
-AppDescription="manage and synchronize list of tasks in Owncloud"
-AppPostInstallCommand=""
-AppWwwDir="owncloud/apps/tasks"

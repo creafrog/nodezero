@@ -31,4 +31,10 @@ fi
 
 }
 
+_NzInstallWebapp() {
+#if AppUrl="none", skip git clone and go to PostInstallScript
+}
+
+
+
 _NzListWebapps

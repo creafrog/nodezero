@@ -1,6 +1,5 @@
 AppName="Owncloud"
-AppUrl="https://github.com/owncloud/core"
-AppTag="v6.0.2"
+AppUrl="none"
 AppDescription="Edit, store, share and synchronize files, contacts and calendars"
-AppPostInstallCommand=""
+AppPostInstallCommand="$NZ_PATH/webapps/scripts/Owncloud.sh install"
 AppWwwDir="owncloud"
