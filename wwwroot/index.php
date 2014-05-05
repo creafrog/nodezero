@@ -210,6 +210,21 @@ if (is_dir($APP_YOURLS_DIR)) {
 }
 ?>
 
+<!-- Box for mapBBCodeShare -->
+<?php
+$APP_MAPS_DIR = 'maps';
+$APP_MAPS_HTML = '<a href="/maps" class="title" style="background-image:url(img/maps.png)"> 
+<div class="app"> 
+<h1>Maps</h1> 
+<p>Edition et partage de cartes</p>
+</div> 
+</a>';
+
+if (is_dir($APP_MAPS_DIR)) {
+	echo $APP_MAPS_HTML;
+}
+?>
+
 <!-- Box for Gitlist -->
 <?php
 $APP_GITLIST_DIR = 'gitlist';
