@@ -1,6 +1,5 @@
 AppName="FileTea"
-AppUrl="https://github.com/elima/FileTea"
-AppTag="0.1.16"
+AppUrl="none"
 AppDescription="Anonymous, temporary file sharing service"
-AppPostInstallCommand=""
+AppPostInstallCommand="aptitude install filetea"
 AppWwwDir="filetea"
