@@ -1,6 +1,5 @@
 AppName="Piwik"
-AppUrl="https://github.com/piwik/piwik"
-AppTag="2.2.0"
+AppUrl="none"
 AppDescription="Web analytics"
-AppPostInstallCommand=""
+AppPostInstallCommand="$NZ_PATH/webapps/scripts/Piwik.sh install"
 AppWwwDir="piwik"
