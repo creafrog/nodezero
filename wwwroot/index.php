@@ -151,7 +151,7 @@ if (is_dir($APP_TTRSS_DIR)) {
 <a class="title" href="https://<?php echo $_SERVER['HTTP_HOST'] ?>" style="background-image:url(img/secure.png); background-color:#000">
 <div class="app">
 <h1>HTTPS</h1>
-<p>Accédez au site en version sécurisée</p>
+<p>Connection sécurisée au site</p>
 </div>
 </a>
 
