@@ -103,6 +103,7 @@ until [ "$selection" = "0" ]; do
      _NzUserShowTransmissionaccess
      echo "1 - Change user access to web server files"
      echo "2 - Change user access to transmission downloads"
+     echo "3 - Change transmission web interface username/password"
      echo ""
      echo "0 - Exit program"
      echo ""
@@ -112,6 +113,7 @@ until [ "$selection" = "0" ]; do
      case $selection in
          1 ) _NzUserToggleWwwaccess;;
          2 ) _NzUserToggleTransmissionaccess;;
+         3 ) _NzUserTransmissionPassword;;
          0 ) return 0;;
          * ) echo "Please enter a valid number"
      esac
@@ -635,7 +637,7 @@ fi
 }
 
 _NzUserToggleWwwAccess() { #Show main user's permissions on web served content
-_NzUserShowWwwAccess
+_NzUserShowWwwAccess >/dev/null
 if [ $NZ_USERWWWACCESS = 0 ]
 	then adduser $NZ_USER www-data; _NzUserShowWwwAccess
 	else deluser $NZ_USER www-data; _NzUserShowWwwAccess
@@ -660,6 +662,16 @@ if [ $NZ_USERTRANSMISSIONACCESS = 0 ]
 fi
 }
 
+_NzUserTransmissionPassword() {
+#TODO ask user for username/password common to all webapps BEFORE installing packages
+CurrentTransmissionUsername=$(grep rpc-username /etc/transmission-daemon/settings.json |awk -F "\"" '{print $4}')
+CurrentTransmissionPassword=$(grep rpc-password /etc/transmission-daemon/settings.json |awk -F "\"" '{print $4}')
+read NewTransmissionUsername -p "Please enter the username required to access Transmission web interface (current: $CurrentTransmissionUsername): "
+read NewTransmissionPassword -p "Please enter the password required to access Transmission web interface (current: $CurrentTransmissionPassword): "
+sed -i "s/^   \"rpc-username\".*/   \"rpc-username\": \"$NewTransmissionUsername\",/g" /etc/transmission-daemon/settings.json
+sed -i "s/^   \"rpc-password\".*/   \"rpc-password\": \"$NewTransmissionPassword\",/g" /etc/transmission-daemon/settings.json
+echo "Transmission web interface username/password has been changed to $NewTransmissionUsername/$NewTransmissionPassword"
+}
 
 ################################################################################
 #####################  CLEANUP AND TROUBLESHOOTING FUNCTIONS  ##################
