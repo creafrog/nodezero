@@ -104,6 +104,7 @@ parted
 macchanger
 iptables
 hostname
+debconf-utils
 
 #Misc
 #logstalgia
