@@ -663,7 +663,6 @@ fi
 }
 
 _NzUserTransmissionPassword() {
-#TODO ask user for username/password common to all webapps BEFORE installing packages
 CurrentTransmissionUsername=$(grep rpc-username /etc/transmission-daemon/settings.json |awk -F "\"" '{print $4}')
 CurrentTransmissionPassword=$(grep rpc-password /etc/transmission-daemon/settings.json |awk -F "\"" '{print $4}')
 read NewTransmissionUsername -p "Please enter the username required to access Transmission web interface (current: $CurrentTransmissionUsername): "

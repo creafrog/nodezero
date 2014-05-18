@@ -30,6 +30,8 @@ egrep -v "^#"  "${NZ_PATH}/packages.list" | egrep -v "^$" | tr "\n" " " | xargs 
 service apache2 stop
 service prosody stop
 service mysql stop
+service transmission-daemon stop
+
 echo "
 Setting up default groups..."
 adduser $NZ_USER debian-transmission
@@ -41,6 +43,14 @@ adduser $NZ_USER plugdev
 adduser $NZ_USER video
 adduser $NZ_USER audio
 adduser $NZ_USER fuse
+
+echo "
+Setting a random username/password for transmission web interface (can be changerd later form the admin interface)"
+NewTransmissionUsername=$(pwgen -s 24)
+NewTransmissionPassword=$(pwgen -s 24)
+sed -i "s/^   \"rpc-username\".*/   \"rpc-username\": \"$NewTransmissionUsername\",/g" /etc/transmission-daemon/settings.json
+sed -i "s/^   \"rpc-password\".*/   \"rpc-password\": \"$NewTransmissionPassword\",/g" /etc/transmission-daemon/settings.json
+echo "Transmission web interface username/password has been changed to $NewTransmissionUsername/$NewTransmissionPassword"
 
 echo "
 Generating SSL keys and certificates..."
@@ -65,6 +75,9 @@ _NzSecureMysql #TODO: mysql must be started before
 service apache2 start
 service prosody start
 service mysql start
+service transmission-daemon start
+
+
 
 echo "Ready to roll. Run nodezero-admin to administrate your server."
 }
