@@ -25,6 +25,9 @@ openssh-server
 prosody
 lua-sec
 
+## Transmission Bittorrent client/seedbox
+transmission-daemon
+
 ##Disk Utils
 dosfstools
 cryptsetup
