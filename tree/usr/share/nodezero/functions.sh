@@ -43,7 +43,7 @@ done
 }
 
 #### TOOLS MENU
-_NzMenuTools() { #TODO: lnav, goaccess
+_NzMenuTools() { #TODO: lnav
 selection=
 until [ "$selection" = "0" ]; do
      echo ""
@@ -63,6 +63,7 @@ until [ "$selection" = "0" ]; do
      echo "13 - Clear packages cache"
      echo "14 - aptitude - manage software packages/updates"
      echo "15 - Update installed software now"
+     echo "16 - goaccess - ananlyze and display web server logs"
      echo ""
      echo "0 - Exit program"
      echo ""
@@ -85,6 +86,7 @@ until [ "$selection" = "0" ]; do
 	 13 ) _NzAptitudeClean;;
 	 14 ) _NzRunAptitude;;
 	 15 ) _NzAptUpgrade;;
+	 16 ) _NzRunGoAccess;;
          0 ) exit;;
          * ) echo "Please enter 1,2,3,4,5,6,7,8,9,10,11,12,13 or 0"
      esac
@@ -493,7 +495,12 @@ _NzRunIftop() {
 iftop
 }
 
-
+_NzRunGoAccess() {
+zcat -f /var/log/apache2/access* | goaccess
+GoAccess_Outfile=/home/$NZ_USER/goaccess.html
+zcat -f /var/log/apache2/access* | goaccess -a >| $GoAccess_Outfile
+echo "Latest statistics saved to $GoAccess_Outfile"
+}
 
 
 
