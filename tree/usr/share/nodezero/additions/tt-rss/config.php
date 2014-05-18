@@ -7,7 +7,7 @@
 	define('DB_HOST', 'localhost');
 	define('DB_USER', 'ttrss');
 	define('DB_NAME', 'ttrss');
-	define('DB_PASS', 'hahahahayouthinkthatsarealpassword'); //TODO populate thsis automatically with previously generated password
+	define('DB_PASS', 'hahahahayouthinkthatsarealpassword');
 	define('DB_PORT', '3306');
 
 	define('MYSQL_CHARSET', 'UTF8');
@@ -18,13 +18,13 @@
 	// *** Basic settings (important!) ***
 	// ***********************************
 
-	define('SELF_URL_PATH', 'https://your-fqdn-here/tt-rss/'); //TODO replace with server configured fqdn
+	define('SELF_URL_PATH', 'https://your-fqdn-here/tt-rss/');
 	// Full URL of your tt-rss installation. This should be set to the
 	// location of tt-rss directory, e.g. http://example.org/tt-rss/
 	// You need to set this option correctly otherwise several features
 	// including PUSH, bookmarklets and browser integration will not work properly.
 
-	define('FEED_CRYPT_KEY', 'blablahblah'); //TODO generate a 24-char random for this
+	define('FEED_CRYPT_KEY', 'blablahblah');
 	// Key used for encryption of passwords for password-protected feeds
 	// in the database. A string of 24 random characters. If left blank, encryption
 	// is not used. Requires mcrypt functions.
