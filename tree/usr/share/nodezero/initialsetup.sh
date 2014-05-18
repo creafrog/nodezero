@@ -68,13 +68,14 @@ sed -i "s/VirtualHost \"your_fqdn_here\"/VirtualHost \"$NZ_FQDN\"/g" /etc/prosod
 sed -i "s|\tkey = \"/etc/prosody/certs/server.key\";|\tkey = \"/etc/prosody/certs/$NZ_FQDN.key\";|g" /etc/prosody/prosody.cfg.lua
 sed -i "s|\tcertificate = \"/etc/prosody/certs/server.cert\";|\tcertificate = \"/etc/prosody/certs/$NZ_FQDN.crt\";|g" /etc/prosody/prosody.cfg.lua
 
+service mysql start
+
 echo "
 Securing mysql installation..."
-_NzSecureMysql #TODO: mysql must be started before
+mysql_secure_installation
 
 service apache2 start
 service prosody start
-service mysql start
 service transmission-daemon start
 
 
@@ -91,7 +92,7 @@ fi
 }
 
 _NzUserGetName() { #Get system's main user name (assume it was the first user created)
-NZ_USER=$(getent passwd|grep 1001|awk -F":" '{print $1}')
+NZ_USER=$(getent passwd|grep 1000:1000|awk -F":" '{print $1}')
 if [ "$NZ_USER" = "" ] #in case the system only has root as user
 	then NZ_USER="root"
 	sed -i 's/"^PermitRootLogin no"/"PermitRootLogin yes"/g' /etc/ssh/sshd_config #Allow root SSH  logins #TODO: doesn't work
@@ -121,10 +122,6 @@ else
 	cat /home/${NZ_USER}/nodezero-key-ecdsa.pub >| /home/${NZ_USER}/.ssh/authorized_keys
 	echo "Please copy /home/${NZ_USER}/nodezero-key-ecdsa and /home/${NZ_USER}/nodezero-key-ecdsa.pub to your remote computer and restart the SSH service." #TODO automate it
 fi
-}
-
-_NzSecureMysql() { #Copied from functions.sh
-mysql_secure_installation
 }
 
 _NzSetupMain
