@@ -30,6 +30,17 @@ egrep -v "^#"  "${NZ_PATH}/packages.list" | egrep -v "^$" | tr "\n" " " | xargs 
 service apache2 stop
 service prosody stop
 service mysql stop
+echo "
+Setting up default groups..."
+adduser $NZ_USER debian-transmission
+adduser $NZ_USER www-data
+adduser $NZ_USER sudo
+adduser $NZ_USER scanner
+adduser $NZ_USER lpadmin
+adduser $NZ_USER plugdev
+adduser $NZ_USER video
+adduser $NZ_USER audio
+adduser $NZ_USER fuse
 
 echo "
 Generating SSL keys and certificates..."
