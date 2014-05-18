@@ -2,5 +2,11 @@ AppName="TT-RSS"
 AppUrl="https://github.com/gothfox/Tiny-Tiny-RSS"
 AppTag="1.12"
 AppDescription="RSS feed reader and aggregator"
-AppPostInstallCommand=""
 AppWwwDir="tt-rss"
+AppPostInstallCommand="cp -r $NZ_PATH/additions/tt-rss/config.php $APACHE_DOCUMENTROOT/$AppWwwDir/config.php;
+FeedCryptkey=$(pwgen -s 24 -n 1);
+TtRssDbPass=$(pwgen -s 24 -n 1);
+_NzCreateDb tt-rss $TtRssDbPass;
+sed \"s|hahahahayouthinkthatsarealpassword|$TtRssDbPass|g\" $APACHE_DOCUMENTROOT/$AppWwwDir/config.php;
+sed \"s|your-fqdn-here|$NZ_FQDN|g\" $APACHE_DOCUMENTROOT/$AppWwwDir/config.php;
+sed \"s|blahblahblah|$FeedCryptKey|g\" $APACHE_DOCUMENTROOT/$AppWwwDir/config.php;"
