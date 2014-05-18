@@ -194,6 +194,22 @@ if (is_dir($APP_BLOG_DIR)) {
 </div> 
 --> 
 
+<!-- Box for Wallabag -->
+<?php
+$APP_WALLABAG_DIR = 'wallabag';
+$APP_WALLABAG_HTML = '<a href="/wallabag" class="title" style="background-image:url(img/wallabag.gif)"> 
+<div class="app"> 
+<h1>Wallabag</h1> 
+<p>Liste de lecture</p>
+</div> 
+</a>';
+
+if (is_dir($APP_WALLABAG_DIR)) {
+	echo $APP_WALLABAG_HTML;
+}
+?>
+
+
 
 <!-- Box for YOURLS url shortener -->
 <?php
