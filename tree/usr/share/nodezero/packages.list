@@ -6,6 +6,7 @@ apache2-mpm-prefork
 ssl-cert
 libapache2-mod-php5
 libapache2-modsecurity
+#libapache2-mod-security2 #on jessie/sid only
 mysql-server
 php5-mysql
 php5
@@ -88,7 +89,7 @@ tiger
 debsums
 libdate-manip-perl
 obnam
-#lnav
+#lnav #on jessie/sid only
 apt-file
 command-not-found
 unattended-upgrades
