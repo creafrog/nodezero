@@ -2,7 +2,7 @@
 mumble-server
 
 ## Web server
-apache2
+apache2-mpm-prefork
 ssl-cert
 libapache2-mod-php5
 libapache2-modsecurity
