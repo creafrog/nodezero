@@ -64,3 +64,6 @@
 [submodule "tree/usr/share/nodezero/additions/tt-rss/themes/reeder"]
 	path = tree/usr/share/nodezero/additions/tt-rss/themes/reeder
 	url = https://github.com/tschinz/tt-rss_reeder_theme
+[submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/ttrss-qrcode"]
+	path = tree/usr/share/nodezero/additions/tt-rss/plugins/ttrss-qrcode
+	url = https://github.com/jonrandoem/ttrss-qrcode
