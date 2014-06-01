@@ -566,6 +566,7 @@ grep -roh "^_.*()" $NODEZERO_PATH/
 }
 
 _NzEditConfig() {
+#Note: See also https://packages.debian.org/sid/augeas-tools to edit config files
 $EDITOR ${NZ_CONF_PATH}/nodezero.conf
 source "${NZ_CONF_PATH}/nodezero.conf"
 echo "$NZ_FQDN" >| /etc/hostname

@@ -23,6 +23,7 @@ Les "sites web diffusant ou collectant des données à caractère personnel mis 
 
 ##Liens externes
  * [général:avantages_et_inconvénients - wiki Auto-hébergement](http://wiki.auto-hebergement.fr/g%C3%A9n%C3%A9ral/avantages_et_inconv%C3%A9nients)
+ * [Personal clouds: définition]([Personal Clouds](http://personal-clouds.org/wiki/Main_Page))
  * [Wiki Auto-hébergement](http://wiki.auto-hebergement.fr) - ressources de documentation et d'entraide
  * [Planet auto-hébergement](http://planet.auto-hebergement.fr/)
  * [alternative-internet](https://github.com/redecentralize/alternative-internet) - A collection of interesting new networks and tech aiming at decentralisation (in some form).
@@ -35,6 +36,7 @@ Les "sites web diffusant ou collectant des données à caractère personnel mis 
    * [arkOS](https://arkos.io/) - Your data, your rules. - A project to help users self-host their websites, email, files and more. Decentralize your web and reclaim your privacy rights while keeping the conveniences you need
    * [Sovereign](https://github.com/al3x/sovereign) - A set of Ansible playbooks to build and maintain your own private cloud: email, calendar, contacts, file sync, IRC bouncer, VPN, and more.
    * [FreedomBox](https://wiki.debian.org/FreedomBox/) - The FreedomBox Project is a community project to develop, design and promote personal servers running free software for private, personal, communications. 
+     * https://wiki.debian.org/FreedomBox/LeavingTheCloud
    * [Syncloud](http://syncloud.org/raspberrypi.html) - Build your own online storage on a Raspberry Pi
    * [Piratebox-Scripts]](http://piratebox.aod-rpg.de/dokuwiki/doku.php) - PirateBox is a self-contained mobile communication and file sharing device. Simply turn it on to transform any space into a free and open communications and file sharing network
 
