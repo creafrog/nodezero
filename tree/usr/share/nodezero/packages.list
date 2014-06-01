@@ -106,6 +106,7 @@ macchanger
 iptables
 hostname
 debconf-utils
+bridge-utils
 
 #Misc
 #logstalgia
