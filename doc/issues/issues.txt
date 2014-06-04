@@ -1,0 +1,32 @@
+# nodiscc/nodezero open issues
+  51  OpenVPN Server [enhancement]
+  50  Prevent apache2 direct IP access [bug] [security]
+  49  Client app [enhancement]
+  48  Local wireless meshnet solution [enhancement] [not now]
+  47  Samba: Firewall should be open to LAN only [bug] [security]
+  46  Setup logcheck [enhancement] [security]
+  45  User "keyring" file [enhancement]
+  44  Expose audio outputs over local network [enhancement]
+  43  tt-rss-mobile [new-app] [not now]
+  42  [admin interface] SMART tests [enhancement]
+  41  Backup solution [bug]
+  40  Etherpad [new-app]
+  38  Contact similar projects
+  37  [service] FileTea file sharing [enhancement]
+  36  [homepage] RSS feed aggregation on main page [enhancement] [not now]
+  35  [service] Samba file sharing [config] [enhancement] [not now]
+  34  Default firewall rules [bug] [config] 1
+  33  Announce HTTP server over Avahi/Zeroconf [config]
+  32  [webapp] CacoCloud feed/mail reader, password/bookmark manager [new-app] [not now]
+  31  [webapp] RatticDB Password Manager [new-app] [not now]
+  29  Initial setup script [automation] [bug] 7
+  28  [service] DLNA/UPnP server [enhancement] [not now]
+  27  [service] Firefox sync server [enhancement]
+  26  [webapp] Huginn (IFTTT replacement) [new-app] [not now]
+  23  [web server] switch to nginx [enhancement] [not now]
+  21  Menu item to revoke current certificate, and generate a new one [security] 2
+  20  Mail server [enhancement] [not now]
+  16  Password policy [automation] [config] [security] 1
+  12  Monitoring solution [enhancement] 3
+  10  Backup policy [config] 3
+   8  Automate tt-rss setup [automation] 1
