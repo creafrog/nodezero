@@ -1,66 +1,75 @@
-[submodule "additions/dokuwiki/lib/plugins/orphanswanted"]
-	path = additions/dokuwiki/lib/plugins/orphanswanted
+[submodule "tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/orphanswanted"]
+	path = tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/orphanswanted
 	url = https://github.com/lupo49/dokuwiki-plugin-orphanswanted
-[submodule "additions/dokuwiki/lib/plugins/addnewpage"]
-	path = additions/dokuwiki/lib/plugins/addnewpage
+[submodule "tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/addnewpage"]
+	path = tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/addnewpage
 	url = https://github.com/samwilson/dokuwiki-plugin-addnewpage/
-[submodule "additions/dokuwiki/lib/plugins/editx"]
-	path = additions/dokuwiki/lib/plugins/editx
+[submodule "tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/editx"]
+	path = tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/editx
 	url = https://github.com/danny0838/dw-editx/
-[submodule "additions/dokuwiki/lib/plugins/upgrade"]
-	path = additions/dokuwiki/lib/plugins/upgrade
+[submodule "tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/upgrade"]
+	path = tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/upgrade
 	url = https://github.com/splitbrain/dokuwiki-plugin-upgrade/
-[submodule "additions/dokuwiki/lib/plugins/titlesanchorlink"]
-	path = additions/dokuwiki/lib/plugins/titlesanchorlink
+[submodule "tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/titlesanchorlink"]
+	path = tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/titlesanchorlink
 	url = https://github.com/Dric/dokuwiki-titlesanchorlink/
-[submodule "additions/dokuwiki/lib/plugins/text"]
-	path = additions/dokuwiki/lib/plugins/text
+[submodule "tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/text"]
+	path = tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/text
 	url = https://github.com/michitux/dokuwiki-plugin-text/
-[submodule "additions/dokuwiki/lib/plugins/orphanmedia"]
-	path = additions/dokuwiki/lib/plugins/orphanmedia
+[submodule "tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/orphanmedia"]
+	path = tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/orphanmedia
 	url = https://github.com/Taggic/orphanmedia/
-[submodule "additions/dokuwiki/lib/plugins/markdownextra"]
-	path = additions/dokuwiki/lib/plugins/markdownextra
+[submodule "tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/markdownextra"]
+	path = tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/markdownextra
 	url = https://github.com/naokij/dokuwiki-plugin-markdownextra/
-[submodule "additions/dokuwiki/lib/plugins/indexmenu"]
-	path = additions/dokuwiki/lib/plugins/indexmenu
+[submodule "tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/indexmenu"]
+	path = tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/indexmenu
 	url = https://github.com/samuelet/indexmenu
-[submodule "additions/dokuwiki/lib/plugins/xbr"]
-	path = additions/dokuwiki/lib/plugins/xbr
+[submodule "tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/xbr"]
+	path = tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/xbr
 	url = https://github.com/Chris--S/dokuwiki-plugin-xbr
-[submodule "additions/tt-rss/plugins/tt-rss-yourls"]
-	path = additions/tt-rss/plugins/tt-rss-yourls
+[submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss-yourls"]
+	path = tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss-yourls
 	url = https://github.com/acaranta/tt-rss-yourls
-[submodule "additions/tt-rss/plugins/tt-rss_plugin_readability"]
-	path = additions/tt-rss/plugins/tt-rss_plugin_readability
+[submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss_plugin_readability"]
+	path = tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss_plugin_readability
 	url = https://github.com/ebell451/tt-rss_plugin_readabillity
-[submodule "additions/tt-rss/plugins/Tiny-Tiny-RSS-Contrib"]
-	path = additions/tt-rss/plugins/Tiny-Tiny-RSS-Contrib
+[submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/Tiny-Tiny-RSS-Contrib"]
+	path = tree/usr/share/nodezero/additions/tt-rss/plugins/Tiny-Tiny-RSS-Contrib
 	url = https://github.com/gothfox/Tiny-Tiny-RSS-Contrib
-[submodule "additions/tt-rss/plugins/ttrss-facebook"]
-	path = additions/tt-rss/plugins/ttrss-facebook
+[submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/ttrss-facebook"]
+	path = tree/usr/share/nodezero/additions/tt-rss/plugins/ttrss-facebook
 	url = https://github.com/dotdavid/ttrss-facebook
-[submodule "additions/dokuwiki/lib/plugins/include"]
-	path = additions/dokuwiki/lib/plugins/include
+[submodule "tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/include"]
+	path = tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/include
 	url = https://github.com/dokufreaks/plugin-include/
-[submodule "additions/dokuwiki/lib/plugins/ckgedit"]
-	path = additions/dokuwiki/lib/plugins/ckgedit
+[submodule "tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/ckgedit"]
+	path = tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/ckgedit
 	url = https://github.com/turnermm/ckgedit/
-[submodule "additions/tt-rss/plugins/framarticle_toolbar"]
-	path = additions/tt-rss/plugins/framarticle_toolbar
+[submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/framarticle_toolbar"]
+	path = tree/usr/share/nodezero/additions/tt-rss/plugins/framarticle_toolbar
 	url = https://github.com/framasoft/framarticle_toolbar
-[submodule "additions/dokuwiki/lib/plugins/gallery"]
-	path = additions/dokuwiki/lib/plugins/gallery
+[submodule "tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/gallery"]
+	path = tree/usr/share/nodezero/additions/dokuwiki/lib/plugins/gallery
 	url = https://github.com/splitbrain/dokuwiki-plugin-gallery/
-[submodule "additions/tt-rss/themes/chalk"]
-	path = additions/tt-rss/themes/chalk
+[submodule "tree/usr/share/nodezero/additions/tt-rss/themes/chalk"]
+	path = tree/usr/share/nodezero/additions/tt-rss/themes/chalk
 	url = https://github.com/asyncopation/ttrss-theme-chalk
-[submodule "additions/tt-rss/themes/grone"]
-	path = additions/tt-rss/themes/grone
+[submodule "tree/usr/share/nodezero/additions/tt-rss/themes/grone"]
+	path = tree/usr/share/nodezero/additions/tt-rss/themes/grone
 	url = https://github.com/cas--/tt-rss_theme_grone
-[submodule "additions/tt-rss/themes/feedly"]
-	path = additions/tt-rss/themes/feedly
+[submodule "tree/usr/share/nodezero/additions/tt-rss/themes/feedly"]
+	path = tree/usr/share/nodezero/additions/tt-rss/themes/feedly
 	url = https://github.com/levito/tt-rss-feedly-theme
-[submodule "additions/tt-rss/themes/reeder"]
-	path = additions/tt-rss/themes/reeder
+[submodule "tree/usr/share/nodezero/additions/tt-rss/themes/reeder"]
+	path = tree/usr/share/nodezero/additions/tt-rss/themes/reeder
 	url = https://github.com/tschinz/tt-rss_reeder_theme
+[submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/ttrss-qrcode"]
+	path = tree/usr/share/nodezero/additions/tt-rss/plugins/ttrss-qrcode
+	url = https://github.com/jonrandoem/ttrss-qrcode
+[submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/poche"]
+	path = tree/usr/share/nodezero/additions/tt-rss/plugins/poche
+	url = https://github.com/jcsaaddupuy/tt-rss-poche
+[submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss-shaarli"]
+	path = tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss-shaarli
+	url = https://github.com/jcsaaddupuy/tt-rss-shaarli

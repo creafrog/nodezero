@@ -2,10 +2,11 @@
 mumble-server
 
 ## Web server
-apache2
+apache2-mpm-prefork
 ssl-cert
 libapache2-mod-php5
 libapache2-modsecurity
+#libapache2-mod-security2 #on jessie/sid only
 mysql-server
 php5-mysql
 php5
@@ -24,6 +25,9 @@ openssh-server
 ## XMPP Server
 prosody
 lua-sec
+
+## Transmission Bittorrent client/seedbox
+transmission-daemon
 
 ##Disk Utils
 dosfstools
@@ -85,7 +89,7 @@ tiger
 debsums
 libdate-manip-perl
 obnam
-#lnav
+#lnav #on jessie/sid only
 apt-file
 command-not-found
 unattended-upgrades
@@ -101,6 +105,9 @@ parted
 macchanger
 iptables
 hostname
+debconf-utils
+bridge-utils
+lm-sensors #TODO: display temperature in the client's overview dialog
 
 #Misc
 #logstalgia
