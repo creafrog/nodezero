@@ -1,0 +1,1 @@
+Config settings in this directory are automatically loaded by apache 2.2. For apache 2.4+, see the conf-{enabled,available} directories.

@@ -194,6 +194,40 @@ if (is_dir($APP_BLOG_DIR)) {
 </div> 
 --> 
 
+<!-- Box for Wallabag -->
+<?php
+$APP_WALLABAG_DIR = 'wallabag';
+$APP_WALLABAG_HTML = '<a href="/wallabag" class="title" style="background-image:url(img/wallabag.gif)"> 
+<div class="app"> 
+<h1>Wallabag</h1> 
+<p>Liste de lecture</p>
+</div> 
+</a>';
+
+if (is_dir($APP_WALLABAG_DIR)) {
+	echo $APP_WALLABAG_HTML;
+}
+?>
+
+
+
+<!-- Box for Markdown-edit -->
+<?php
+$APP_MARKDOWNEDIT_DIR = 'markdown-edit';
+$APP_MARKDOWNEDIT_HTML = '<a href="/markdown-edit" class="title" style="background-image:url(img/markdown-edit.png)"> 
+<div class="app"> 
+<h1>Markdown Edit</h1> 
+<p>Editeur de texte Markdown</p>
+</div> 
+</a>';
+
+if (is_dir($APP_MARKDOWNEDIT_DIR)) {
+	echo $APP_MARKDOWNEDIT_HTML;
+}
+?>
+
+
+
 
 <!-- Box for YOURLS url shortener -->
 <?php
@@ -239,6 +273,8 @@ if (is_dir($APP_GITLIST_DIR)) {
 	echo $APP_GITLIST_HTML;
 }
 ?>
+
+
 
 <script src="scripts/css3-mediaqueries.js"></script>
 </body> 

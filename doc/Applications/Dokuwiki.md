@@ -39,6 +39,7 @@ DokuWiki est un moteur de wiki libre sous licence GNU GPL conforme aux standards
   * Search Text https://www.dokuwiki.org/plugin:searchtext
     * Text Export/Render https://www.dokuwiki.org/plugin:text (requis)
   * AuthOwncloud https://www.dokuwiki.org/plugin:authowncloud
+  * Bookcreator https://www.dokuwiki.org/plugin:bookcreator
 
 
 ###Alternatives ====
