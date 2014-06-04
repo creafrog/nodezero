@@ -43,7 +43,7 @@ done
 }
 
 #### TOOLS MENU
-_NzMenuTools() { #TODO: lnav, goaccess
+_NzMenuTools() { #TODO: lnav
 selection=
 until [ "$selection" = "0" ]; do
      echo ""
@@ -63,6 +63,7 @@ until [ "$selection" = "0" ]; do
      echo "13 - Clear packages cache"
      echo "14 - aptitude - manage software packages/updates"
      echo "15 - Update installed software now"
+     echo "16 - goaccess - ananlyze and display web server logs"
      echo ""
      echo "0 - Exit program"
      echo ""
@@ -85,6 +86,7 @@ until [ "$selection" = "0" ]; do
 	 13 ) _NzAptitudeClean;;
 	 14 ) _NzRunAptitude;;
 	 15 ) _NzAptUpgrade;;
+	 16 ) _NzRunGoAccess;;
          0 ) exit;;
          * ) echo "Please enter 1,2,3,4,5,6,7,8,9,10,11,12,13 or 0"
      esac
@@ -101,6 +103,7 @@ until [ "$selection" = "0" ]; do
      _NzUserShowTransmissionaccess
      echo "1 - Change user access to web server files"
      echo "2 - Change user access to transmission downloads"
+     echo "3 - Change transmission web interface username/password"
      echo ""
      echo "0 - Exit program"
      echo ""
@@ -110,6 +113,7 @@ until [ "$selection" = "0" ]; do
      case $selection in
          1 ) _NzUserToggleWwwaccess;;
          2 ) _NzUserToggleTransmissionaccess;;
+         3 ) _NzUserTransmissionPassword;;
          0 ) return 0;;
          * ) echo "Please enter a valid number"
      esac
@@ -493,7 +497,12 @@ _NzRunIftop() {
 iftop
 }
 
-
+_NzRunGoAccess() {
+zcat -f /var/log/apache2/access* | goaccess
+GoAccess_Outfile=/home/$NZ_USER/goaccess.html
+zcat -f /var/log/apache2/access* | goaccess -a >| $GoAccess_Outfile
+echo "Latest statistics saved to $GoAccess_Outfile"
+}
 
 
 
@@ -557,6 +566,7 @@ grep -roh "^_.*()" $NODEZERO_PATH/
 }
 
 _NzEditConfig() {
+#Note: See also https://packages.debian.org/sid/augeas-tools to edit config files
 $EDITOR ${NZ_CONF_PATH}/nodezero.conf
 source "${NZ_CONF_PATH}/nodezero.conf"
 echo "$NZ_FQDN" >| /etc/hostname
@@ -628,7 +638,7 @@ fi
 }
 
 _NzUserToggleWwwAccess() { #Show main user's permissions on web served content
-_NzUserShowWwwAccess
+_NzUserShowWwwAccess >/dev/null
 if [ $NZ_USERWWWACCESS = 0 ]
 	then adduser $NZ_USER www-data; _NzUserShowWwwAccess
 	else deluser $NZ_USER www-data; _NzUserShowWwwAccess
@@ -653,6 +663,17 @@ if [ $NZ_USERTRANSMISSIONACCESS = 0 ]
 fi
 }
 
+_NzUserTransmissionPassword() {
+service transmission-daemon stop
+CurrentTransmissionUsername=$(grep rpc-username /etc/transmission-daemon/settings.json |awk -F "\"" '{print $4}')
+CurrentTransmissionPassword=$(grep rpc-password /etc/transmission-daemon/settings.json |awk -F "\"" '{print $4}')
+read -p "Please enter the username required to access Transmission web interface (current: $CurrentTransmissionUsername): " NewTransmissionUsername
+read -p "Please enter the password required to access Transmission web interface (current: $CurrentTransmissionPassword): " NewTransmissionPassword
+sed -i "s/^    \"rpc-username\".*/    \"rpc-username\": \"$NewTransmissionUsername\",/g" /etc/transmission-daemon/settings.json
+sed -i "s/^    \"rpc-password\".*/    \"rpc-password\": \"$NewTransmissionPassword\",/g" /etc/transmission-daemon/settings.json
+echo "Transmission web interface username/password has been changed to $NewTransmissionUsername/$NewTransmissionPassword"
+service transmission-daemon start
+}
 
 ################################################################################
 #####################  CLEANUP AND TROUBLESHOOTING FUNCTIONS  ##################
