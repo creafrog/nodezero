@@ -14,6 +14,7 @@
 @nodiscc commented 81 days ago:
      * http://piwik.org/docs/log-analytics-tool-how-to/ (apache logs)
      * http://munin-monitoring.org/ (system graphs)
+     * http://www.cyberciti.biz/faq/fedora-rhel-install-cacti-monitoring-rrd-software/
 
 
 @nodiscc commented 21 days ago:
