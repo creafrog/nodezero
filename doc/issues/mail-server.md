@@ -7,7 +7,7 @@
      * Web interface
         * roundcube
         * https://github.com/RainLoop/rainloop-webmail, http://demo.rainloop.net
-        * https://www.mailpile.is/
+        * https://www.mailpile.is/, https://github.com/pagekite/Mailpile/wiki
      * Filtering with clamassassin http://blog.wains.be/2007/04/26/postfix-spamassassin-clamav-with-procmail-without-amavisd-new/
     
     Doc:
