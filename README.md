@@ -1,6 +1,8 @@
 #NodeZero
 ![](doc/images/nodezero-home.png)
 
+A zero-configuration home server installation/maintenance solution.
+
 This projects aims at
  * providing an easy and fast installation and maintenance solution for a personal home server.
  * providing free (as in speech) alternatives to commercial network services, such as file and media hosting and sharing, document editing, mail and news reading, communication services and more.
