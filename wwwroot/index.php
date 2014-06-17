@@ -259,6 +259,22 @@ if (is_dir($APP_MAPS_DIR)) {
 }
 ?>
 
+<!-- Box for Bumpy-Booby -->
+<?php
+$APP_BUGS_DIR = 'bugs';
+$APP_BUGS_HTML = '<a href="/bugs" class="title" style="background-image:url(img/bugs.png)"> 
+<div class="app"> 
+<h1>Bugs</h1> 
+<p>Bug tracking system</p>
+</div> 
+</a>';
+
+if (is_dir($APP_BUGS_DIR)) {
+	echo $APP_BUGS_HTML;
+}
+?>
+
+
 <!-- Box for Gitlist -->
 <?php
 $APP_GITLIST_DIR = 'gitlist';
