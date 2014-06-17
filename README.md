@@ -1,8 +1,6 @@
 #NodeZero
 ![](doc/images/nodezero-home.png)
 
-
-##Goals
 This projects aims at
  * providing an easy and fast installation and maintenance solution for a personal home server.
  * providing free (as in speech) alternatives to commercial network services, such as file and media hosting and sharing, document editing, mail and news reading, communication services and more.
@@ -10,11 +8,10 @@ This projects aims at
  * It should be able to run on low-end (recycled) machines.
 
 
-##More info
-For more info, head to the [documentation](doc/).
+ * [Documentation](doc/)
+ * [Bugs/feature requests](https://telecom.dmz.se/bugs/nodezero/issues)
 
-##Status
- * Not ready.
+Status: Not ready.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/nodiscc/nodezero/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
