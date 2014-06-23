@@ -26,3 +26,5 @@ An extra lightweight and extra awesome blogging engine
  * [twister | P2P microblogging platform](http://twister.net.co/)
  * [blosxom :: the zen of blogging ::](http://blosxom.sourceforge.net/) -  a lightweight yet feature-packed weblog application designed from the ground up with simplicity, usability, and interoperability in mind. 
  * [htmly](https://github.com/danpros/htmly) - Databaseless Blogging Platform (Flat-File Blog) ([Demo](http://www.htmly.com/demo/))
+ * [PluXml](http://www.pluxml.org/) - Blog ou Cms à l'Xml !
+

@@ -42,17 +42,20 @@ DokuWiki est un moteur de wiki libre sous licence GNU GPL conforme aux standards
   * Bookcreator https://www.dokuwiki.org/plugin:bookcreator
 
 
-###Alternatives ====
+###Alternatives
+####CMS
   * [Pico](http://pico.dev7studios.com/index.html#) - A stupidly simple, blazing fast, flat file CMS. ([Sources on Github](https://github.com/gilbitron/Pico))
+  * [99ko CMS](https://github.com/99ko-project/99ko-cms) - 99ko est un CMS permettant de créer un site web en quelques minutes et sans connaissances particulières en programmation. Il fonctionne sans base de données et utilise de simples fichiers texte (format JSON) pour stocker vos données.
+  * [SPIP](http://www.spip.net/fr) - SPIP est un Système de Publication pour l’Internet.
+
+
+####Wiki
   * [Olelo/Gitwiki](https://github.com/minad/olelo) - ([Demo](http://www.gitwiki.org/)) - Olelo is a wiki that stores pages in a Git repository, supports many markup styles and has an extensible, hackable architecture! Features: Edit, move or delete pages; Page attribute editor; Support for hierarchical wikis (directory structure); File upload; History, commit and diff view; Locales (Czech, English, French, German); Support for many markup languages (Creole, Markdown, Textile, ...); RSS/Atom changelog for whole wiki or pages; Section editing for Creole; Embedded LaTeX formulas; Syntax highlighting; Image resizing, SVG to PNG/JPEG conversion; Auto-generated table of contents; Previews; View pages as S5 presentation; Privacy features: Access control lists, Private wiki, Read-only wiki.
   * [Gitit](https://github.com/jgm/gitit) - A wiki program that stores pages and uploaded files in a git repository, which can then be modified using the VCS command line tools or the wiki's web interface. Supported markups include pandoc's extended version of markdown, reStructuredText, LaTeX, and HTML. Pages can be exported in a number of different formats, including LaTeX, RTF, OpenOffice ODT, and MediaWiki markup. Other features include: plugins, syntax highlighting, caching, ATOM feeds...
   * [Mediawiki](https://www.mediawiki.org/wiki/MediaWiki)
-  * [99ko CMS](https://github.com/99ko-project/99ko-cms) - 99ko est un CMS permettant de créer un site web en quelques minutes et sans connaissances particulières en programmation. Il fonctionne sans base de données et utilise de simples fichiers texte (format JSON) pour stocker vos données.
   * [Wikimatrix - Compare wikis](http://www.wikimatrix.org/)
   * [Blazekiss](https://github.com/ldleman/blazekiss) - BlazeKiss est un wiki basé sur le principe Kiss : Keep It Simple Stupid, c'est à dire la simplicité et la fonctionnalité avant tout
   * [WiKiss](http://wikiss.tuxfamily.org/) - un wiki simple à utiliser et déployer.
-  * [PluXml](http://www.pluxml.org/) - Blog ou Cms à l'Xml !
-  * [SPIP](http://www.spip.net/fr) - SPIP est un Système de Publication pour l’Internet.
   * [Drupal](https://drupal.org/) - open source content management platform
   * [Joomal!](http://www.joomla.fr/) - un système de gestion de contenu (CMS)
   * [CMS Made Simple](http://www.cmsmadesimple.org/) - open source content management system, faster and easier management of website contents, scalable for small businesses to large corporations.
