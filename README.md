@@ -11,7 +11,9 @@ This projects aims at
 
 
  * [Documentation](doc/)
- * [Bugs/feature requests](https://telecom.dmz.se/bugs/nodezero/issues)
+ * Bugs/feature requests
+   * https://telecom.dmz.se/bugs/nodezero/issues
+   * https://github.com/nodiscc/nodezero/issues
 
 Status: Not ready.
 
