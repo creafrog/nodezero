@@ -44,6 +44,9 @@ usbmount
 #exim4-config
 #sendmail
 
+#UPnP Media Server
+minidlna
+
 ## Other Network services
 ntp
 #openvpn
