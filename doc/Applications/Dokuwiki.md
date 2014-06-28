@@ -47,6 +47,12 @@ DokuWiki est un moteur de wiki libre sous licence GNU GPL conforme aux standards
   * [Pico](http://pico.dev7studios.com/index.html#) - A stupidly simple, blazing fast, flat file CMS. ([Sources on Github](https://github.com/gilbitron/Pico))
   * [99ko CMS](https://github.com/99ko-project/99ko-cms) - 99ko est un CMS permettant de créer un site web en quelques minutes et sans connaissances particulières en programmation. Il fonctionne sans base de données et utilise de simples fichiers texte (format JSON) pour stocker vos données.
   * [SPIP](http://www.spip.net/fr) - SPIP est un Système de Publication pour l’Internet.
+  * [Drupal](https://drupal.org/) - open source content management platform
+  * [Joomal!](http://www.joomla.fr/) - un système de gestion de contenu (CMS)
+  * [CMS Made Simple](http://www.cmsmadesimple.org/) - open source content management system, faster and easier management of website contents, scalable for small businesses to large corporations.
+  * [GetSimple CMS](http://get-simple.info/) - The Simplest Content Management System. Ever.
+  * [Bolt](http://bolt.cm/) - Sophisticated, lightweight & simple CMS ([Github repository](https://github.com/bolt/bolt))
+  * [Concrete 5 CMS](http://www.concrete5.org/)
 
 
 ####Wiki
@@ -56,15 +62,9 @@ DokuWiki est un moteur de wiki libre sous licence GNU GPL conforme aux standards
   * [Wikimatrix - Compare wikis](http://www.wikimatrix.org/)
   * [Blazekiss](https://github.com/ldleman/blazekiss) - BlazeKiss est un wiki basé sur le principe Kiss : Keep It Simple Stupid, c'est à dire la simplicité et la fonctionnalité avant tout
   * [WiKiss](http://wikiss.tuxfamily.org/) - un wiki simple à utiliser et déployer.
-  * [Drupal](https://drupal.org/) - open source content management platform
-  * [Joomal!](http://www.joomla.fr/) - un système de gestion de contenu (CMS)
-  * [CMS Made Simple](http://www.cmsmadesimple.org/) - open source content management system, faster and easier management of website contents, scalable for small businesses to large corporations.
-  * [GetSimple CMS](http://get-simple.info/) - The Simplest Content Management System. Ever.
-  * [Bolt](http://bolt.cm/) - Sophisticated, lightweight & simple CMS ([Github repository](https://github.com/bolt/bolt))
   * [TiddlyWiki](http://tiddlywiki.com/) - a reusable non-linear personal web notebook
   * [Redaxscript • Ultra lightweight website engine](http://redaxscript.com/)
   * [Docstore](http://haldean.org/) - A basic site for hosting static documents - [Source on Github](https://github.com/haldean/docstore) - docstore is a simple way to serve Markdown files without any server-side processing, and without requiring you (as the author) to recompile every time you change an article. It consists of a very simple JS script that makes an ajax request to your server, runs a Markdown processor on what it finds, and then displays the results. Clone the repository and add articles in the text/ directory to get started.
-  * [Concrete 5 CMS](http://www.concrete5.org/)
  
 
 
