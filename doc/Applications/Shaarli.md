@@ -2,6 +2,7 @@
 
 
   * [Site officiel](http://sebsauvage.net/wiki/doku.php?id=php:shaarli)
+  * [Sources](https://github.com/sebsauvage/Shaarli)
   * [Documentation](https://pad.lqdn.fr/p/shaarliuserdoc)
   * [Exemples d'utilisation de Shaarli](http://sebsauvage.net/links/?bSmebQ):
 
