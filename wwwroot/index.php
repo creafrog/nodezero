@@ -172,6 +172,21 @@ if (is_dir($APP_WEBMAIL_DIR)) {
 ?>
 
 
+<!-- Box for alltube -->
+<?php
+$APP_ALLTUBE_DIR = 'alltube';
+$APP_ALLTUBE_HTML = '<a href="/alltube" class="title" style="background-image:url(img/alltube.png)"> 
+<div class="app"> 
+<h1>Alltube</h1> 
+<p>Download media from hosting sites</p>
+</div> 
+</a>';
+
+if (is_dir($APP_ALLTUBE_DIR)) {
+	echo $APP_ALLTUBE_HTML;
+}
+?>
+
 <!-- Box for blog engine -->
 <?php
 $APP_BLOG_DIR = 'blog';
