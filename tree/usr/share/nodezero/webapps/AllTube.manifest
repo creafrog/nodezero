@@ -1,0 +1,6 @@
+AppName="AllTube"
+AppUrl="https://github.com/Rudloff/alltube"
+AppTag="master"
+AppDescription="download video/music from hosting sites"
+AppPostInstallCommand=""
+AppWwwDir="images"

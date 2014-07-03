@@ -79,6 +79,7 @@ nano
 wget
 curl
 lsof
+youtube-dl
 
 ##Admin tools
 logwatch
