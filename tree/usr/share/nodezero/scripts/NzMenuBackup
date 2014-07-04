@@ -1,0 +1,28 @@
+#!/bin/bash
+#Backup Menu
+source /etc/nodezero/nodezero.conf
+set -e
+
+selection=
+until [ "$selection" = "0" ]; do
+     echo ""
+     echo "========== BACKUP MENU =========="
+     echo "1 - tree - generate a list of your files"
+     echo "2 - backup web server now"
+     echo "3 - copy backups to external drive"
+     echo "4 - backup important directories"
+     echo ""
+     echo "0 - Exit program"
+     echo ""
+     echo -n "Enter Selection:"
+     read selection
+     echo ""
+     case $selection in
+         1 ) _NzRunTree;;
+         2 ) _NzBackupHttpd;;
+         3 ) _NzDoPhysicalBackup;;
+         4 ) _NzBackupUserFiles;;
+         0 ) return 0;;
+         * ) echo "Please enter a valid number"
+     esac
+done

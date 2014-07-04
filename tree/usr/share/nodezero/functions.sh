@@ -7,257 +7,37 @@
 
 #### MAIN MENU
 _NzMenuMain() { #called from nodezero-admin.sh
-selection=
-until [ "$selection" = "0" ]; do
-     echo ""
-     echo "========== NODEZERO MAIN MENU =========="
-     echo "1 - Tools Menu"
-     echo "2 - User Account Menu"
-     echo "3 - Backup Menu"
-     echo "4 - Troubleshooting Menu"
-     echo "5 - Edit main configuration file"
-     echo "6 - Prosody Instant Messaging server configuration"
-     echo "7 - Other services configuration"
-     echo "8 - Power off"
-     echo "9 - Reboot"
-     echo ""
-     echo "0 - Exit program"
-     echo ""
-     echo -n "Enter Selection:"
-     read selection
-     echo ""
-     case $selection in
-         1 ) _NzMenuTools;; #OK
-         2 ) _NzMenuUserAccount;; #OK
-         3 ) _NzMenuBackup;; #OK
-         4 ) _NzMenuTroubleshooting;; #OK
-         5 ) _NzEditConfig;;
-         6 ) _NzMenuProsody;; #OK
-         7 ) _NzMenuServices;; #OK
-         8 ) _NzPoweroff;; #TODO in common.sh
-         9 ) _NzReboot;; #TODO in common.sh
-         0 ) return 0;;
-         * ) echo "Please enter a valid number"
-     esac
-done
+
 }
 
 #### TOOLS MENU
 _NzMenuTools() { #TODO: lnav
-selection=
-until [ "$selection" = "0" ]; do
-     echo ""
-     echo "========== TOOLS MENU =========="
-     echo "1 - dfc - display disk usage"
-     echo "2 - htop - system monitor"
-     echo "3 - ncdu - disk usage analyzer"
-     echo "4 - last - display user login history"
-     echo "5 - lastb - display failed login attempts"
-     echo "6 - nethogs - display network usage by programs"
-     echo "7 - iftop - display network usgae by connection"
-     echo "8 - ranger - explore filesystem"
-     echo "9 - Display system information"
-     echo "10 - Edit maintenance message"
-     echo "11 - lynis - Security Audit"
-     echo "12 - Purge old configuration files"
-     echo "13 - Clear packages cache"
-     echo "14 - aptitude - manage software packages/updates"
-     echo "15 - Update installed software now"
-     echo "16 - goaccess - ananlyze and display web server logs"
-     echo ""
-     echo "0 - Exit program"
-     echo ""
-     echo -n "Enter Selection:"
-     read selection
-     echo ""
-     case $selection in
-         1 ) _NzRunDfc;;
-         2 ) _NzRunHtop;;
-         3 ) _NzRunNcdu;;
-         4 ) _NzRunLast;;
-	 5 ) _NzRunLastb;;
-	 6 ) _NzRunNethogs;;
-	 6 ) _NzRunIftop;;
-	 8 ) _NzRunRanger;;
-	 9 ) _NzShowMotd;;
-	 10 ) _NzEditMotd;;
-	 11 ) _NzRunLynis;;
-	 12 ) _NzAptitudePurge;;
-	 13 ) _NzAptitudeClean;;
-	 14 ) _NzRunAptitude;;
-	 15 ) _NzAptUpgrade;;
-	 16 ) _NzRunGoAccess;;
-         0 ) exit;;
-         * ) echo "Please enter 1,2,3,4,5,6,7,8,9,10,11,12,13 or 0"
-     esac
-done
+
 }
 
 #### USER ACCOUNT MENU
 _NzMenuUserAccount() { #TODO: password change mechanism
-selection=
-until [ "$selection" = "0" ]; do
-     echo ""
-     echo "========== USER ACCOUNT MENU =========="
-     _NzUserShowWwwaccess
-     _NzUserShowTransmissionaccess
-     echo "1 - Change user access to web server files"
-     echo "2 - Change user access to transmission downloads"
-     echo "3 - Change transmission web interface username/password"
-     echo ""
-     echo "0 - Exit program"
-     echo ""
-     echo -n "Enter Selection:"
-     read selection
-     echo ""
-     case $selection in
-         1 ) _NzUserToggleWwwaccess;;
-         2 ) _NzUserToggleTransmissionaccess;;
-         3 ) _NzUserTransmissionPassword;;
-         0 ) return 0;;
-         * ) echo "Please enter a valid number"
-     esac
-done
+
 }
 
 #### BACKUP MENU
 _NzMenuBackup() {
-selection=
-until [ "$selection" = "0" ]; do
-     echo ""
-     echo "========== BACKUP MENU =========="
-     echo "1 - tree - generate a list of your files"
-     echo "2 - backup web server now"
-     echo "3 - copy backups to external drive"
-     echo "4 - backup important directories"
-     echo ""
-     echo "0 - Exit program"
-     echo ""
-     echo -n "Enter Selection:"
-     read selection
-     echo ""
-     case $selection in
-         1 ) _NzRunTree;;
-         2 ) _NzBackupHttpd;;
-         3 ) _NzDoPhysicalBackup;;
-         4 ) _NzBackupUserFiles;;
-         0 ) return 0;;
-         * ) echo "Please enter a valid number"
-     esac
-done
+
 }
 
 #### TROUBLESHOOTING MENU
 _NzMenuTroubleshooting() { 
-#TODO: add bleachbit
-selection=
-until [ "$selection" = "0" ]; do
-     echo ""
-     echo "========== CLEANUP AND TROUBLESHOOTING =========="
-     echo "1 - Clear dokuwiki cache"
-     echo "2 - Restore correct file permissions"
-     echo "3 - Clear PHP APC Cache"
-     echo "4 - Edit access permissions for the web server files" #TODO: no
-     echo "5 - Cleanup stale install files"
-     echo "6 - Cleanup APT packages cache and stale config files"
-     echo "7 - Disable Owncloud maintenance mode."
-     echo ""
-     echo "0 - Exit program"
-     echo ""
-     echo -n "Enter Selection:"
-     read selection
-     echo ""
-     case $selection in
-         1 ) _NzClearDwCache;;
-         2 ) _NzSetWwwPermissions;;
-         3 ) _NzClearApcCache;;
-         4 ) _NzEditVarwwwSshKeys;;
-         0 ) exit;; #TODO: Add entries from the menu
-         * ) echo "Invalid entry."
-     esac
-done
+
 }
 
 #### PROSODY CONFIGURATION MENU
 _NzMenuProsody() {
-_NzProsodyGetStatus #OK
-_NzProsodyGetRegistrationsStatus #OK
-until [ "$selection" = "0" ]; do
-echo "
-### XMPP/JABBER SERVER (PROSODY) #############################
- - [1][$PROSODY_STATUS] SERVER ENABLED
- - [2][$PROSODY_REG_ENABLED] REGISTRATIONS ENABLED
-       Allows anyone to create a new account on the server
-
-### OTHER ACTIONS
- - [3] Add a new account
- - [4] Delete an account
- - [5] Change an account password
- - [0] Back to main Menu
-"
-
-     case $selection in
-         1 ) _NzProsodyToggle;; #OK
-         2 ) _NzProsodyToggleResgistartions;; #TODO
-         3 ) _NzProsodyAddUser;; #OK
-         4 ) _NzProsodyGetUserlist; _NzProsodyDelUser;; #OK
-         5 ) _NzProsodyGetUserlist;; _NzProsodyChangeUserPassword;; #OK
-         0 ) exit;;
-         * ) echo "Please enter a valid number"
-    esac
-done
 
 }
 
 #### OTHER SERVICES CONFIGURATION MENU
 _NzMenuServices() { #TODO
-selection=
-until [ "$selection" = "0" ]; do
-echo "
-################################### SERVICES ###
-Apache2 Web Server:			
- [1][$APACHE2_ST_LED] $APACHE2_ST
- [2][$UFW_HTTP_INET_LED] Internet access allowed
- [3][$UFW_HTTP_LAN_LED] Only allow LAN access
 
-MYSQL database server
- [4][$MYSQLD_ST_LED] $MYSQLD_ST
-
-Prosody Jabber/XMPP messaging server:
- [5][$XMPP_ST_LED] $XMPP_ST
- [6][$XMPP_INET_LED] Serve over the Internet
- [7][$XMPP_LAN_LED] Serve on LAN only
-
-OpenSSH Server:
- [8][$SSHD_ST_LED] $SSHD_ST
-
-Transmission Bittorrent client:
- [9][$SEEDBOX_ST_LED] $SEEDBOX_ST
-
-Mumble VoIP server:
- [10][$MUMBLE_ST_LED] $MUMBLE_ST
-
-[S] Other services
-[B] Back to Main Menu
-[R] Reboot
-[P] Power Off
-[Q] Exit
-"
-     case $selection in
-         1 ) ;;
-         2 ) ;;
-         3 ) ;;
-         4 ) ;;
-         5 ) ;;
-         6 ) ;;
-         7 ) ;;
-         8 ) ;;
-         9 ) ;;
-         10 ) ;;
-         0 ) exit;;
-         * ) echo "Please enter a valid number"
-    esac
-done
 }
 
 
@@ -266,60 +46,15 @@ done
 ################################################################################
 ###########################      PROSODY FUNCTIONS #############################
 ################################################################################
-_NzProsodyGetStatus() {
-if [[ -f /var/run/prosody/prosody.pid ]]
-then PROSODY_STATUS="N"
-else PROSODY_STATUS="Y"
-fi
-}
 
-_NzProsodyToggle() {
-if ${PROSODY_STATUS}="N"
-then rcconf --on prosody --now
-else rcconf --off prosody --now
-fi
-}
 
-_NzProsodyGetRegistrationsStatus() {
-if [ `grep "allow_registration = true" /etc/prosody/prosody.cfg.lua` ]
-then $PROSODY_REG_ENABLED="Y"
-else $PROSODY_REG_ENABLED"N"
-fi
-}
 
-_NzProsodyAdduser() {
-echo "Please enter the desired username for the new account:"
-read PROSODY_NEW_USERNAME
-prosodyctl adduser "${PROSODY_NEW_USERNAME}@${NZ_FQDN}"
-if [ $? = 0 ]
-	then echo "Done. You can now login with an XMPP client. Username: ${PROSODY_NEW_USERNAME} , Domain: ${NZ_FQDN} , Password: you just entered it. Press any key to continue."
-read -n 1
-fi
-}
 
-_NzProsodyGetUserlist() {
-PROSODY_FQDN_STRING=`echo $NZ_FQDN | sed 's/\./\%2e/g'`
-PROSODY_ACCOUNT_FILES=`find "/var/lib/prosody/${PROSODY_FQDN_STRING}/accounts" -name "*.dat"`
-PROSODY_ACCOUNT_LIST=`for i in ${PROSODY_ACCOUNT_FILES}; do basename $i .dat; done`
-}
 
-_NzProsodyDeluser() {
-_NzProsodyGetUserlist
-echo "List of accounts on the server:
-$PROSODY_ACCOUNT_LIST
-Enter the name of the account you want to delete:"
-read PROSODY_DELETE_ACCOUNT
-prosodyctl deluser "${PROSODY_DELETE_ACCOUNT}@${FQDN}"
-}
 
-_NzProsodyChangeUserPassword() {
-_NzProsodyGetUserlist
-echo "List of accounts on the server:
-$PROSODY_ACCOUNT_LIST
-Enter the name of the account you want to change the password for:"
-read PROSODY_PASSWD_ACCOUNT
-prosodyctl passwd "${PROSODY_PASSWD_ACCOUNT}@${FQDN}"
-}
+
+
+
 
 
 

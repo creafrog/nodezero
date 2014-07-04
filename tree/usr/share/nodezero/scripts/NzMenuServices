@@ -1,0 +1,52 @@
+#!/bin/bash
+#Services Menu
+source /etc/nodezero/nodezero.conf
+set -e
+
+selection=
+until [ "$selection" = "0" ]; do
+echo "
+################################### SERVICES ###
+Apache2 Web Server:			
+ [1][$APACHE2_ST_LED] $APACHE2_ST
+ [2][$UFW_HTTP_INET_LED] Internet access allowed
+ [3][$UFW_HTTP_LAN_LED] Only allow LAN access
+
+MYSQL database server
+ [4][$MYSQLD_ST_LED] $MYSQLD_ST
+
+Prosody Jabber/XMPP messaging server:
+ [5][$XMPP_ST_LED] $XMPP_ST
+ [6][$XMPP_INET_LED] Serve over the Internet
+ [7][$XMPP_LAN_LED] Serve on LAN only
+
+OpenSSH Server:
+ [8][$SSHD_ST_LED] $SSHD_ST
+
+Transmission Bittorrent client:
+ [9][$SEEDBOX_ST_LED] $SEEDBOX_ST
+
+Mumble VoIP server:
+ [10][$MUMBLE_ST_LED] $MUMBLE_ST
+
+[S] Other services
+[B] Back to Main Menu
+[R] Reboot
+[P] Power Off
+[Q] Exit
+"
+     case $selection in
+         1 ) ;;
+         2 ) ;;
+         3 ) ;;
+         4 ) ;;
+         5 ) ;;
+         6 ) ;;
+         7 ) ;;
+         8 ) ;;
+         9 ) ;;
+         10 ) ;;
+         0 ) exit;;
+         * ) echo "Please enter a valid number"
+    esac
+done

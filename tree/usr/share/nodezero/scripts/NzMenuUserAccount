@@ -1,0 +1,29 @@
+#!/bin/bash
+#User account Menu
+#TODO: password change mechanism
+source /etc/nodezero/nodezero.conf
+set -e
+
+selection=
+until [ "$selection" = "0" ]; do
+     echo ""
+     echo "========== USER ACCOUNT MENU =========="
+     _NzUserShowWwwaccess
+     _NzUserShowTransmissionaccess
+     echo "1 - Change user access to web server files"
+     echo "2 - Change user access to transmission downloads"
+     echo "3 - Change transmission web interface username/password"
+     echo ""
+     echo "0 - Exit program"
+     echo ""
+     echo -n "Enter Selection:"
+     read selection
+     echo ""
+     case $selection in
+         1 ) _NzUserToggleWwwaccess;;
+         2 ) _NzUserToggleTransmissionaccess;;
+         3 ) _NzUserTransmissionPassword;;
+         0 ) return 0;;
+         * ) echo "Please enter a valid number"
+     esac
+done

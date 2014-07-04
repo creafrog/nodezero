@@ -1,0 +1,32 @@
+#!/bin/bash
+#Troubleshooting Menu
+#TODO: add bleachbit
+source /etc/nodezero/nodezero.conf
+set -e
+
+selection=
+until [ "$selection" = "0" ]; do
+     echo ""
+     echo "========== CLEANUP AND TROUBLESHOOTING =========="
+     echo "1 - Clear dokuwiki cache"
+     echo "2 - Restore correct file permissions"
+     echo "3 - Clear PHP APC Cache"
+     echo "4 - Edit access permissions for the web server files" #TODO: no
+     echo "5 - Cleanup stale install files"
+     echo "6 - Cleanup APT packages cache and stale config files"
+     echo "7 - Disable Owncloud maintenance mode."
+     echo ""
+     echo "0 - Exit program"
+     echo ""
+     echo -n "Enter Selection:"
+     read selection
+     echo ""
+     case $selection in
+         1 ) _NzClearDwCache;;
+         2 ) _NzSetWwwPermissions;;
+         3 ) _NzClearApcCache;;
+         4 ) _NzEditVarwwwSshKeys;;
+         0 ) exit;; #TODO: Add entries from the menu
+         * ) echo "Invalid entry."
+     esac
+done
