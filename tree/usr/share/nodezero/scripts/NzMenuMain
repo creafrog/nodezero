@@ -3,6 +3,17 @@
 source /etc/nodezero/nodezero.conf
 set -e
 
+_NzEditConfig() { #Edit and reload main nodezero config file
+#Note: See also https://packages.debian.org/sid/augeas-tools to edit config files
+$EDITOR ${NZ_CONF_PATH}/nodezero.conf
+source "${NZ_CONF_PATH}/nodezero.conf"
+echo "$NZ_FQDN" >| /etc/hostname
+hostname "$NZ_FQDN"
+_NzRegenContactPage #TODO
+_NzReloadConfig #TODO: check if paths/values in nodezero.conf are valid, update config files accordingly
+}
+
+
 selection=
 until [ "$selection" = "0" ]; do
      echo ""
