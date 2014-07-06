@@ -4,6 +4,12 @@
 source /etc/nodezero/nodezero.conf
 set -e
 
+NzChownTransmissionDaemon() { #Fix premissions for transmisison logs/files #TODO run this at first setup
+    chown debian-transmission:debian-transmission /var/log/debian-transmission.log
+    chown -R debian-transmission:debian-transmission ${transmission_download_dir}
+}
+
+
 selection=
 until [ "$selection" = "0" ]; do
      echo ""
