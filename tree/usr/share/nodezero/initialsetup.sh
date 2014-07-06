@@ -51,6 +51,11 @@ NewTransmissionPassword=$(pwgen -s 24)
 sed -i "s/^   \"rpc-username\".*/   \"rpc-username\": \"$NewTransmissionUsername\",/g" /etc/transmission-daemon/settings.json
 sed -i "s/^   \"rpc-password\".*/   \"rpc-password\": \"$NewTransmissionPassword\",/g" /etc/transmission-daemon/settings.json
 echo "Transmission web interface username/password has been changed to $NewTransmissionUsername/$NewTransmissionPassword"
+#TODO: ask for a web interface passqord at beginning, store it in a file (user keyring), use this instead
+
+chown debian-transmission:debian-transmission /var/log/debian-transmission.log
+chown -R debian-transmission:debian-transmission ${transmission_download_dir}
+
 
 echo "
 Generating SSL keys and certificates..."
