@@ -157,15 +157,6 @@ _NzReboot() {
 
 }
 
-_NzUserGetName() { #Get main user's username
-export NZ_USER=`getent passwd | grep 1000:1000 | awk -F ":" '{print $1}'`
-}
-
-_NzUserGetName() { #Get system's main user name (assume it was the first user created)
-	NZ_USER=$(getent passwd|grep 1000:1000|awk -F":" '{print $1}')
-}
-
-
 _NzTestInetConnection() { #Test connectivity to debian.org
 ping -q -c3 debian.org
 }
