@@ -138,26 +138,7 @@ grep -roh "^_.*()" $NODEZERO_PATH/
 
 
 
-_NzRegenContactPage() {
-ContactAddresses=""
-if -z "$NZ_PUBLIC_MAIL"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Email\" href=\"$NZ_PUBLIC_MAIL\"><i class=\"icon-mail-alt\"></i></a>"; fi
-if -z "$NZ_PUBLIC_IM"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"IM\" href=\"$NZ_PUBLIC_IM\"><i class=\"icon-comment\"></i></a>"; fi
-if -z "$NZ_PUBLIC_PHONE"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Git\" href=\"$NZ_PUBLIC_PHONE\"><i class=\"icon-phone-squared\"></i></a>"; fi
-if -z "$NZ_PUBLIC_TWITTER"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Twitter\" href=\"$Z_PUBLIC_TWITTER\"><i class=\"icon-twitter-squared\"></i></a>"; fi
-if -z "$NZ_PUBLIC_GPLUS"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Google+\" href=\"$NZ_PUBLIC_GPLUS\"><i class=\"icon-gplus-squared\"></i></a>"; fi
-if -z "$NZ_PUBLIC_FACEBOOK"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Facebook\" href=\"$NZ_PUBLIC_FACEBOOK\"><i class=\"icon-facebook-squared\"></i></a>"; fi
-if -z "$NZ_PUBLIC_TUMBLR"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Tumblr\" href=\"$NZ_PUBLIC_TUMBLR\"><i class=\"icon-tumblr-squared\"></i></a>"; fi
-if -z "$NZ_PUBLIC_INSTAGRAM"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Instagram\" href=\"$NZ_PUBLIC_INSTAGRAM\"><i class=\"icon-instagramm\"></i></a>"; fi
-if -z "$NZ_PUBLIC_YOUTUBE"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Youtube\" href=\"$NZ_PUBLIC_YOUTUBE\"><i class=\"icon-youtube-play\"></i></a>"; fi
-if -z "$NZ_PUBLIC_GITHUB"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Github\" href=\"$NZ_PUBLIC_GITHUB\"><i class=\"icon-github-squared\"></i></a>"; fi
-if -z "$NZ_PUBLIC_LINKEDIN"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"LinkedIn\" href=\"$NZ_PUBLIC_LINKEDIN\"><i class=\"icon-linkedin-squared\"></i></a>"; fi
-if -z "$NZ_PUBLIC_SKYPE"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Skype\" href=\"$NZ_PUBLIC_SKYPE\"><i class=\"icon-skype\"></i></a>"; fi
-if -z "$NZ_PUBLIC_BTC"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Bitcoin\" href=\"$NZ_PUBLIC_BTC\"><i class=\"icon-bitcoin\"></i></a>"; fi
-if -z "$NZ_PUBLIC_MISC"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Misc\" href=\"$NZ_PUBLIC_MISC\"><i class=\"icon-blank\"></i></a>"; fi
-#TODO: create webpage by concatenating HTML header + $ContactAddresses + footer, then write it to contact/index.html
-cat $NZ_PATH/contact/header.html "$ContactAddresses" $NZ_PATH/contact/footer.html > $APACHE_DOCUMENTROOT/contact/index.html
-_NzSetWwwPermissions
-}
+
 
 #Create symlinks to zenphoto and Dokuwiki data dirs in the main user's (UID 1000) home directory
 _NzSymlinkWebappDataDirs() {
@@ -167,9 +148,6 @@ echo "Not yet implemented."
 }
 
 
-export _NzEditVarwwwSshKeys() {
-nano /var/www/.ssh/authorized_keys
-}
 
 _NzPoweroff() {
 
@@ -182,6 +160,11 @@ _NzReboot() {
 _NzUserGetName() { #Get main user's username
 export NZ_USER=`getent passwd | grep 1000:1000 | awk -F ":" '{print $1}'`
 }
+
+_NzUserGetName() { #Get system's main user name (assume it was the first user created)
+	NZ_USER=$(getent passwd|grep 1000:1000|awk -F":" '{print $1}')
+}
+
 
 _NzTestInetConnection() { #Test connectivity to debian.org
 ping -q -c3 debian.org
@@ -242,30 +225,9 @@ service transmission-daemon start
 ################################################################################
 #####################  CLEANUP AND TROUBLESHOOTING FUNCTIONS  ##################
 ################################################################################
-_NzCleanupStaleFiles() { #Detect stale/dangerous files (install.php...) that should be deleted
-#TODO: add tt-rss pre-upgrade dirs cleanup
-#TODO: more cleanup
-}
-
-#Disable Owncloud maintenance mode
-_NzDisableOwncloudMaintenanceMode() {
-sed -i "/'maintenance'/c\  \'maintenance' => false," ${APACHE_DOCUMENTROOT}/owncloud/config/config.php
-}
-
-#Clear Dokuwiki Cache
-_NzClearDwCache() {
-rm -r $APACHE_DOCUMENTROOT/dokuwiki/data/cache/*
-}
-
-_NzSetWwwPermissions() {
-chown -R $APACHE_USER:$APACHE_GROUP $APACHE_DOCUMENTROOT
-}
 
 
 
-_NzClearApcCache() { #Clear PHP APC cache 
-service apache2 restart #so subtle
-}
 
 _NzCleanupApt() {
 aptitude -y purge ~c
