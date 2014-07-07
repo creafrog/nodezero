@@ -4,13 +4,13 @@ source /etc/nodezero/nodezero.conf
 set -e
 
 _NzEditConfig() { #Edit and reload main nodezero config file
-#Note: See also https://packages.debian.org/sid/augeas-tools to edit config files
-$EDITOR ${NZ_CONF_PATH}/nodezero.conf
-source "${NZ_CONF_PATH}/nodezero.conf"
-echo "$NZ_FQDN" >| /etc/hostname
-hostname "$NZ_FQDN"
-_NzRegenContactPage #TODO
-_NzReloadConfig #TODO: check if paths/values in nodezero.conf are valid, update config files accordingly
+    #Note: See also https://packages.debian.org/sid/augeas-tools to edit config files
+    $EDITOR ${NZ_CONF_PATH}/nodezero.conf
+    source "${NZ_CONF_PATH}/nodezero.conf"
+    echo "$NZ_FQDN" >| /etc/hostname
+    hostname "$NZ_FQDN"
+    _NzRegenContactPage #TODO
+    _NzReloadConfig #TODO: (check if paths/values in nodezero.conf are valid) update config files accordingly
 }
 
 
@@ -19,11 +19,12 @@ until [ "$selection" = "0" ]; do
      echo ""
      echo "========== NODEZERO MAIN MENU =========="
      echo "1 - Tools Menu"
-     echo "2 - User Account Menu"
-     echo "3 - Backup Menu"
+     echo "2 - User account and permissions menu"
+     echo "3 - Backup menu"
      echo "4 - Troubleshooting Menu"
      echo "5 - Edit main configuration file"
-     echo "6 - Prosody Instant Messaging server configuration"
+     echo "6 - Prosody instant messaging server configuration"
+     echo "7 - Transmission-daemon bittorrent client/seedbox configuration"
      echo "7 - Other services configuration"
      echo "8 - Power off"
      echo "9 - Reboot"
