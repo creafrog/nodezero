@@ -1,109 +1,136 @@
 #!/bin/bash
+#Temporary install script for nodezero
+#TODO: rewrite everything, use existing functions in scripts/ if available, separate UI from functions
+
 set -o nounset
 set -e errexit
 
-export NZ_CONF_PATH="/etc/nodezero" #sets main config file path
+#set main config file path
+export NZ_CONF_PATH="/etc/nodezero"
 source "${NZ_CONF_PATH}/nodezero.conf"
+
+#load extra config if present
 if [ -f "${NZ_CONF_PATH}/conf.d/*.conf" ]
 	then source "${NZ_CONF_PATH}/conf.d/*.conf"
 fi
 
-_NzSetupMain() {
-_NzUserGetName
-sed -i "s/^export NZ_USER=/export NZ_USER=\"$NZ_USER\" #Main user name/g" "${NZ_CONF_PATH}/nodezero.conf"
+source ${NZ_PATH}/functions.sh
 
-echo "
-###################################################
-##### Nodezero setup assistant ####################
-###################################################
-
-Please edit your configuration file. Press any key to continue."
-read -n 1
-_NzEditConfig
-
-
-echo "
-Installing required packages..."
-aptitude update
-egrep -v "^#"  "${NZ_PATH}/packages.list" | egrep -v "^$" | tr "\n" " " | xargs aptitude -y install
-
-service apache2 stop
-service prosody stop
-service mysql stop
-service transmission-daemon stop
-
-echo "
-Setting up default groups..."
-adduser $NZ_USER debian-transmission
-adduser $NZ_USER www-data
-adduser $NZ_USER sudo
-adduser $NZ_USER scanner
-adduser $NZ_USER lpadmin
-adduser $NZ_USER plugdev
-adduser $NZ_USER video
-adduser $NZ_USER audio
-adduser $NZ_USER fuse
-
-echo "
-Setting a random username/password for transmission web interface (can be changerd later form the admin interface)"
-NewTransmissionUsername=$(pwgen -s 24)
-NewTransmissionPassword=$(pwgen -s 24)
-sed -i "s/^   \"rpc-username\".*/   \"rpc-username\": \"$NewTransmissionUsername\",/g" /etc/transmission-daemon/settings.json
-sed -i "s/^   \"rpc-password\".*/   \"rpc-password\": \"$NewTransmissionPassword\",/g" /etc/transmission-daemon/settings.json
-echo "Transmission web interface username/password has been changed to $NewTransmissionUsername/$NewTransmissionPassword"
-#TODO: ask for a web interface passqord at beginning, store it in a file (user keyring), use this instead
-
-chown debian-transmission:debian-transmission /var/log/debian-transmission.log
-chown -R debian-transmission:debian-transmission ${transmission_download_dir}
-
-
-echo "
-Generating SSL keys and certificates..."
-make-ssl-cert generate-default-snakeoil --force-overwrite
-#prosodyctl cert generate #This only works on 0.9+
-openssl req -new -x509 -days 365 -nodes -out "/var/lib/prosody/$NZ_FQDN.crt" -newkey rsa:2048 -keyout "/var/lib/prosody/$NZ_FQDN.key" -batch
-
-echo "
-Generating SSH keys for remote access..."
-_NzSSHKeygen
-
-echo "
-Updating Prosody configuration..."
-sed -i "s/VirtualHost \"your_fqdn_here\"/VirtualHost \"$NZ_FQDN\"/g" /etc/prosody/prosody.cfg.lua
-sed -i "s|\tkey = \"/etc/prosody/certs/server.key\";|\tkey = \"/etc/prosody/certs/$NZ_FQDN.key\";|g" /etc/prosody/prosody.cfg.lua
-sed -i "s|\tcertificate = \"/etc/prosody/certs/server.cert\";|\tcertificate = \"/etc/prosody/certs/$NZ_FQDN.crt\";|g" /etc/prosody/prosody.cfg.lua
-
-service mysql start
-
-echo "
-Securing mysql installation..."
-mysql_secure_installation
-
-service apache2 start
-service prosody start
-service transmission-daemon start
-
-
-
-echo "Ready to roll. Run nodezero-admin to administrate your server."
+##################### Functions #######
+_NzSetupAllowRootAccess() { #Check if system has user UID=1001, if not, allow root ssh access
+	if [ "$NZ_USER" = "" ] #in case the system only has root as user
+	then
+		NZ_USER="root"
+		sed -i 's/"^PermitRootLogin no"/"PermitRootLogin yes"/g' /etc/ssh/sshd_config #Allow root SSH  logins #TODO: doesn't work
+		echo "WARNING: No unprivilegied user account detected. Allowing root SSH logins..."
+	else
+		echo "Main system user is $NZ_USER."
+	fi
 }
 
 
-_NzCheckRoot() { #Check if we are root, copied frum functions.sh
-if [[ "$(/usr/bin/whoami)" != "root" ]]; then
-    echo "This script must be run as root\! Script aborted."
-    exit 1
-fi
+###################### Main setup loop
+_NzSetupMain() { 
+	#TODO: fix file permissions at the end
+
+	#Check if we have root, functions.sh
+	_NzCheckRoot
+
+	#Detect and update main user name in nodezero.conf, allow root access if system has no user UID=1000
+	source ${libdir}/scripts/NzConfigRoutines
+	_NzUserGetName
+	_NzSetupAllowRootAccess
+
+
+	sed -i "s/^export NZ_USER=/export NZ_USER=\"$NZ_USER\" #Main user name/g" "${NZ_CONF_PATH}/nodezero.conf"
+
+	#Edit main config file
+	echo "
+	###################################################
+	##### Nodezero setup assistant ####################
+	###################################################
+
+	Please edit your configuration file. Press any key to continue."
+	read -n 1
+	_NzEditConfig
+
+
+	#Install default packages
+	#This is really bad and should be managed with ansible #TODO
+	echo "
+	Installing required packages..."
+	aptitude update
+	egrep -v "^#"  "${NZ_PATH}/packages.list" | egrep -v "^$" | tr "\n" " " | xargs aptitude -y install #-y is dangerous
+
+	#Stop services to configure them
+	service apache2 stop
+	service prosody stop
+	service mysql stop
+	service transmission-daemon stop
+
+	#Set groups for main user
+	echo "
+	Setting up default groups..."
+	adduser $NZ_USER debian-transmission
+	adduser $NZ_USER www-data
+	adduser $NZ_USER sudo
+	adduser $NZ_USER scanner
+	adduser $NZ_USER lpadmin
+	adduser $NZ_USER plugdev
+	adduser $NZ_USER video
+	adduser $NZ_USER audio
+	adduser $NZ_USER fuse
+
+	#Set random password for transmission
+	#TODO: ask for a web interface password at beginning, store it in nodezero.conf, use it instead.
+	#it can be reused for other web apps (https://telecom.dmz.se/bugs/nodezero/issues/37 single sign-on)
+	#TODO: the password should be exported in user's keyring file
+	#tldr TODO use password from nodezero.conf, add a routine to update transmission username/pw to _NzReloadConfig, call it from there
+	echo "
+	Setting a random username/password for transmission web interface (can be changerd later form the admin interface)"
+	NewTransmissionUsername=$(pwgen -s 24)
+	NewTransmissionPassword=$(pwgen -s 24)
+	sed -i "s/^   \"rpc-username\".*/   \"rpc-username\": \"$NewTransmissionUsername\",/g" /etc/transmission-daemon/settings.json
+	sed -i "s/^   \"rpc-password\".*/   \"rpc-password\": \"$NewTransmissionPassword\",/g" /etc/transmission-daemon/settings.json
+	echo "Transmission web interface username/password has been changed to $NewTransmissionUsername/$NewTransmissionPassword"
+	
+	#Generate apache and prosody certs
+	_NzRegenCertificates
+
+	#Generate new ssh key pair
+	#TODO: Move text inside the function, move function to nzMenuTroubleshooting
+	echo "
+	Generating new SSH keys for remote access..."
+	_NzSSHKeygen
+
+	#Update prosody configuration
+	#TODO: move this to _NzReloadConfig
+	echo "
+	Updating Prosody configuration..."
+	sed -i "s/VirtualHost \"your_fqdn_here\"/VirtualHost \"$NZ_FQDN\"/g" /etc/prosody/prosody.cfg.lua
+	sed -i "s|\tkey = \"/etc/prosody/certs/server.key\";|\tkey = \"/etc/prosody/certs/$NZ_FQDN.key\";|g" /etc/prosody/prosody.cfg.lua
+	sed -i "s|\tcertificate = \"/etc/prosody/certs/server.cert\";|\tcertificate = \"/etc/prosody/certs/$NZ_FQDN.crt\";|g" /etc/prosody/prosody.cfg.lua
+
+	#Secure Mysql install
+	#TODO: move it to NzMenuTroubleshooting, call from there
+	service mysql start
+	echo "
+	Securing mysql installation..."
+	mysql_secure_installation
+
+	service apache2 start
+	service prosody start
+	service transmission-daemon start
+
+
+
+	echo "Ready to roll. Run nodezero-admin to administrate your server."
 }
 
-_NzUserGetName() { #Get system's main user name (assume it was the first user created)
-NZ_USER=$(getent passwd|grep 1000:1000|awk -F":" '{print $1}')
-if [ "$NZ_USER" = "" ] #in case the system only has root as user
-	then NZ_USER="root"
-	sed -i 's/"^PermitRootLogin no"/"PermitRootLogin yes"/g' /etc/ssh/sshd_config #Allow root SSH  logins #TODO: doesn't work
-	echo "No unprivilegied user account detected. Allowing root SSH logins..."
-fi
-}
+
+
+
+
 
 
 _NzEditConfig() { #Edit main config file, copied from functions.sh
