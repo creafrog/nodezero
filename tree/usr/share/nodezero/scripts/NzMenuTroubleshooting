@@ -4,35 +4,75 @@
 source /etc/nodezero/nodezero.conf
 set -e
 
-NzChownTransmissionDaemon() { #Fix premissions for transmisison logs/files #TODO run this at first setup
+_NzFixPermissions() { #Fix permissions for transmission/apache files
     chown debian-transmission:debian-transmission /var/log/debian-transmission.log
     chown -R debian-transmission:debian-transmission ${transmission_download_dir}
+    chown -R $APACHE_USER:$APACHE_GROUP $APACHE_DOCUMENTROOT
+}
+
+_NzClearCaches() { #Clear dokuwiki and php-apc caches
+rm -r $APACHE_DOCUMENTROOT/dokuwiki/data/cache/*
+service apache2 restart #clear php-apc cache, so subtle
 }
 
 
-selection=
-until [ "$selection" = "0" ]; do
-     echo ""
-     echo "========== CLEANUP AND TROUBLESHOOTING =========="
-     echo "1 - Clear dokuwiki cache"
-     echo "2 - Restore correct file permissions"
-     echo "3 - Clear PHP APC Cache"
-     echo "4 - Edit access permissions for the web server files" #TODO: no
-     echo "5 - Cleanup stale install files"
-     echo "6 - Cleanup APT packages cache and stale config files"
-     echo "7 - Disable Owncloud maintenance mode."
-     echo ""
-     echo "0 - Exit program"
-     echo ""
-     echo -n "Enter Selection:"
-     read selection
-     echo ""
-     case $selection in
-         1 ) _NzClearDwCache;;
-         2 ) _NzSetWwwPermissions;;
-         3 ) _NzClearApcCache;;
-         4 ) _NzEditVarwwwSshKeys;;
-         0 ) exit;; #TODO: Add entries from the menu
-         * ) echo "Invalid entry."
-     esac
-done
+
+_NzCleanupStaleFiles() { #Detect stale/dangerous files (install.php...) that should be deleted
+#TODO: add tt-rss pre-upgrade dirs cleanup
+#TODO: more cleanup
+echo "Not yet implemented."
+}
+
+
+
+_NzRegenCertificates() { #Regenerate TLS certificates for apache and prosody
+    #TODO: Move text inside the function move this to NzMenuTroubleshooting, call it from there
+    echo "
+    Generating SSL keys and certificates..."
+    make-ssl-cert generate-default-snakeoil --force-overwrite
+    #prosodyctl cert generate #This only works on 0.9+
+    openssl req -new -x509 -days 365 -nodes -out "/var/lib/prosody/$NZ_FQDN.crt" -newkey rsa:2048 -keyout "/var/lib/prosody/$NZ_FQDN.key" -batch
+}
+
+
+
+_NzDisableOwncloudMaintenanceMode() { #Disable Owncloud maintenance mode
+sed -i "/'maintenance'/c\  \'maintenance' => false," ${APACHE_DOCUMENTROOT}/owncloud/config/config.php
+}
+
+
+
+
+###################### Main maintenance menu loop
+_NzMenuTroubleshooting() {
+    selection=
+    until [ "$selection" = "0" ]; do
+         echo ""
+         echo "========== CLEANUP AND TROUBLESHOOTING =========="
+         echo "1 - Clear caches (PHP, dokuwiki)"
+         echo "2 - Restore correct file permissions"
+         echo "3 - Edit access permissions for the web server files" #TODO: no
+         echo "5 - Cleanup stale install files"
+         echo "6 - Cleanup APT packages cache and stale config files"
+         echo "7 - Disable Owncloud maintenance mode."
+         echo "8 - Regenerate web/xmpp servers security certificates"
+         echo ""
+         echo "0 - Exit program"
+         echo ""
+         echo -n "Enter Selection:"
+         read selection
+         echo ""
+         case $selection in
+             1 ) _NzClearCaches;; #OK
+             2 ) _NzFixPermissions;; #OK
+             3 ) _NzClearApcCache;;
+             4 ) _NzEditVarwwwSshKeys;;
+             5 ) _NzCleanupStaleFiles;;
+             6 ) source ${libdir}/scripts/NzAptFunctions; _NzAptCleanup;;
+             7 ) _NzDisableOwncloudMaintenanceMode;;
+             8 ) _NzRegenCertificates;;
+             0 ) exit;; #TODO: Add entries from the menu
+             * ) echo "Invalid entry.";;
+         esac
+    done
+}
