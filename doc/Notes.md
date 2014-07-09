@@ -34,3 +34,7 @@ _Source: http://burogu.makotoworkshop.org/index.php?post/2009/09/17/auto-heberge
 
 ###Bannissement d'adresses IP
 Il est inutile de bannir des adresses IP à la sources d'attaque sur votre serveur, si celui ci est à jour et correctement configuré. Oubliez donc fail2ban et les outils de bannissement automatique. Voir https://quack1.me/ban_ip_filtrage.html 
+
+###Empêcher la déconnection de certaines applications web
+Par défaut la session php est nettoyée toutes les 24 minutes et certaines applis déconnectent l'utilisateur (shaarli, le bug tracker...).
+Pour rallonger ce délai, modifier la valeur de `session.gc_maxlifetime` dans `/etc/php5/apache2/php.ini` (par défaut 1440 secondes soit 24 minutes)

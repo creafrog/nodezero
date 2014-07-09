@@ -10,6 +10,7 @@ Les applications web suivantes ne sont pas installées par défaut mais peuvent 
  * [MonstaFTP](http://www.monstaftp.com/) - Open source PHP/Ajax cloudware that puts FTP file management right in your browser, anywhere, any time. 
  * [Airtime](http://www.sourcefabric.org/en/airtime/) - Free open source radio automation software
  * [Bootcamp](https://github.com/vitorfs/bootcamp) - An enterprise social network - http://trybootcamp.vitorfs.com
+ * [Coinpunk](https://github.com/kyledrake/coinpunk) - Self-hosted Bitcoin wallet service web interface
 
  
  

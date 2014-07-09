@@ -47,6 +47,7 @@ DokuWiki est un moteur de wiki libre sous licence GNU GPL conforme aux standards
   * [Pico](http://pico.dev7studios.com/index.html#) - A stupidly simple, blazing fast, flat file CMS. ([Sources on Github](https://github.com/gilbitron/Pico))
   * [99ko CMS](https://github.com/99ko-project/99ko-cms) - 99ko est un CMS permettant de créer un site web en quelques minutes et sans connaissances particulières en programmation. Il fonctionne sans base de données et utilise de simples fichiers texte (format JSON) pour stocker vos données.
   * [SPIP](http://www.spip.net/fr) - SPIP est un Système de Publication pour l’Internet.
+  * [Movable Type](https://movabletype.org/)
   * [Drupal](https://drupal.org/) - open source content management platform
   * [Joomal!](http://www.joomla.fr/) - un système de gestion de contenu (CMS)
   * [CMS Made Simple](http://www.cmsmadesimple.org/) - open source content management system, faster and easier management of website contents, scalable for small businesses to large corporations.
@@ -66,6 +67,10 @@ DokuWiki est un moteur de wiki libre sous licence GNU GPL conforme aux standards
   * [Redaxscript • Ultra lightweight website engine](http://redaxscript.com/)
   * [Docstore](http://haldean.org/) - A basic site for hosting static documents - [Source on Github](https://github.com/haldean/docstore) - docstore is a simple way to serve Markdown files without any server-side processing, and without requiring you (as the author) to recompile every time you change an article. It consists of a very simple JS script that makes an ajax request to your server, runs a Markdown processor on what it finds, and then displays the results. Clone the repository and add articles in the text/ directory to get started.
  
+####Static sites generators
+* [Static Site Generators](http://staticsitegenerators.net/) - The definitive listing of Static Site Generators 
+* [Staticgen](http://staticgen.com/) - Dynamic list of top-trending static site generators
+
 
 
 ### Trucs & Astuces

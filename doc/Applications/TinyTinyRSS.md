@@ -30,6 +30,21 @@ De plus, le RSS est simple à utiliser grâce à son format et ses spécificatio
   * [The real reason Google wants to kill RSS - Boing Boing](http://boingboing.net/2013/07/03/the-real-reason-google-wants-t.html)
 
 
+
+###Trucs & Astuces
+####Logiciels supplémentaires
+ * [RelatedSoftware - Tiny Tiny RSS](http://tt-rss.org/redmine/projects/tt-rss/wiki/RelatedSoftware) - (mobile applications, browser plugins...)
+ * [gritttt-rss](https://github.com/nhoening/gritttt-rss) - More features for TT-RSS ([Official site](http://gritttt-rss.nicolashoening.de/))
+*  [ttrss-mobile](https://github.com/mboinet/ttrss-mobile) - A mobile webapp for Tiny Tiny RSS
+
+####Partager des liens
+Il est possible de partager des liens sur différents réseaux (facebook, twitter, google+, et bien d'autres) depuis tt-rss.
+ * Quelques plugins permettant de partager des articles sont disponibles dans la page `Préférences` de tt-rss, sous le menu `Plugins`.
+Par exemple, si vous activez le plugin `twitter`, il sera possible de cliquer sur le bouton twitter dans chaque article pour le partager sur Twitter.
+ * D'autres plugins intéressants sont disponibles sur http://tt-rss.org/redmine/projects/tt-rss/wiki/Plugins
+ * Vous pouvez aussi vous rendre dans le flux spécial `Articles publiés` de votre installation Tiny Tiny RSS (qui regroupe tous les articles pour lesquels vous avez cliqué sur l'icône `Publier` puis sur l'icône ![](../images/rss.svg) en haut à droite (sous le menu `Actions...`), puis effectuer une action à parit de ce flux avec le service [IFTTT](https://ifttt.com). Voir [IFTTT : automatiser des tâches courantes sur le web](http://www.commentcamarche.net/faq/34648-ifttt-automatiser-des-taches-courantes-sur-le-web)
+
+
 ###Alternatives
 
   * [Leed](http://projet.idleman.fr/leed/) - Leed (contraction de Light Feed) est un agrégatteur RSS libre et minimaliste qui permet la consultation de flux RSS de manière rapide et non intrusive ([Dépôt Github](https://github.com/ldleman/Leed))
@@ -66,14 +81,3 @@ De plus, le RSS est simple à utiliser grâce à son format et ses spécificatio
     * - Install difficile
 
 
-###Trucs & Astuces
-####Logiciels supplémentaires
- * [RelatedSoftware - Tiny Tiny RSS](http://tt-rss.org/redmine/projects/tt-rss/wiki/RelatedSoftware)
- * [gritttt-rss](https://github.com/nhoening/gritttt-rss) - More features for TT-RSS ([Official site](http://gritttt-rss.nicolashoening.de/))
-
-####Partager des liens
-Il est possible de partager des liens sur différents réseaux (facebook, twitter, google+, et bien d'autres) depuis tt-rss.
- * Quelques plugins permettant de partager des articles sont disponibles dans la page `Préférences` de tt-rss, sous le menu `Plugins`.
-Par exemple, si vous activez le plugin `twitter`, il sera possible de cliquer sur le bouton twitter dans chaque article pour le partager sur Twitter.
- * D'autres plugins intéressants sont disponibles sur http://tt-rss.org/redmine/projects/tt-rss/wiki/Plugins
- * Vous pouvez aussi vous rendre dans le flux spécial `Articles publiés` de votre installation Tiny Tiny RSS (qui regroupe tous les articles pour lesquels vous avez cliqué sur l'icône `Publier` puis sur l'icône ![](../images/rss.svg) en haut à droite (sous le menu `Actions...`), puis effectuer une action à parit de ce flux avec le service [IFTTT](https://ifttt.com). Voir [IFTTT : automatiser des tâches courantes sur le web](http://www.commentcamarche.net/faq/34648-ifttt-automatiser-des-taches-courantes-sur-le-web)

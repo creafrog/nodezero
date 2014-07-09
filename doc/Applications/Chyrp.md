@@ -18,6 +18,7 @@ An extra lightweight and extra awesome blogging engine
 
 ###Alternatives
  * [Dotclear](http://dotclear.org/)
+ * [Movable Type](https://movabletype.org/)
  * [Wordpress](https://wordpress.org/) - WordPress is web software you can use to create a beautiful website or blog.
   * [BuddyPress](http://buddypress.org/about/) - BuddyPress is a powerful plugin that takes your WordPress.org powered site beyond the blog with social-network features like user profiles, activity streams, user groups, and more.
  * [Blogotext](http://lehollandaisvolant.net/blogotext/fr/) - un moteur de blog privilégiant SQLite. Ceci vous offre une simplicité d’installation inégalée, couplée à d’excellentes performances.
@@ -27,4 +28,9 @@ An extra lightweight and extra awesome blogging engine
  * [blosxom :: the zen of blogging ::](http://blosxom.sourceforge.net/) -  a lightweight yet feature-packed weblog application designed from the ground up with simplicity, usability, and interoperability in mind. 
  * [htmly](https://github.com/danpros/htmly) - Databaseless Blogging Platform (Flat-File Blog) ([Demo](http://www.htmly.com/demo/))
  * [PluXml](http://www.pluxml.org/) - Blog ou Cms à l'Xml !
+
+####Static sites generators
+* [Static Site Generators](http://staticsitegenerators.net/) - The definitive listing of Static Site Generators 
+* [Staticgen](http://staticgen.com/) - Dynamic list of top-trending static site generators
+
 
