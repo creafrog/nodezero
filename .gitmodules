@@ -76,3 +76,6 @@
 [submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss_plugin_readabillity"]
 	path = tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss_plugin_readabillity
 	url = https://github.com/ebell451/tt-rss_plugin_readabillity
+[submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/ttrss-videoframes"]
+	path = tree/usr/share/nodezero/additions/tt-rss/plugins/ttrss-videoframes
+	url = https://github.com/tribut/ttrss-videoframes
