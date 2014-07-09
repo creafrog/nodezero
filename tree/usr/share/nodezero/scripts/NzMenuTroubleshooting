@@ -25,6 +25,12 @@ echo "Not yet implemented."
 
 
 
+_NzDisableOwncloudMaintenanceMode() { #Disable Owncloud maintenance mode
+sed -i "/'maintenance'/c\  \'maintenance' => false," ${APACHE_DOCUMENTROOT}/owncloud/config/config.php
+}
+
+
+
 _NzRegenCertificates() { #Regenerate TLS certificates for apache and prosody
     #TODO: Move text inside the function move this to NzMenuTroubleshooting, call it from there
     echo "
@@ -36,12 +42,33 @@ _NzRegenCertificates() { #Regenerate TLS certificates for apache and prosody
 
 
 
-_NzDisableOwncloudMaintenanceMode() { #Disable Owncloud maintenance mode
-sed -i "/'maintenance'/c\  \'maintenance' => false," ${APACHE_DOCUMENTROOT}/owncloud/config/config.php
+
+_NzReboot() { #Reboot
+    read -p "Are you sure? This will reboot the machine [y/N]: " confirmation
+    if [ "$confirmation" != "y" ]
+        then echo "Power off cancelled."
+        else poweroff
+    fi
+}
+
+_NzPoweroff() { #Power off the machine
+    read -p "Are you sure? This will turn the machine off (you will have to manually turn it on) [y/N]: " confirmation
+    if [ "$confirmation" != "y" ]
+        then echo "Power off cancelled."
+        else poweroff
+    fi
 }
 
 
 
+_NzTestInetConnection() { #Test connectivity to debian.org #TODO move to NzMenuTroubleshooting
+    ping -q -c3 debian.org
+}
+
+
+_NzEditMotd() { #Edit maintenance message
+    nano /etc/motd
+}
 
 ###################### Main maintenance menu loop
 _NzMenuTroubleshooting() {
@@ -56,6 +83,11 @@ _NzMenuTroubleshooting() {
          echo "6 - Cleanup APT packages cache and stale config files"
          echo "7 - Disable Owncloud maintenance mode."
          echo "8 - Regenerate web/xmpp servers security certificates"
+         echo "9 - Change Mysql root password"
+         echo "10 - Reboot machine"
+         echo "11 - Power off machine"
+         echo "12 - Test network connectivity to debian.org"
+         echo "13 - Edit maintenance message"
          echo ""
          echo "0 - Exit program"
          echo ""
@@ -68,9 +100,14 @@ _NzMenuTroubleshooting() {
              3 ) _NzClearApcCache;;
              4 ) _NzEditVarwwwSshKeys;;
              5 ) _NzCleanupStaleFiles;;
-             6 ) source ${libdir}/scripts/NzAptFunctions; _NzAptCleanup;;
+             6 ) source "${NZ_PATH}/scripts/NzAptFunctions"; _NzAptCleanup;;
              7 ) _NzDisableOwncloudMaintenanceMode;;
              8 ) _NzRegenCertificates;;
+             9 ) source "${NZ_PATH}/scripts/NzSqlFunctions"; _NzMysqlRootPwReset;;
+             10 ) _NzReboot;;
+             11 ) _NzPowerOff;;
+             12 ) _NzTestInetConnection;;
+             13 ) _NzEditMotd;;
              0 ) exit;; #TODO: Add entries from the menu
              * ) echo "Invalid entry.";;
          esac

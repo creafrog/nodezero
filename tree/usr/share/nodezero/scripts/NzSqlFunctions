@@ -1,0 +1,35 @@
+#!/bin/bash
+#Mysql functions
+
+_NzDeleteDB() {
+	QUERY="DROP DATABASE $1; DROP USER $1@localhost;"
+	mysql -u root -p -e "$QUERY"
+}
+
+_NzCreateDB() {
+	QUERY="create database $1; create user $1@localhost identified by \"$2\"; grant all on $1.* to $1@localhost;"
+	mysql -u root -p -e "$QUERY"
+}
+
+
+_NzSecureMysql() {
+	mysql_secure_installation
+}
+
+
+_NzMysqlRootPwReset() {
+	echo -n "Please enter your new MySQL root password: "
+	read NEWMYSQLPASSWORD
+	echo -n "Please enter your new password again: "
+	read NEWMYSQLCONFIRMATION
+	if [ "$NEWMYSQLPASSWORD" != "$NEWMYSQLCONFIRMATION" ]
+		then echo "Passwords do not match\!"; return 1
+	fi
+
+	QUERY="UPDATE user SET Password=PASSWORD(\'"$NEWMYSQLPASSWORD"\') WHERE User='root'; FLUSH PRIVILEGES;"
+	service mysql stop
+	mysqld_safe --skip-grant-tables&
+	sleep 5
+	mysql -u root mysql -e "$QUERY"
+	echo "Password changed to: $NEWMYSQLPASSWORD"
+}

@@ -1,4 +1,48 @@
+#!/bin/bash
+
 _NzAptCleanup() {
 	aptitude clean
 	aptitude purge -y ~c
+}
+
+_NzAptUpgrade() {
+aptitude -q5 update
+aptitude -q5 -y upgrade
+}
+
+_NzRunAptitude() {
+aptitude
+}
+
+_NzMenuApt() {
+    selection=
+    until [ "$selection" = "0" ]; do
+         echo ""
+         echo "========== PACKAGE MANAGEMENT =========="
+         echo "1 - Clear caches (PHP, dokuwiki)"
+         echo "2 - Restore correct file permissions"
+         echo "3 - Edit access permissions for the web server files" #TODO: no
+         echo "5 - Cleanup stale install files"
+         echo "6 - Cleanup APT packages cache and stale config files"
+         echo "7 - Disable Owncloud maintenance mode."
+         echo "8 - Regenerate web/xmpp servers security certificates"
+         echo ""
+         echo "0 - Exit program"
+         echo ""
+         echo -n "Enter Selection:"
+         read selection
+         echo ""
+         case $selection in
+             1 ) _NzClearCaches;; #OK
+             2 ) _NzFixPermissions;; #OK
+             3 ) _NzClearApcCache;;
+             4 ) _NzEditVarwwwSshKeys;;
+             5 ) _NzCleanupStaleFiles;;
+             6 ) source ${libdir}/scripts/NzAptFunctions; _NzAptCleanup;;
+             7 ) _NzDisableOwncloudMaintenanceMode;;
+             8 ) _NzRegenCertificates;;
+             0 ) exit;; #TODO: Add entries from the menu
+             * ) echo "Invalid entry.";;
+         esac
+    done
 }

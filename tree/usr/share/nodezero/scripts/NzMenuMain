@@ -21,7 +21,7 @@ until [ "$selection" = "0" ]; do
      echo "1 - Tools Menu"
      echo "2 - User account and permissions menu"
      echo "3 - Backup menu"
-     echo "4 - Troubleshooting Menu"
+     echo "4 - System maintenance and troubleshooting Menu"
      echo "5 - Edit main configuration file"
      echo "6 - Prosody instant messaging server configuration"
      echo "7 - Transmission-daemon bittorrent client/seedbox configuration"

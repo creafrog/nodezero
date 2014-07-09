@@ -4,6 +4,55 @@
 source /etc/nodezero/nodezero.conf
 set -e
 
+_NzUserShowWwwaccess() { #Show main user's permissions on web served content
+    groups $NZ_USER | grep -q "$APACHE_GROUP"
+    if [ ?$ != 0 ]
+        then echo "$NZ_USER is not allowed to edit the web server files"
+        export NZ_USERWWWACCESS=0
+        else  echo "$NZ_USER is allowed to edit the web server files"
+        export NZ_USERWWWACCESS=1
+    fi
+}
+
+_NzUserToggleWwwAccess() { #Show main user's permissions on web served content
+    _NzUserShowWwwAccess >/dev/null
+    if [ $NZ_USERWWWACCESS = 0 ]
+        then adduser $NZ_USER www-data; _NzUserShowWwwAccess
+        else deluser $NZ_USER www-data; _NzUserShowWwwAccess
+    fi
+}
+
+_NzUserShowTransmissionAccess() { #Show main user's permissions on transmission downloaded files
+    groups $NZ_USER | grep -q debian-transmission
+    if [ ?$ != 0 ]
+        then echo "$NZ_USER is not allowed to edit transmission downloaded files"
+        export NZ_USERTRANSMISSIONACCESS=0
+        else  echo "$NZ_USER is allowed to edit the transmission downloaded files"
+        export NZ_USERTRANSMISSIONACCESS=1
+    fi
+}
+
+_NzUserToggleTransmissionAccess() { #Toggle main user's permissions on transmission downloaded files
+    _NzUserShowTransmissionAccess
+    if [ $NZ_USERTRANSMISSIONACCESS = 0 ]
+        then adduser $NZ_USER debian-transmission; _NzUserShowTransmissionAccess
+        else deluser $NZ_USER debian-transmission; _NzUserShowTransmissionAccess
+    fi
+}
+
+_NzUserTransmissionPassword() {
+    service transmission-daemon stop
+    CurrentTransmissionUsername=$(grep rpc-username /etc/transmission-daemon/settings.json |awk -F "\"" '{print $4}')
+    CurrentTransmissionPassword=$(grep rpc-password /etc/transmission-daemon/settings.json |awk -F "\"" '{print $4}')
+    read -p "Please enter the username required to access Transmission web interface (current: $CurrentTransmissionUsername): " NewTransmissionUsername
+    read -p "Please enter the password required to access Transmission web interface (current: $CurrentTransmissionPassword): " NewTransmissionPassword
+    sed -i "s/^    \"rpc-username\".*/    \"rpc-username\": \"$NewTransmissionUsername\",/g" /etc/transmission-daemon/settings.json
+    sed -i "s/^    \"rpc-password\".*/    \"rpc-password\": \"$NewTransmissionPassword\",/g" /etc/transmission-daemon/settings.json
+    echo "Transmission web interface username/password has been changed to $NewTransmissionUsername/$NewTransmissionPassword"
+    service transmission-daemon start
+}
+
+
 selection=
 until [ "$selection" = "0" ]; do
      echo ""

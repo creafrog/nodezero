@@ -14,7 +14,7 @@ if [ -f "${NZ_CONF_PATH}/conf.d/*.conf" ]
 	then source "${NZ_CONF_PATH}/conf.d/*.conf"
 fi
 
-source ${NZ_PATH}/functions.sh
+source ${NZ_PATH}/functions.sh #todo: delete this once functions.sh is empty
 
 ##################### Functions #######
 _NzSetupAllowRootAccess() { #Check if system has user UID=1001, if not, allow root ssh access
@@ -37,7 +37,7 @@ _NzSetupMain() {
 	_NzCheckRoot
 
 	#Detect and update main user name in nodezero.conf, allow root access if system has no user UID=1000
-	source ${libdir}/scripts/NzConfigRoutines
+	source ${NZ_PATH}/scripts/NzConfigRoutines
 	_NzUserGetName
 	_NzSetupAllowRootAccess
 
@@ -95,6 +95,7 @@ _NzSetupMain() {
 	echo "Transmission web interface username/password has been changed to $NewTransmissionUsername/$NewTransmissionPassword"
 	
 	#Generate apache and prosody certs
+	source "${NZ_PATH}/scripts/NzMenuTroubleshooting"
 	_NzRegenCertificates
 
 	#Generate new ssh key pair
@@ -122,24 +123,13 @@ _NzSetupMain() {
 	service prosody start
 	service transmission-daemon start
 
-
+    locale-gen
 
 	echo "Ready to roll. Run nodezero-admin to administrate your server."
 }
 
 
 
-
-
-
-
-_NzEditConfig() { #Edit main config file, copied from functions.sh
-$EDITOR ${NZ_CONF_PATH}/nodezero.conf
-source "${NZ_CONF_PATH}/nodezero.conf"
-echo "Updating hostname...."
-echo "$NZ_FQDN" >| /etc/hostname
-hostname "$NZ_FQDN"
-}
 
 _NzSSHKeygen() { #Generate ssh keys, send them to user's home dir
 if [ "$NZ_USER" = "root" ]

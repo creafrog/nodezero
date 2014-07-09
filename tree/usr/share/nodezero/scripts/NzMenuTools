@@ -3,6 +3,58 @@
 source /etc/nodezero/nodezero.conf
 set -e
 
+
+_NzRunLynis () {
+lynis -c -q
+}
+
+_NZRunDfc() {
+dfc
+}
+
+_NzRunHtop() {
+htop
+}
+
+_NzRunNcdu() {
+ncdu /
+}
+
+
+_NzRunLast() {
+last -wdai |less -P "$LESSPROMPT"
+}
+
+
+_NzRunLastb() { #Check last failed login attempts
+lastb -wdai |less +F -P "$LESSPROMPT"
+}
+
+_NzRunRanger() {
+ranger
+}
+
+
+_NzShowMotd() { #TODO: uptime, hostname, OS/kernel, disk/ram/cpu usage graph over time, IP addresses, Internet traffic over time, disk I/O, top 5 processes, load average, 
+echo "NOT YET IMPLEMENTED"
+}
+
+_NzEditMotd() { #TODO
+echo "NOT YET IMPLEMENTED"
+}
+
+_NzRunIftop() { #TODO set default interface
+iftop
+}
+
+_NzRunGoAccess() {
+    zcat -f /var/log/apache2/access* | goaccess
+    GoAccess_Outfile=/home/$NZ_USER/goaccess.html
+    zcat -f /var/log/apache2/access* | goaccess -a >| $GoAccess_Outfile
+    echo "Latest statistics saved to $GoAccess_Outfile"
+}
+
+
 selection=
 until [ "$selection" = "0" ]; do
      echo ""
@@ -18,10 +70,10 @@ until [ "$selection" = "0" ]; do
      echo "9 - Display system information"
      echo "10 - Edit maintenance message"
      echo "11 - lynis - Security Audit"
-     echo "12 - Purge old configuration files"
-     echo "13 - Clear packages cache"
-     echo "14 - aptitude - manage software packages/updates"
-     echo "15 - Update installed software now"
+     #echo "12 - Purge old configuration files"
+     #echo "13 - Clear packages cache"
+     #echo "14 - aptitude - manage software packages/updates"
+     #echo "15 - Update installed software now"
      echo "16 - goaccess - analyze and display web server logs"
      echo "17 - lnav - view system log files"
      echo ""
@@ -42,10 +94,10 @@ until [ "$selection" = "0" ]; do
     	 9 ) _NzShowMotd;;
     	 10 ) _NzEditMotd;;
     	 11 ) _NzRunLynis;;
-    	 12 ) _NzAptitudePurge;;
-    	 13 ) _NzAptitudeClean;;
-    	 14 ) _NzRunAptitude;;
-    	 15 ) _NzAptUpgrade;;
+    	 #12 ) _NzAptitudePurge;; #TODO: move to NzAptFunctions menu,rename aptfunctions to menuapt
+    	 #13 ) _NzAptitudeClean;;
+    	 #14 ) _NzRunAptitude;;
+    	 #15 ) _NzAptUpgrade;;
     	 16 ) _NzRunGoAccess;;
          17 ) lnav;;
          0 ) exit;;
