@@ -82,3 +82,6 @@
 [submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/ttrss-sendtokindle"]
 	path = tree/usr/share/nodezero/additions/tt-rss/plugins/ttrss-sendtokindle
 	url = https://github.com/usr42/ttrss-sendtokindle
+[submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss-tumblr"]
+	path = tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss-tumblr
+	url = https://github.com/epyonavenger/tt-rss-tumblr
