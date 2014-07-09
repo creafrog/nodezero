@@ -73,3 +73,6 @@
 [submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss-shaarli"]
 	path = tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss-shaarli
 	url = https://github.com/jcsaaddupuy/tt-rss-shaarli
+[submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss_plugin_readabillity"]
+	path = tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss_plugin_readabillity
+	url = https://github.com/ebell451/tt-rss_plugin_readabillity
