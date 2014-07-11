@@ -60,7 +60,7 @@ modules_enabled = {
 		--"admin_telnet"; -- Opens telnet console interface on localhost port 5582
 
 	-- Other specific functionality
-		--"bosh"; -- Enable BOSH clients, aka "Jabber over HTTP"
+		"bosh"; -- Enable BOSH clients, aka "Jabber over HTTP"
 		--"httpserver"; -- Serve static files from a directory over HTTP
 		--"groups"; -- Shared roster support
 		--"announce"; -- Send announcement to all online users
@@ -71,6 +71,9 @@ modules_enabled = {
 	-- support
 		"posix"; -- POSIX functionality, sends server to background, enables syslog, etc.
 };
+
+-- BOSH listener port
+bosh_ports = { 5280 }
 
 -- These modules are auto-loaded, should you
 -- (for some mad reason) want to disable
