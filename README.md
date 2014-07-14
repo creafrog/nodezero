@@ -16,6 +16,3 @@ This projects aims at
    * https://github.com/nodiscc/nodezero/issues
 
 Status: Not ready.
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/nodiscc/nodezero/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-

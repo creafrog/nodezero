@@ -1,7 +1,7 @@
 #Système de base
 
 ##Console d'administration
-La consiole d'administration est disponible en se connectant via SSH à votre serveur et en lancant la commande `nodezero-admin`. Elle permet d'effectuer diverss tâches:
+La console d'administration est disponible en se connectant via SSH à votre serveur et en lancant la commande `nodezero-admin`. Elle permet d'effectuer diverss tâches:
  * Monitoring/surveillance de l'état du serveur: Usage disque, usage des ressources (RAM, CPU, réseau, _uptime_), processus en cours, tentatives de connection, vérifications de sécurité.
  * Administration: permissions d'accès aux dossiers/fichiers, mises à jour de logiciels, nettoyage de fichiers temporaires, visualisation/copie/suppression de fichiers, redémarrage/extinction...
  * Sauvegardes: sauvegarde des données du serveur, bases de données, fichiers utilisateur
@@ -37,7 +37,11 @@ SSH (_Secure Shell_) est un programme qui permet de se connecter à une machine 
 
 ![](images/screenshots/transmission-mobile.png)
 
-  * [Installer un serveur de téléchargement bittorrent sous debian avec transmission. - HomeServer.DIY](http://homeserver-diy.net/wiki/index.php?title=Installer_un_serveur_de_t%C3%A9l%C3%A9chargement_bit-torrent_sous_debian_avec_transmission.)
+
+##Serveur multimedia uPnP miniDLNA
+| 📖 |    Brouillon       |
+|---------|---------|
+
 
 
 ##Serveur Mail
