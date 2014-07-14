@@ -2,6 +2,36 @@
 #Common config routines for nodezero
 
 
+_NzCheckRoot() { #Check if we are root
+if [[ "$(/usr/bin/whoami)" != "root" ]]; then
+    echo "This script must be run as root\! Script aborted."
+    exit 1
+fi
+}
+
+
+_NzListFunctions() { #List all available Nodezero shell scripts
+grep -roh "^_.*()" $NZ_PATH/scripts/
+}
+
+
+_NzEditConfig() { #Edit and reload main nodezero config file
+    #Note: See also https://packages.debian.org/sid/augeas-tools to edit config files
+    $EDITOR ${NZ_CONF_PATH}/nodezero.conf
+    source "${NZ_CONF_PATH}/nodezero.conf"
+    _NzReloadConfig #TODO: (check if paths/values in nodezero.conf are valid) update config files accordingly
+}
+
+_NzReloadConfig() { #Main config reload routine
+	_NzConfigUpdateFqdn
+	_NzRegenContactPage
+}
+
+_NzConfigUpdateFqdn() {
+	echo "$NZ_FQDN" >| /etc/hostname
+	hostname "$NZ_FQDN"
+}
+
 _NzRegenContactPage() { #Generate web server contact page
 ContactAddresses=""
 if -z "$NZ_PUBLIC_MAIL"; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Email\" href=\"$NZ_PUBLIC_MAIL\"><i class=\"icon-mail-alt\"></i></a>"; fi
@@ -21,6 +51,10 @@ if -z "$NZ_PUBLIC_MISC"; then ContactAddresses="$ContactAddresses \n <a data-tog
 #TODO: create webpage by concatenating HTML header + $ContactAddresses + footer, then write it to contact/index.html
 cat $NZ_PATH/contact/header.html "$ContactAddresses" $NZ_PATH/contact/footer.html > $APACHE_DOCUMENTROOT/contact/index.html
 _NzSetWwwPermissions
+}
+
+_NzSymlinkWebappDataDirs() { #Create symlinks to zenphoto and Dokuwiki data dirs in the main user's (UID 1000) home directory
+	echo "Not yet implemented." #TODO: Not called from anywhere, add this to a menu
 }
 
 

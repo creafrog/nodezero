@@ -34,10 +34,10 @@ _NzSetupMain() {
 	#TODO: fix file permissions at the end
 
 	#Check if we have root, functions.sh
+	source ${NZ_PATH}/scripts/NzConfigRoutines
 	_NzCheckRoot
 
 	#Detect and update main user name in nodezero.conf, allow root access if system has no user UID=1000
-	source ${NZ_PATH}/scripts/NzConfigRoutines
 	_NzUserGetName
 	_NzSetupAllowRootAccess
 
