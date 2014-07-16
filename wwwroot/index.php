@@ -86,7 +86,7 @@ if (is_dir($APP_OWNCLOUD_DIR)) {
 <!-- Box for transmission -->
 <?php
 $APP_TRANSMISSION_DIR = 'transmission';
-$APP_TRANSMISSION_HTML = '<a href="/transmission" class="title" style="background-image:url(img/transmission.jpg)"> 
+$APP_TRANSMISSION_HTML = '<a href="/transmission" class="title" style="background-image:url(img/transmission.png)"> 
 <div class="app"> 
 <h1>Seedbox</h1> 
 <p>Client Bittorrent Transmission</p> 
@@ -134,7 +134,7 @@ if (is_dir($APP_DOKUWIKI_DIR)) {
 <!-- Box for tt-rss -->
 <?php
 $APP_TTRSS_DIR = 'tt-rss';
-$APP_TTRSS_HTML = '<a href="/tt-rss" class="title" style="background-image:url(img/tt-rss.jpg)"> 
+$APP_TTRSS_HTML = '<a href="/tt-rss" class="title" style="background-image:url(img/tt-rss.png)"> 
 <div class="app">
 <h1>Tiny Tiny RSS</h1>
 <p>Lecteur de flux RSS</p>
@@ -173,7 +173,7 @@ if (is_dir($APP_CONVERSE_DIR)) {
 <!-- Box for roundcube -->
 <?php
 $APP_WEBMAIL_DIR = 'mail';
-$APP_WEBMAIL_HTML = '<a href="/mail" class="title" style="background-image:url(img/webmail.gif)"> 
+$APP_WEBMAIL_HTML = '<a href="/mail" class="title" style="background-image:url(img/webmail.png)"> 
 <div class="app"> 
 <h1>Webmail</h1> 
 <p>Roundcube mail</p>
@@ -226,7 +226,7 @@ if (is_dir($APP_BLOG_DIR)) {
 <!-- Box for Wallabag -->
 <?php
 $APP_WALLABAG_DIR = 'wallabag';
-$APP_WALLABAG_HTML = '<a href="/wallabag" class="title" style="background-image:url(img/wallabag.gif)"> 
+$APP_WALLABAG_HTML = '<a href="/wallabag" class="title" style="background-image:url(img/wallabag.png)"> 
 <div class="app"> 
 <h1>Wallabag</h1> 
 <p>Liste de lecture</p>
@@ -261,7 +261,7 @@ if (is_dir($APP_MARKDOWNEDIT_DIR)) {
 <!-- Box for YOURLS url shortener -->
 <?php
 $APP_YOURLS_DIR = 'url';
-$APP_YOURLS_HTML = '<a href="/url" class="title" style="background-image:url(img/yourls.jpg)"> 
+$APP_YOURLS_HTML = '<a href="/url" class="title" style="background-image:url(img/yourls.png)"> 
 <div class="app"> 
 <h1>Yourls</h1> 
 <p>Raccourcisseur d\'URLs</p>
