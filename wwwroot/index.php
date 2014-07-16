@@ -135,14 +135,28 @@ if (is_dir($APP_DOKUWIKI_DIR)) {
 <?php
 $APP_TTRSS_DIR = 'tt-rss';
 $APP_TTRSS_HTML = '<a href="/tt-rss" class="title" style="background-image:url(img/tt-rss.jpg)"> 
-<div class="app"> 
-<h1>Tiny Tiny RSS</h1> 
-<p>Lecteur de flux RSS</p> 
-</div> 
+<div class="app">
+<h1>Tiny Tiny RSS</h1>
+<p>Lecteur de flux RSS</p>
+</div>
 </a>';
 
 if (is_dir($APP_TTRSS_DIR)) {
 	echo $APP_TTRSS_HTML;
+}
+?>
+
+<?php
+$APP_CONVERSE_DIR = 'converse';
+$APP_CONVERSE_HTML = '<a href="/converse" class="title" style="background-image:url(img/converse.png)"> 
+<div class="app">
+<h1>Converse</h1>
+<p>Messagerie instantanée</p>
+</div>
+</a>';
+
+if (is_dir($APP_CONVERSE_DIR)) {
+	echo $APP_CONVERSE_HTML;
 }
 ?>
 
