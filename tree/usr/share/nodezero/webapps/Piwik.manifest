@@ -1,5 +1,8 @@
 AppName="Piwik"
 AppUrl="none"
+AppType="archive"
 AppDescription="Web analytics"
 AppPostInstallCommand="$NZ_PATH/webapps/scripts/Piwik.sh install"
 AppWwwDir="piwik"
+
+#TODO: make it work

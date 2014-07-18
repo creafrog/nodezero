@@ -1,5 +1,6 @@
 AppName="Owncloud"
 AppUrl="none"
+AppType="archive"
 AppDescription="Edit, store, share and synchronize files, contacts and calendars"
 AppWwwDir="owncloud"
 AppPostInstallCommand="TempDir=$(mktemp -d);

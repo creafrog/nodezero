@@ -1,6 +1,7 @@
 AppName="TT-RSS"
 AppUrl="https://github.com/gothfox/Tiny-Tiny-RSS"
 AppTag="1.12"
+AppType="git"
 AppDescription="RSS feed reader and aggregator"
 AppWwwDir="tt-rss"
 AppPostInstallCommand="cp -r $NZ_PATH/additions/tt-rss/config.php $APACHE_DOCUMENTROOT/$AppWwwDir/config.php;

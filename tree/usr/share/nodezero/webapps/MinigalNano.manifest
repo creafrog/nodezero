@@ -1,6 +1,7 @@
 AppName="MinigalNano"
 AppUrl="https://github.com/sebsauvage/MinigalNano"
 AppTag="master"
+AppType="git"
 AppDescription="image gallery"
 AppPostInstallCommand="mkdir $APACHE_DOCUMENTROOT/images/photos; \
 cp $NZ_PATH/additions/images/README.md $APACHE_DOCUMENTROOT/images/photos/; \

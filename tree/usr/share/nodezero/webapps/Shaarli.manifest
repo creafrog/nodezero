@@ -1,6 +1,7 @@
 AppName="Shaarli"
 AppUrl="https://github.com/sebsauvage/shaarli"
 AppTag="master"
+AppType="git"
 AppDescription="link sharing/bookmarking service"
 AppPostInstallCommand=""
 AppWwwDir="links"

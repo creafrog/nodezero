@@ -1,6 +1,7 @@
 AppName="Gitlist"
 AppUrl="https://github.com/klaussilveira/gitlist"
 AppTag="0.4.0"
+AppType="git"
 AppDescription="Git repository browser"
 AppPostInstallCommand="mkdir $APACHE_DOCUMENTROOT/gitlist/cache; \
 chmod 776  $APACHE_DOCUMENTROOT/gitlist/cache; \

@@ -1,6 +1,7 @@
 AppName="WordPress"
 AppUrl="https://github.com/WordPress/WordPress"
 AppTag="3.9"
+AppType="git"
 AppDescription="blog and CMS engine"
 AppPostInstallCommand=""
 AppWwwDir="wordpress"

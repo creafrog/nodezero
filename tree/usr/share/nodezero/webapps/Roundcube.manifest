@@ -1,6 +1,7 @@
 AppName="Roundcube"
 AppUrl="https://github.com/roundcube/roundcubemail"
 AppTag="1.0.0"
+AppType="git"
 AppDescription="webmail client"
 AppPostInstallCommand=""
 AppWwwDir="mail"

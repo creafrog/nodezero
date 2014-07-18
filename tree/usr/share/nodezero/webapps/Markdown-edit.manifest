@@ -1,6 +1,7 @@
 AppName="Markdown-edit"
 AppUrl="https://github.com/georgeosddev/markdown-edit"
 AppTag="master"
+AppType="git"
 AppDescription="markdown editor"
 AppPostInstallCommand=""
 AppWwwDir="markdown-edit"
