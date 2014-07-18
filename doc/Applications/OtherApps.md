@@ -4,6 +4,7 @@ Les applications web suivantes ne sont pas installées par défaut mais peuvent 
  * [PHPCompta](http://www.phpcompta.be/) - logiciel libre de comptabilité en ligne
  * [Net Billetterie](http://net-billetterie.tuxfamily.org/) - Logiciel de gestion de salle de spectacle ou de saison culturelle.
  * [OsCOmmerce](http://oscommerce.com/) - Boutique en ligne ([Démo](http://demo.oscommerce.com/))
+ * [Galette](http://galette.eu/dc/) - Galette is a membership management web application towards non profit organizations
  * [Zen-Cart](http://www.zencart-france.com/) - Boutique en ligne ([Démo](http://demo.zen-cart.cn/))
  * [GRR](http://grr.mutualibre.org/) - GRR est un système de Gestion et de Réservations de Ressources, adapaté à la gestion et la réservation de salles et de matériels.
  * [Casebox](http://www.casebox.org/) - Content management platform. Manage records, tasks, files.
