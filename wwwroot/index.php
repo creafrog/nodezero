@@ -329,6 +329,6 @@ if (is_dir($APP_GITLIST_DIR)) {
 </a>
 
 
-<script src="scripts/css3-mediaqueries.js"></script>
+<script src="res/css3-mediaqueries.js"></script>
 </body> 
 </html>
