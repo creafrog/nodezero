@@ -307,7 +307,7 @@ if (is_dir($APP_BUGS_DIR)) {
 <!-- Box for Gitlist -->
 <?php
 $APP_GITLIST_DIR = 'gitlist';
-$APP_GITLIST_HTML = '<a href="/gitlist" class="title" style="background-image:url(img/gitlist.jpg)"> 
+$APP_GITLIST_HTML = '<a href="/gitlist" class="title" style="background-image:url(img/gitlist.png)"> 
 <div class="app"> 
 <h1>Gitlist</h1> 
 <p>Browse git repositories</p>
@@ -319,6 +319,14 @@ if (is_dir($APP_GITLIST_DIR)) {
 }
 ?>
 
+
+<!-- Box for Contact -->
+<a href="/contact" class="title" style="background-image:url(img/contact.png)"> 
+	<div class="app"> 
+		<h1>Contact</h1> 
+		<p>Leave a message!</p>
+	</div> 
+</a>
 
 
 <script src="scripts/css3-mediaqueries.js"></script>
