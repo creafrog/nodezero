@@ -22,11 +22,17 @@ a:link { -webkit-tap-highlight-color: #3b7cbf; }
 .ie7 img { -ms-interpolation-mode: bicubic; }
 h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
+@font-face {
+  font-family: 'WeblySleek UI';
+  src: local('WeblySleek UI'), url('/res/weblysleekuil.ttf') format('ttf');
+}
+
+
 /* Primary Styles */
   
 body {
 	padding: 10px;
-	font: 1em "Open Sans", sans-serif;
+	font: 1em "WeblySleek UI", "Open Sans", "Droid Sans", sans-serif;
 	color: #CCC;
 /*	background-color: #F2F1DB;*/
 /*	background-color: #222;*/
