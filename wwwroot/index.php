@@ -192,7 +192,7 @@ $APP_ALLTUBE_DIR = 'alltube';
 $APP_ALLTUBE_HTML = '<a href="/alltube" class="title" style="background-image:url(img/alltube.png)"> 
 <div class="app"> 
 <h1>Alltube</h1> 
-<p>Download media from hosting sites</p>
+<p>Download media from web sites</p>
 </div> 
 </a>';
 
