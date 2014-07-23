@@ -4,7 +4,6 @@
 
 Nodezero est un système d'installation et de maintenance pour un serveur personnel (_home server_, serveur auto-hébergé). Un serveur auto-hébergé peut remplacer la majorité des services commerciaux (et/ou gratuits) trouvables sur internet: partage et synchronisation de fichiers, hébergement de photos, d'un blog, d'un service de messagerie, d'e-mail... sans laisser la gestion de ses données personnelles à un tiers.
 
-L'administration à distance (ou sur place) se fait à travers une interface simple disponible via SSH. Il vous faudra donc un accès shell à votre serveur - l'utilisation d'un serveur hébergé chez vous est donc recommandée. Un VPS peut aussi faire l'affaire. 
 
 ##Documentation
  * [A propos](About.md) - Pourquoi faire?

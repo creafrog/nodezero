@@ -28,20 +28,20 @@ Prosody IM est un serveur XMPP (serveur de messagerie instantanée) simple à ut
 
 
 ##Serveur OpenSSH
-SSH (_Secure Shell_) est un programme qui permet de se connecter à une machine distante et d'y exécuter des commandes. Il fournit des  communications sécurisées et chiffrées entre deux hôtes à travers un réseau non sécurisé. Il permet également de partager des fichiers (protocole _SFTP_) entre ordinateurs, d'afficher des programmes tournant à distance sur votre ordinateur local (_X forwarding_), et d'établir des tunnels sécurisés (par exemple pour utiliser le serveur distant comme _Proxy Web_), 
+SSH (_Secure Shell_) est un programme qui permet de se connecter à une machine distante et d'y exécuter des commandes. Il fournit des  communications sécurisées et chiffrées entre deux hôtes à travers un réseau non sécurisé. Il permet également de partager des fichiers (protocole _SFTP_) entre ordinateurs, d'afficher des programmes à distance sur votre ordinateur local (_X forwarding_), et d'établir des tunnels sécurisés (par exemple pour utiliser le serveur distant comme _Proxy Web_), 
 
  * [Explication détaillée de l'authentification par clé SSH (en)](https://we.riseup.net/debian/ssh-key-authentication)
 
+_L'administration à distance (ou sur place) se fait à travers une interface simple disponible via SSH. Il vous faudra donc un accès shell à votre serveur - l'utilisation d'un serveur hébergé chez vous est donc recommandée. Un VPS peut aussi faire l'affaire. _
 
 ##Client Bittorrent Transmission
+Transmission est un client pour le réseau [peer-to-peer](https://fr.wikipedia.org/wiki/Pair_%C3%A0_pair) [Bittorrent](https://fr.wikipedia.org/wiki/BitTorrent_%28protocole%29). 
 
 ![](images/screenshots/transmission-mobile.png)
 
 
 ##Serveur multimedia uPnP miniDLNA
-| 📖 |    Brouillon       |
-|---------|---------|
-
+MiniDLNA est un serveur multimedia. Il sert des fichiers multimedia (musique, images et video) à des appareils connectés à votre réseau. Le client peut être un logiciel (xbmc, vlc, [autres clients](https://en.wikipedia.org/wiki/List_of_UPnP_AV_media_servers_and_clients#UPnP_AV_clients)) ou un appareil (lecteur multimedia portable smartphone, télévision, media center)
 
 
 ##Serveur Mail

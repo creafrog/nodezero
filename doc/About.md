@@ -16,11 +16,6 @@ Quelques questions à se poser quand on dépose ses données chez un fournisseur
   * Le fournisseur prend il les précautions nécessaires pour protéger mes données, mes mots de passe...
   * Quelle utilisation le fournisseur fait-il de mes données ? (vente, "minage" d'informations...)
 
-##Aspects légaux
-###Déclaration à la CNIL
-Les "sites web diffusant ou collectant des données à caractère personnel mis en œuvre par des particuliers dans le cadre d’une activité exclusivement personnelle" sont dispensés de déclaration à la CNIL. _(Source: http://ouvaton.coop/Declarer-son-site-a-la-CNIL)_
-
-
 ##Liens externes
  * [général:avantages_et_inconvénients - wiki Auto-hébergement](http://wiki.auto-hebergement.fr/g%C3%A9n%C3%A9ral/avantages_et_inconv%C3%A9nients)
  * [Personal clouds: définition]([Personal Clouds](http://personal-clouds.org/wiki/Main_Page))
