@@ -1,18 +1,85 @@
 #NodeZero
-![](doc/images/nodezero-home.png)
 
-A zero-configuration home server installation/maintenance solution.
+Installation rapide et administration simplifiée de serveurs personnels (serveur auto-hébergé, _home server_), utilisant des alternatives [libres](https://fr.wikipedia.org/wiki/Logiciel_libre) aux services commerciaux/propriétaires sur Internet.
 
-This projects aims at
- * providing an easy and fast installation and maintenance solution for a personal home server.
- * providing free (as in speech) alternatives to commercial network services, such as file and media hosting and sharing, document editing, mail and news reading, communication services and more.
- * creating an accessible documentation about server operation and principles of Internet communication.
- * It should be able to run on low-end (recycled) machines.
+## Aide/Documentation
+ * [A propos/pourquoi/qu'est ce que c'est?](doc/notes.md)
+ * [Manuel d'utilisation](doc/README.md)
+ * [Signaler un bug/poser une question](https://telecom.dmz.se/bugs/nodezero/issues)
+
+## Fonctionnalités
+
+<!-- MarkdownTOC depth=4 -->
+
+- Serveur Web
+	- Applications web
+- Serveur de messagerie instantanée Prosody
+- Serveur OpenSSH
+- Console d'administration
+- Client Bittorrent Transmission
+- Serveur multimedia uPnP miniDLNA
+- Service de transfert de fichiers FileTea
+- Serveur Mail
+
+<!-- /MarkdownTOC -->
 
 
- * [Documentation](doc/)
- * Bugs/feature requests
-   * https://telecom.dmz.se/bugs/nodezero/issues
-   * https://github.com/nodiscc/nodezero/issues
+### Serveur Web
+Le logiciel libre Apache est le [serveur HTTP](https://fr.wikipedia.org/wiki/Serveur_HTTP) (serveur Web) le plus populaire du World Wide Web. [En savoir plus...](doc/apache.md)
 
-Status: Not ready.
+#### Applications web
+ * **Owncloud**: hébergement/partage/synchronisation de fichiers, calendriers,carnets d'adresses, édition de documents et plus [En savoir plus....](doc/applications/owncloud.md)
+ * **Shaarli**: partage/sauvegarde de liens et de marque pages. [En savoir plus...](doc/shaarli.md)
+ * **MinigalNano**: partage d'images, vidéos, fichiers multimédia. [En savoir plus...](doc/minigalnano.md)
+ * **Tiny Tiny RSS**: receive news aund updates using RSS feeds, [read more](doc/tt-rss.md)
+ * **Converse**: a web client for the XMPP (Jabber) instant messaging network, [read more](doc/applications/converse.md)
+ * **Chyrp**: un moteur de blog léger et complet [En savoir plus...](doc/chyrp.md)
+ * **MapBBCodeShare**: consultation de cartes géographiques, placement, sauvegarde et partage de repères, trajets et notes sur des cartes. [En savoir plus](doc/mapbbcodeshare.md) 
+ * **Alltube**: service de téléchargement audio/vidéo depuis Youtube, Dailymotion, Soundcloud, Vimeo et plus de 100 autres sites. [En savoir plus](doc/alltube.md)
+ * **Wallabag**: sauvegarde de pages web, liste de lecture, amélioration de la lisibilité et lecture hors ligne. [En savoir plus](doc/wallabag.md)
+ * **Contact**: une page de contact simple et personnalisable. [En savoir plus...](doc/contact.md)
+ * **YOURLS**: votre propre raccourcisseur d'URLs. [En savoir plus...](doc/yourls.md)
+ * **Outils pour développeurs**
+   * **Gitlist**: a modern git repository viewer. [Learn more...](doc/gitlist.md)
+   * **Bumpy-Booby**: a modern task/bug tracking system. [Learn more...](doc/bumpy-booby.md)
+   * **Markdown Edit**: un éditeur de documents en ligne utilisant le format Markdown. [En savoir plus...](doc/markdown-edit.md)
+
+ 
+
+### Serveur de messagerie instantanée Prosody
+Prosody IM est un serveur XMPP (serveur de messagerie instantanée) simple à utiliser. Il est conçu pour être facilement extensible à l'aide de greffons, et nécessite peu de ressources. [En savoir plus...](doc/prosody.md)
+
+
+### Serveur OpenSSH
+SSH (_Secure Shell_) est un programme qui permet de se connecter à une machine distante et d'y exécuter des commandes (**contôle à distance**). Il fournit des  communications sécurisées et chiffrées. Il permet également de **partager des fichiers** (protocole _SFTP_) entre ordinateurs, d'utiliser les programmes du serveur sur votre écran local (_X forwarding_), et d'établir des **tunnels sécurisés** (par exemple pour utiliser le serveur distant comme _Proxy Web_). [En savoir plus...](doc/openssh.md)
+
+
+### Console d'administration
+La console d'administration est un système de menus facilitant les tâches courantes sur le serveur.
+ 
+ * Surveillance de l'état du serveur: Usage disque, usage des ressources (RAM, CPU, réseau...), programmes en cours, tentatives de connection, informations de sécurité.
+ * Sauvegardes: sauvegarde des données du serveur, des bases de données, des fichiers des utilisateurs
+ * Installation, mise à jour et suppression de logiciels, activation/désactivation et configuration des services
+ * Gestion des comptes utilisateur, permissions d'accès, mots de passe, dépannage.
+ * Nettoyage de fichiers temporaires, tâches d'entretien/maintenance, redémarrage/extinction...
+
+### Client Bittorrent Transmission
+
+![](images/screenshots/transmission-mobile.png)
+
+
+
+### Serveur multimedia uPnP miniDLNA
+| 📖 |    Brouillon       |
+|---------|---------|
+
+
+### Service de transfert de fichiers FileTea
+| 📖 |    Not yet implemented       |
+|---------|---------|
+
+### Serveur Mail
+| 📖 |    Not yet implemented       |
+|---------|---------|
+
+ * [Newsletters spam test by mail-tester.com](http://www.mail-tester.com/)

@@ -31,29 +31,25 @@ _NzSetupAllowRootAccess() { #Check if system has user UID=1001, if not, allow ro
 
 ###################### Main setup loop
 _NzSetupMain() { 
-	#TODO: fix file permissions at the end
-
-	#Check if we have root, functions.sh
 	source ${NZ_PATH}/scripts/NzConfigRoutines
+	#Check if we have root
 	_NzCheckRoot
-
-	#Detect and update main user name in nodezero.conf, allow root access if system has no user UID=1000
+	#Detect and update main user name in nodezero.conf
 	_NzUserGetName
+	#allow root access if system has no user UID=1000
 	_NzSetupAllowRootAccess
 
-
-	sed -i "s/^export NZ_USER=/export NZ_USER=\"$NZ_USER\" #Main user name/g" "${NZ_CONF_PATH}/nodezero.conf"
+	#TODO: set NZ_USER to root if no user 1000 detected. better start managing configuration changes with ansible/augeas/puppet/chef
+	#sed -i "s/^export NZ_USER=/export NZ_USER=\"$NZ_USER\" #Main user name/g" "${NZ_CONF_PATH}/nodezero.conf"
 
 	#Edit main config file
 	echo "
 	###################################################
 	##### Nodezero setup assistant ####################
 	###################################################
-
 	Please edit your configuration file. Press any key to continue."
 	read -n 1
 	_NzEditConfig
-
 
 	#Install default packages
 	#This is really bad and should be managed with ansible #TODO
@@ -80,6 +76,7 @@ _NzSetupMain() {
 	adduser $NZ_USER video
 	adduser $NZ_USER audio
 	adduser $NZ_USER fuse
+	#TODO: fix file permissions at the end
 
 	#Set random password for transmission
 	#TODO: ask for a web interface password at beginning, store it in nodezero.conf, use it instead.
