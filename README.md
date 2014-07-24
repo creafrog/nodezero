@@ -55,7 +55,7 @@ SSH (_Secure Shell_) est un programme qui permet de se connecter à une machine 
 
 
 ### Console d'administration
-La console d'administration est un système de menus facilitant les tâches courantes sur le serveur.
+La console d'administration est un système de menus facilitant les tâches courantes sur le serveur. [En savoir plus...](doc/nodezero-admin.md)
  
  * Surveillance de l'état du serveur: Usage disque, usage des ressources (RAM, CPU, réseau...), programmes en cours, tentatives de connection, informations de sécurité.
  * Sauvegardes: sauvegarde des données du serveur, des bases de données, des fichiers des utilisateurs
@@ -64,14 +64,14 @@ La console d'administration est un système de menus facilitant les tâches cour
  * Nettoyage de fichiers temporaires, tâches d'entretien/maintenance, redémarrage/extinction...
 
 ### Client Bittorrent Transmission
+Transmission est un client pour le réseau [peer-to-peer](https://fr.wikipedia.org/wiki/Pair_%C3%A0_pair) [Bittorrent](https://fr.wikipedia.org/wiki/BitTorrent_%28protocole%29). [En savoir plus...](doc/transmission.md)
 
 ![](images/screenshots/transmission-mobile.png)
 
 
-
 ### Serveur multimedia uPnP miniDLNA
-| 📖 |    Brouillon       |
-|---------|---------|
+MiniDLNA est un serveur multimedia. Il sert des fichiers multimedia (musique, images et video) à des appareils connectés à votre réseau. Le client peut être un logiciel (xbmc, vlc, [autres clients](https://en.wikipedia.org/wiki/List_of_UPnP_AV_media_servers_and_clients#UPnP_AV_clients)) ou un appareil (lecteur multimedia portable smartphone, télévision, media center). [En savoir plus...](doc/minidlna.md)
+
 
 
 ### Service de transfert de fichiers FileTea
