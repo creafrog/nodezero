@@ -1,6 +1,7 @@
 AppName="TT-RSS Mobile"
-AppUrl="https://github.com/mboinet/ttrss-mobile/raw/master/dist/ttrss-mobile-1.0.tar.bz2"
-AppType="archive"
+AppUrl="https://github.com/nodiscc/ttrss-mobile"
+AppType="git"
+AppTag=master
 AppDescription="Mobile interface for TT-RSS"
 AppWwwDir="tt-rss/mobile/"
 AppPostInstallCommand=""
