@@ -3,28 +3,28 @@
 source /etc/nodezero/nodezero.conf
 set -e
 
-_NzProsodyGetStatus() {
+_NzProsodyGetStatus() { #Get IM server enabled/disabled status
 if [[ -f /var/run/prosody/prosody.pid ]]
 then PROSODY_STATUS="Enabled"
 else PROSODY_STATUS="Disabled"
 fi
 }
 
-_NzProsodyToggle() {
+_NzProsodyToggle() { #Enable/disable IM server
 if [ ${PROSODY_STATUS} = "Disabled" ]
 then rcconf --on prosody --now
 else rcconf --off prosody --now #Todo: get rid of rcconf
 fi
 }
 
-_NzProsodyGetRegistrationsStatus() {
+_NzProsodyGetRegistrationsStatus() { #Get new IM accounts registrations allowed/denied status
 if [ `grep "allow_registration = true" /etc/prosody/prosody.cfg.lua` ]
 then PROSODY_REG_ENABLED="Allowed"
 else PROSODY_REG_ENABLED="Not allowed"
 fi
 }
 
-_NzProsodyAddUser() {
+_NzProsodyAddUser() { #Create new IM account
 echo "Please enter the desired username for the new account:"
 read PROSODY_NEW_USERNAME
 prosodyctl adduser "${PROSODY_NEW_USERNAME}@${NZ_FQDN}"
@@ -35,14 +35,14 @@ fi
 }
 
 
-_NzProsodyGetUserlist() {
+_NzProsodyGetUserlist() { #Get list of IM accounts on the server
 PROSODY_FQDN_STRING=`echo $NZ_FQDN | sed 's/\./\%2e/g'`
 PROSODY_ACCOUNT_FILES=`find "/var/lib/prosody/${PROSODY_FQDN_STRING}/accounts" -name "*.dat"`
 PROSODY_ACCOUNT_LIST=`for i in ${PROSODY_ACCOUNT_FILES}; do basename $i .dat; done`
 }
 
 
-_NzProsodyDelUser() {
+_NzProsodyDelUser() { #Delete an existing IM account
 _NzProsodyGetUserlist
 echo "List of accounts on the server:
 $PROSODY_ACCOUNT_LIST
@@ -51,7 +51,7 @@ read PROSODY_DELETE_ACCOUNT
 prosodyctl deluser "${PROSODY_DELETE_ACCOUNT}@${FQDN}"
 }
 
-_NzProsodyChangeUserPassword() {
+_NzProsodyChangeUserPassword() { #Change password for an IM account
 _NzProsodyGetUserlist
 echo "List of accounts on the server:
 $PROSODY_ACCOUNT_LIST
@@ -61,7 +61,7 @@ prosodyctl passwd "${PROSODY_PASSWD_ACCOUNT}@${FQDN}"
 }
 
 
-_NzMenuProsody() {
+_NzMenuProsody() { #Main prosody IM server menu
 until [ "$selection" = "0" ]; do
 _NzProsodyGetStatus
 _NzProsodyGetRegistrationsStatus
