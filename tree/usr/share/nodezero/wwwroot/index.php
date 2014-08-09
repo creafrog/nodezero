@@ -134,7 +134,7 @@ if (is_dir($APP_DOKUWIKI_DIR)) {
 <!-- Box for tt-rss -->
 <?php
 $APP_TTRSS_DIR = 'tt-rss';
-$APP_TTRSS_HTML = '<a href="/tt-rss" class="title" style="background-image:url(img/tt-rss.png)"> 
+$APP_TTRSS_HTML = '<a href="/tt-rss" class="title" style="background-image:url(img/ttrss.png)"> 
 <div class="app">
 <h1>Tiny Tiny RSS</h1>
 <p>Lecteur de flux RSS</p>
@@ -146,6 +146,23 @@ if (is_dir($APP_TTRSS_DIR)) {
 }
 ?>
 
+<!-- Box for tt-rss mobile-->
+<?php
+$APP_TTRSSMOBILE_DIR = 'tt-rss/mobile';
+$APP_TTRSSMOBILE_HTML = '<a href="/tt-rss/mobile" class="title" style="background-image:url(img/ttrss.png)"> 
+<div class="app">
+<h1>tt-rss (mobile)</h1>
+<p>Lecteur RSS (mobile)</p>
+</div>
+</a>';
+
+if (is_dir($APP_TTRSSMOBILE_DIR)) {
+	echo $APP_TTRSSMOBILE_HTML;
+}
+?>
+
+
+<!-- Box for converse.js -->
 <?php
 $APP_CONVERSE_DIR = 'converse';
 $APP_CONVERSE_HTML = '<a href="/converse" class="title" style="background-image:url(img/converse.png)"> 
@@ -329,6 +346,5 @@ if (is_dir($APP_GITLIST_DIR)) {
 </a>
 
 
-<script src="res/css3-mediaqueries.js"></script>
 </body> 
 </html>
