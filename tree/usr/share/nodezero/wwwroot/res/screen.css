@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 @font-face {
   font-family: 'WeblySleek UI';
-  src: local('WeblySleek UI'), url('/res/weblysleekuil.ttf') format('ttf');
+  src: local('WeblySleek UI'), url('/res/weblysleekuil.ttf') format('truetype');
 }
 
 
