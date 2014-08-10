@@ -3,5 +3,5 @@ AppUrl="https://github.com/nodiscc/ttrss-mobile"
 AppType="git"
 AppTag=master
 AppDescription="Mobile interface for TT-RSS"
-AppWwwDir="tt-rss/mobile/"
+AppWwwDir="tt-rss-mobile/"
 AppPostInstallCommand=""
