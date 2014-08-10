@@ -148,8 +148,8 @@ if (is_dir($APP_TTRSS_DIR)) {
 
 <!-- Box for tt-rss mobile-->
 <?php
-$APP_TTRSSMOBILE_DIR = 'tt-rss/mobile';
-$APP_TTRSSMOBILE_HTML = '<a href="/tt-rss/mobile" class="title" style="background-image:url(img/ttrss.png)"> 
+$APP_TTRSSMOBILE_DIR = 'tt-rss-mobile';
+$APP_TTRSSMOBILE_HTML = '<a href="/tt-rss-mobile" class="title" style="background-image:url(img/ttrss.png)"> 
 <div class="app">
 <h1>tt-rss (mobile)</h1>
 <p>Lecteur RSS (mobile)</p>
