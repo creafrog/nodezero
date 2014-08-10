@@ -1,9 +1,8 @@
 AppName="Gitlist"
-AppUrl="https://github.com/klaussilveira/gitlist"
-AppTag="0.4.0"
-AppType="git"
+AppUrl="https://s3.amazonaws.com/gitlist/gitlist-0.5.0.tar.gz"
+AppType="archive"
+AppWwwDir="gitlist"
 AppDescription="Git repository browser"
 AppPostInstallCommand="mkdir $APACHE_DOCUMENTROOT/gitlist/cache; \
 chmod 776  $APACHE_DOCUMENTROOT/gitlist/cache; \
 mv $APACHE_DOCUMENTROOT/gitlist/config.ini-example $APACHE_DOCUMENTROOT/gitlist/config.ini" #TODO: edit config
-AppWwwDir="gitlist"
