@@ -6,6 +6,7 @@ GitList allows you to browse repositories using your favorite browser, viewing f
   * http://gitlist.org/
 
 ###Alternatives
+  * [Gitprep](http://gitprep.org/) - Portable Github clone ([Source on Github](https://github.com/yuki-kimoto/gitprep), [Demo](http://perlcodesample.sakura.ne.jp/gitprep.cgi))
   * http://darcyclarke.me/dev/repojs/ - A plugin to embed Github repos on your site [Github project](https://github.com/darcyclarke/Repo.js)
   * [GitLab: Self Hosted Git Management Application](http://gitlab.org/) - GitLab is open source software to collaborate on code. Manage git repositories with fine grained access controls that keep your code secure. Perform code reviews and enhance collaboration with merge requests. Each project can also have an issue tracker and a wiki  
 
