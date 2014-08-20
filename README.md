@@ -34,7 +34,7 @@ Le logiciel libre Apache est le [serveur HTTP](https://fr.wikipedia.org/wiki/Ser
 Prosody IM est un serveur XMPP (serveur de messagerie instantanée) simple à utiliser. Il est conçu pour être facilement extensible à l'aide de greffons, et nécessite peu de ressources. [En savoir plus...](doc/prosody.md)
 
 
-### Serveur SSH
+### Serveur SSH/partage de fichiers SFTP
 SSH (_Secure Shell_) est un programme qui permet de se connecter à une machine distante et d'y exécuter des commandes (**contôle à distance**). Il fournit des  communications sécurisées et chiffrées. Il permet également de **partager des fichiers** (protocole _SFTP_) entre ordinateurs, d'utiliser les programmes du serveur sur votre écran local (_X forwarding_), et d'établir des **tunnels sécurisés** (par exemple pour utiliser le serveur distant comme _Proxy Web_). [En savoir plus...](doc/openssh.md)
 
 
@@ -56,6 +56,15 @@ Transmission est un client pour le réseau [peer-to-peer](https://fr.wikipedia.o
 ### Serveur multimedia uPnP
 MiniDLNA est un serveur multimedia. Il sert des fichiers multimedia (musique, images et video) à des appareils connectés à votre réseau. Le client peut être un logiciel (xbmc, vlc, [autres clients](https://en.wikipedia.org/wiki/List_of_UPnP_AV_media_servers_and_clients#UPnP_AV_clients)) ou un appareil (lecteur multimedia portable smartphone, télévision, media center). [En savoir plus...](doc/minidlna.md)
 
+
+### Partage de fichiers Windows Samba
+| 📖 |    Not yet implemented       |
+|---------|---------|
+
+
+### Serveur OpenVPN
+| 📖 |    Not yet implemented       |
+|---------|---------|
 
 
 ### Service de transfert de fichiers
