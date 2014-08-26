@@ -66,6 +66,8 @@ MiniDLNA est un serveur multimedia. Il sert des fichiers multimedia (musique, im
 | 📖 |    Not yet implemented       |
 |---------|---------|
 
+ * Alternative: [tinc](http://tinc-vpn.org/)
+  * [Setup Tinc](http://www.allsundry.com/2011/04/10/tinc-better-than-openvpn/)
 
 ### Service de transfert de fichiers
 | 📖 |    Not yet implemented       |
