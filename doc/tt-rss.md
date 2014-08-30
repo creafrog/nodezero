@@ -1,15 +1,35 @@
+#Tiny Tiny RSS
 
-##Tiny Tiny RSS
-Tiny Tiny RSS est un [Agrégateur](https://fr.wikipedia.org/wiki/Agr%C3%A9gateur) et lecteur et de flux [RSS](https://fr.wikipedia.org/wiki/RSS)/[Atom](https://fr.wikipedia.org/wiki/Atom) libre, vous permettant de lire des actualités et mises à jour de sites depuis n'importe quel endroit, avec une expérience proche des lecteurs de flux de bureau (comme [Liferea](?id=rxtx:internet#liferea). Ses fonctionnalités incluent:
+Tiny Tiny RSS est un lecteur de flux [RSS](https://fr.wikipedia.org/wiki/RSS)/[Atom](https://fr.wikipedia.org/wiki/Atom) libre, vous permettant de lire des actualités et mises à jour de sites depuis n'importe quel endroit, avec une expérience proche des lecteurs de flux de bureau (comme [Liferea](?id=rxtx:internet#liferea). Ses fonctionnalités incluent:
 
   * Application sur le serveur, nécessitant juste un navigateur web
   * Prise encharge des flux RSS, RDF, et Atom
-  * Lecture de flux protégés par mot de passe
+  * [Agrégation](https://fr.wikipedia.org/wiki/Agr%C3%A9gation_web)/curation de flux et repartage (services web, réseaux sociaux, nouveau flux RSS)
+  * Filtrage/recherche
   * Import/export [OPML](https://fr.wikipedia.org/wiki/OPML)
-  * [Agrégation](https://fr.wikipedia.org/wiki/Agr%C3%A9gation_web) de flux
-  * Partage direct d'articles (création d'un flux Rss personnalisé)
-  * Filtrage
+  * Lecture de flux protégés par mot de passe
   * Raccourcis clavier
+
+------------------------------
+
+  * [Site Officiel](http://tt-rss.org/)
+  * [Demo](http://tt-rss.org/demo/)
+  * [Framanews](http://framanews.org/) - Instance publique gratuite de Tiny Tiny RSS
+
+
+![](images/tt-rss.png)
+
+![](images/tt-rss-mobile.png)
+![](images/tt-rss-mobile-2.png)
+
+
+
+-------------------------------
+## Le standard RSS
+  * [RSS - Comment ça marche](http://www.commentcamarche.net/contents/www/rss.php3)
+  * [Comment S'abonner au Flux RSS D'une Page Facebook?](http://www.emarketinglicious.fr/social-media/comment-abonner-au-flux-rss-page-facebook-tutoriel)
+  * [Aggrégateurs (lecteurs de fils) RSS - Comment ça marche](http://www.commentcamarche.net/faq/3339-agregateurs-rss-lecteurs-de-fils-rss)
+  * [The real reason Google wants to kill RSS - Boing Boing](http://boingboing.net/2013/07/03/the-real-reason-google-wants-t.html)
 
 **Le standard RSS** représente un moyen simple d'être tenu informé des nouveaux contenus d'un site web, sans avoir à le consulter.
 
@@ -18,26 +38,21 @@ Le RSS permet aux internautes d’un site de s’abonner facilement aux dernièr
 De plus, le RSS est simple à utiliser grâce à son format et ses spécifications ouvertes : on peut les combiner, les partager, les dupliquer, les trier… On peut créer nos propres outils utilisant RSS. RSS c’est ce qui permet de lier tous les sites entre-eux, facilement et simplement.
 
 
-![](../images/thumbs/tt-rss-digest._thumb.png) ![](../images/thumbs/tt-rss-main._thumb.png)
-![](../images/thumbs/ttrss-mobile._thumb.png)
-
-  * [Site Officiel](http://tt-rss.org/)
-   * [Demo](http://tt-rss.org/demo/)
-   * [Framanews](http://framanews.org/) - Instance publique gratuite de Tiny Tiny RSS
-  * [RSS - Comment ça marche](http://www.commentcamarche.net/contents/www/rss.php3)
-  * [Comment S'abonner au Flux RSS D'une Page Facebook ? [Tutoriel] | Emarketinglicious](http://www.emarketinglicious.fr/social-media/comment-abonner-au-flux-rss-page-facebook-tutoriel)
-  * [Aggrégateurs (lecteurs de fils) RSS - Comment ça marche](http://www.commentcamarche.net/faq/3339-agregateurs-rss-lecteurs-de-fils-rss)
-  * [The real reason Google wants to kill RSS - Boing Boing](http://boingboing.net/2013/07/03/the-real-reason-google-wants-t.html)
 
 
 
-###Trucs & Astuces
-####Logiciels supplémentaires
+
+##Trucs & Astuces
+
+### Logiciels supplémentaires
  * [RelatedSoftware - Tiny Tiny RSS](http://tt-rss.org/redmine/projects/tt-rss/wiki/RelatedSoftware) - (mobile applications, browser plugins...)
  * [gritttt-rss](https://github.com/nhoening/gritttt-rss) - More features for TT-RSS ([Official site](http://gritttt-rss.nicolashoening.de/))
 *  [ttrss-mobile](https://github.com/mboinet/ttrss-mobile) - A mobile webapp for Tiny Tiny RSS
 
-####Partager des liens
+
+
+
+### Partager des liens
 Il est possible de partager des liens sur différents réseaux (facebook, twitter, google+, et bien d'autres) depuis tt-rss.
  * Quelques plugins permettant de partager des articles sont disponibles dans la page `Préférences` de tt-rss, sous le menu `Plugins`.
 Par exemple, si vous activez le plugin `twitter`, il sera possible de cliquer sur le bouton twitter dans chaque article pour le partager sur Twitter.
@@ -45,7 +60,7 @@ Par exemple, si vous activez le plugin `twitter`, il sera possible de cliquer su
  * Vous pouvez aussi vous rendre dans le flux spécial `Articles publiés` de votre installation Tiny Tiny RSS (qui regroupe tous les articles pour lesquels vous avez cliqué sur l'icône `Publier` puis sur l'icône ![](../images/rss.svg) en haut à droite (sous le menu `Actions...`), puis effectuer une action à parit de ce flux avec le service [IFTTT](https://ifttt.com). Voir [IFTTT : automatiser des tâches courantes sur le web](http://www.commentcamarche.net/faq/34648-ifttt-automatiser-des-taches-courantes-sur-le-web)
 
 
-###Alternatives
+## Alternatives
 
   * [Leed](http://projet.idleman.fr/leed/) - Leed (contraction de Light Feed) est un agrégatteur RSS libre et minimaliste qui permet la consultation de flux RSS de manière rapide et non intrusive ([Dépôt Github](https://github.com/ldleman/Leed))
     * - Nécessite MySQL

@@ -37,6 +37,7 @@ Prosody IM est un serveur XMPP (serveur de messagerie instantanée) simple à ut
 ### Serveur SSH/partage de fichiers SFTP
 SSH (_Secure Shell_) est un programme qui permet de se connecter à une machine distante et d'y exécuter des commandes (**contôle à distance**). Il fournit des  communications sécurisées et chiffrées. Il permet également de **partager des fichiers** (protocole _SFTP_) entre ordinateurs, d'utiliser les programmes du serveur sur votre écran local (_X forwarding_), et d'établir des **tunnels sécurisés** (par exemple pour utiliser le serveur distant comme _Proxy Web_). [En savoir plus...](doc/openssh.md)
 
+![](doc/images/nodezero-sftp.png)
 
 ### Console d'administration
 La console d'administration est un système de menus facilitant les tâches courantes sur le serveur. [En savoir plus...](doc/nodezero-admin.md)
