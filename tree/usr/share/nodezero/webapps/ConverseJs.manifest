@@ -1,7 +1,32 @@
+#!/bin/bash
+set -e
+
 AppName="Converse.js"
 AppUrl="https://github.com/jcbrand/converse.js"
 AppTag="v0.7.4"
 AppType="git"
 AppDescription="XMPP webchat client"
-AppPostInstallCommand=""
+
 AppWwwDir="chat"
+
+AppReleasesFeed="https://github.com/jcbrand/converse.js/releases.atom"
+
+###############################################################################
+#Install/upgrade management
+
+
+_AppPostUpdate() { #Run after install/upgrade
+indexhtml="$APACHE_DOCUMENTROOT/$AppWwwDir/index.html"
+
+#Change config values
+orig_boshurl="            bosh_service_url: .*"
+new_boshurl="            bosh_service_url: '${APACHE_PROTO}://$NZ_FQDN/bosh/http_bind',"
+orig_locale="        i18n: locales\['en'\]"
+new_locale="        i18n: locales\['fr'\]"
+end_options="        });"
+add_options="        message_carbons: true,\n        roster_groups: true,\n        });"
+
+sed -i "s|$orig_boshurl|$new_boshurl|g" "$indexhtml"
+sed -i "s|$orig_locale|$new_locale|g" "$indexhtml"
+sed -i "s|$end_options|$add_options|g" "$indexhtml"
+}
