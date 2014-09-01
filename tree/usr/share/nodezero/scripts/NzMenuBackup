@@ -110,6 +110,7 @@ _NzDoPhysicalBackup() { #Sync local backups to USB drive
 
 
 _NzObnamMount() { #Mount an obnam generation
+echo "NOT YET IMPLEMENTED"
 #TODO: display generations and allow selecting one to mount
 #TODO: allow restoring from backup
 }
