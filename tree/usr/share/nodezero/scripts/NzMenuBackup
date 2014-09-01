@@ -114,36 +114,39 @@ _NzObnamMount() { #Mount an obnam generation
 #TODO: allow restoring from backup
 }
 
+_NzCreateBackupDir() {
+    if [ ! -d "${BACKUP_LOCAL_STORAGE}" ] #Create backup destination if it does not exist
+    then
+        mkdir -p "${BACKUP_LOCAL_STORAGE}"
+    fi
+}
 
-######## End functions #############################################
-#Main loop
 
-if [ ! -d "${BACKUP_LOCAL_STORAGE}" ] # Create backup destination if it does not exist
-then
-    mkdir -p "${BACKUP_LOCAL_STORAGE}"
-fi
+####################################################################
 
-_NzShowLastLocalBackup
+_NzMenuBackup() {
+    _NzCreateBackupDir
+    _NzShowLastLocalBackup
 
-#Backup menu
-selection=
-until [ "$selection" = "0" ]; do
-     echo ""
-     echo "========== BACKUP MENU =========="
-     echo "1 - tree - generate a list of your important files"
-     echo "2 - backup now"
-     echo "3 - copy backups to external drive"
-     echo ""
-     echo "0 - Exit program"
-     echo ""
-     echo -n "Enter Selection:"
-     read selection
-     echo ""
-     case $selection in
-         1 ) _NzRunTree;;
-         2 ) _NzBackupNow;;
-         3 ) _NzDoPhysicalBackup;;
-         0 ) return 0;;
-         * ) echo "Please enter a valid number"
-     esac
-done
+    selection=
+    until [ "$selection" = "0" ]; do
+         echo ""
+         echo "========== BACKUP MENU =========="
+         echo "1 - tree - generate a list of your important files"
+         echo "2 - backup now"
+         echo "3 - copy backups to external drive"
+         echo ""
+         echo "0 - Exit program"
+         echo ""
+         echo -n "Enter Selection:"
+         read selection
+         echo ""
+         case $selection in
+             1 ) _NzRunTree;;
+             2 ) _NzBackupNow;;
+             3 ) _NzDoPhysicalBackup;;
+             0 ) return 0;;
+             * ) echo "Please enter a valid number"
+         esac
+    done
+}
