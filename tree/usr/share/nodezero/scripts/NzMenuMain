@@ -37,7 +37,7 @@ until [ "$selection" = "0" ]; do
      case $selection in
          1 ) _NzMenuTools;; #OK
          2 ) _NzMenuUserAccount;; #OK
-         3 ) source ${NZ_PATH}/scripts/_NzMenuBackup; _NzMenuBackup;; #OK
+         3 ) source ${NZ_PATH}/scripts/NzMenuBackup; _NzMenuBackup;; #OK
          4 ) _NzMenuTroubleshooting;; #OK
          5 ) _NzEditConfig;;
          6 ) _NzMenuProsody;; #OK
