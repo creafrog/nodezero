@@ -9,6 +9,7 @@ miniBoardNano is a very simple image gallery. It adheres to the KISS principle a
   * [Github repository](https://github.com/sebsauvage/MinigalNano)
   
 ###Alternatives
+  * [Mediacrush](https://mediacru.sh/) - a website you can upload images, audio, and video to, and receive a link to share it with your friends ([Sources on Github](https://github.com/MediaCrush/MediaCrush))
   * [Openphoto](http://theopenphotoproject.org/)
   * [Gallery](http://gallery.menalto.com/)
   * [Photoshow](http://www.photoshow-gallery.com/) - ([Dépôt github](https://github.com/thibaud-rohmer/PhotoShow))

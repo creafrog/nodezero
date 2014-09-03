@@ -28,6 +28,7 @@ Owncloud est un projet de gestion de vos données sur internet. Ses fonctionnali
 
 ###Alternatives
 ####Synchronisation de fichiers
+  * [Syncthing](http://syncthing.net/) - Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized.
   * [Git Annex](http://git-annex.branchable.com/assistant/quickstart/) - Synchronisation de fichiers entre ordinateurs, disques externes, serveurs...
   * [Seafile](http://seafile.com/en/home/) - File Syncing and Collaboration for Teams
 
