@@ -37,33 +37,12 @@ _NzBackupNow() { #Main backup routine #TODO TODO TODO
     #New backup routin using backintime
 
     #Create dirs
-    mkdir -p $BACKUP_DIR/backintime/nodezero/root/1
+    mkdir -p "$BACKUP_DIR/backintime/nodezero/root/1"
 
     #example cron:        0 */2 * * * nice -n 19 ionice -c2 -n7 /usr/bin/backintime --backup-job >/dev/null 2>&1
 
     #Main backup
-    backintime --profile nodezero --config /usr/share/nodezero/backintime.conf --backup
-
-    #config file contents: #TODO move this
-    # profile1.name=nodezero
-    # profile1.snapshots.backup_on_restore.enabled=false #erase existing files on restore
-    # profile<N>.snapshots.dont_remove_named_snapshots=false
-    # profile<N>.snapshots.exclude.<I>.value=''
-    # profile<N>.snapshots.include.<I>.value=/path/to/folder/we/should/backup
-    # profile<N>.snapshots.mode=local
-    # profile<N>.snapshots.path=$BACKUP_DIR
-    # profile<N>.snapshots.path.auto=false
-    # profile<N>.snapshots.path.host=nodezero
-    # profile<N>.snapshots.path.profile=1
-    # profile<N>.snapshots.path.user=root
-    # profile<N>.snapshots.preserve_acl=false
-    # profile<N>.snapshots.smart_remove=true
-    # profile<N>.snapshots.smart_remove.keep_all=2
-    # profile<N>.snapshots.smart_remove.keep_one_per_day=7
-    # profile<N>.snapshots.smart_remove.keep_one_per_month=6
-    # profile<N>.snapshots.smart_remove.keep_one_per_week=4
-    # profiles=1
-
+    backintime --profile nodezero --config "$NZ_PATH/backintime.conf" --backup
 
 }
 
