@@ -42,7 +42,7 @@ _NzBackupNow() { #Main backup routine #TODO TODO TODO
     #example cron:        0 */2 * * * nice -n 19 ionice -c2 -n7 /usr/bin/backintime --backup-job >/dev/null 2>&1
 
     #Main backup
-    backintime --profile nodezero --config "$NZ_PATH/backintime.conf" --backup
+    backintime --profile-id 1 --config "$NZ_PATH/backintime.conf" --backup
 
 }
 
