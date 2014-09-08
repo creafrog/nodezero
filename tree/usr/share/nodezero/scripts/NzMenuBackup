@@ -37,7 +37,7 @@ _NzBackupNow() { #Main backup routine #TODO TODO TODO
     #New backup routin using backintime
 
     #Create dirs
-    mkdir -p "$BACKUP_DIR/backintime/nodezero/root/1"
+    mkdir -p "$BACKUP_LOCAL_STORAGE/backintime/nodezero/root/1"
 
     #example cron:        0 */2 * * * nice -n 19 ionice -c2 -n7 /usr/bin/backintime --backup-job >/dev/null 2>&1
 
