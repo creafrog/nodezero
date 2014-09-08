@@ -3,11 +3,18 @@
 source /etc/nodezero/nodezero.conf
 set -e
 
-#Functions
+###############################################################################
+_NzCreateBackupDir() { #Create backup destination if it does not exist
+    if [ ! -d "${BACKUP_LOCAL_STORAGE}" ]
+    then mkdir -p "${BACKUP_LOCAL_STORAGE}"
+    fi
+}
+
+
 _NzRunTree() { #Create a list of files in user-specified directories ($IMPORTANT_DIRS)
     FILELIST="${BACKUP_LOCAL_STORAGE}/filelist-`date +%Y%m%d-%H\:%M\:%S`.txt"
 
-    tree -alxhtC --dirsfirst  ${IMPORTANT_DIR} >> ${FILELIST}
+    tree -alxhtC --dirsfirst  ${IMPORTANT_DIRS} >> ${FILELIST}
 
     if [ ${TREE_TO_HTML} = "1" ] #HTML output (disabled by default, set TREE_TO_HTML to 1 in nodezero.conf)
     then
@@ -18,19 +25,50 @@ _NzRunTree() { #Create a list of files in user-specified directories ($IMPORTANT
 
 
 
-_NzBackupNow() { #Main backup routine
+_NzBackupNow() { #Main backup routine #TODO TODO TODO
     #TODO: check obnam configuration file
     #Example: obnam backup --repository sftp://me@server.org/~/backups --quiet --keep 90d --compress-with gzip --log syslog --exclude '/home/somedir' /
-    obnam backup ${IMPORTANT_DIRS} &&
-    date +%c >| "$BACKUP_LOCAL_STORAGE/last_backup.txt"
+    #obnam backup ${IMPORTANT_DIRS} &&
+    #date +%c >| "$BACKUP_LOCAL_STORAGE/last_backup.txt"
     #TODO: backups can take a long time so maybe this job should be muted/disowned?
+
+    #New backup routin using backintime
+
+    #Create dirs
+    mkdir -p $BACKUP_DIR/backintime/nodezero/root/1
+
+    #example cron:        0 */2 * * * nice -n 19 ionice -c2 -n7 /usr/bin/backintime --backup-job >/dev/null 2>&1
+
+    #Main backup
+    backintime --profile nodezero --config /usr/share/nodezero/backintime.conf --backup
+
+    #config file contents: #TODO move this
+    # profile1.name=nodezero
+    # profile1.snapshots.backup_on_restore.enabled=false #erase existing files on restore
+    # profile<N>.snapshots.dont_remove_named_snapshots=false
+    # profile<N>.snapshots.exclude.<I>.value=''
+    # profile<N>.snapshots.include.<I>.value=/path/to/folder/we/should/backup
+    # profile<N>.snapshots.mode=local
+    # profile<N>.snapshots.path=$BACKUP_DIR
+    # profile<N>.snapshots.path.auto=false
+    # profile<N>.snapshots.path.host=nodezero
+    # profile<N>.snapshots.path.profile=1
+    # profile<N>.snapshots.path.user=root
+    # profile<N>.snapshots.preserve_acl=false
+    # profile<N>.snapshots.smart_remove=true
+    # profile<N>.snapshots.smart_remove.keep_all=2
+    # profile<N>.snapshots.smart_remove.keep_one_per_day=7
+    # profile<N>.snapshots.smart_remove.keep_one_per_month=6
+    # profile<N>.snapshots.smart_remove.keep_one_per_week=4
+    # profiles=1
+
+
 }
 
-
-
-_NzBackupSqldb() { #Backup an SQL database #TODO
-echo "NOT YET IMPLEMENTED"
-#dont forget to write the backup date in last_db_backup.txt
+_NzBackupSqldb() { #Backup an SQL database
+    mysql_backup_date=$(date +%Y%m%d-%H\:%M\:%S)
+    mysqldump -u root --all-databases > ${BACKUP_LOCAL_STORAGE}/mysqldump-"$mysql_backup_date".sql
+    echo $mysql_backup_date >| "$BACKUP_LOCAL_STORAGE/last_db_backup.txt"
 }
 
 _NzRestoreSqldb() { #Restore an sql database #TODO
@@ -39,15 +77,17 @@ echo "NOT YET IMPLEMENTED"
 #RESTORE A DB TABLE FROM A FULL DUMP: sed -n -e '/CREATE TABLE.*mytable/,/CREATE TABLE/p' mysql.dump > mytable.dump
 }
 
+
 _NzShowLastRemoteDbBackup() { #Display last remote databases backup date
     if [ -r $BACKUP_MOUNTPOINT_NAME/last_db_backup.txt ]
-        then
+    then
         LAST_REMOTE_DB_BACKUP=$(cat "$BACKUP_MOUNTPOINT_NAME/last_db_backup.txt")
         echo "Last remote MySQL database backup: $LAST_REMOTE_DB_BACKUP"
     else
         echo "No remote MySQL database backups detected."
     fi
 }
+
 
 _NzShowLastLocalDbBackup() { #Display last local mysql databases backup date
     if [ -r $BACKUP_LOCAL_STORAGE/last_db_backup.txt ]
@@ -73,18 +113,18 @@ _NzShowLastRemoteBackup() { #Display last remote backup date
 
 
 _NzDoPhysicalBackup() { #Sync local backups to USB drive
-    #Show prompt and detect newly plugged usb drive
+    #Show prompt and detect newly plugged usb drive #TODO moe this to separate function
     echo "You have 60 seconds to insert your USB backup drive...."
     BACKUP_MOUNTPOINT_NAME=`inotifywait --quiet --timeout 60 /var/run/usbmount --format %w%f --event create`
-    
+
     #If mountpoint is created by usbmount and is detected
-    if [ -d "$BACKUP_MOUNTPOINT_NAME" ] 
+    if [ -d "$BACKUP_MOUNTPOINT_NAME" ]
     then
-        echo "Backup drive detected on $BACKUP_MOUNTPOINT_NAME" 
+        echo "Backup drive detected on $BACKUP_MOUNTPOINT_NAME"
         echo "Calculating disk space..."
         BACKUP_VOLUME_SIZE=`lsblk -b | grep "$BACKUP_MOUNTPOINT_NAME" |awk -F " " '{print $4}'` #Check backup drive capacity
-        BACKUP_FILES_SIZE=`du -abc $BACKUP_LOCAL_STORAGE | tail -n 1 | awk -F " " '{print $1}'` #Check backup files size 
-        
+        BACKUP_FILES_SIZE=`du -abc $BACKUP_LOCAL_STORAGE | tail -n 1 | awk -F " " '{print $1}'` #Check backup files size
+
         if [[ "$BACKUP_FILES_SIZE" -gt "$BACKUP_VOLUME_SIZE" ]]
         then
             #If drive is too small, throw an error.
@@ -96,7 +136,7 @@ _NzDoPhysicalBackup() { #Sync local backups to USB drive
             _NzShowLastLocalDbBackup
             _NzShowLastRemoteDbBackup
             echo "Starting backup synchronization to external drive"; sleep 2
-            rsync -avzP $BACKUP_LOCAL_STORAGE $BACKUP_MOUNTPOINT_NAME/ &&  #Sync backups to usb drive with rsync
+            rsync -avzP $BACKUP_LOCAL_STORAGE $BACKUP_MOUNTPOINT_NAME/ &&  #Sync backups to usb drive with rsync #TODO do not use rsync, use backintimedirectly
             echo "Your backup has been copied to the external drive."
         fi
     else
@@ -105,37 +145,24 @@ _NzDoPhysicalBackup() { #Sync local backups to USB drive
 
 }
 
-
-
-
-
-_NzObnamMount() { #Mount an obnam generation
-echo "NOT YET IMPLEMENTED"
-#TODO: display generations and allow selecting one to mount
-#TODO: allow restoring from backup
-}
-
-_NzCreateBackupDir() {
-    if [ ! -d "${BACKUP_LOCAL_STORAGE}" ] #Create backup destination if it does not exist
-    then
-        mkdir -p "${BACKUP_LOCAL_STORAGE}"
-    fi
-}
-
-
 ####################################################################
 
 _NzMenuBackup() {
     _NzCreateBackupDir
-    _NzShowLastLocalBackup
+    _NzShowLastRemoteBackup
 
     selection=
     until [ "$selection" = "0" ]; do
          echo ""
          echo "========== BACKUP MENU =========="
+         echo "WARNING: UNFINISHED SECTION"
          echo "1 - tree - generate a list of your important files"
-         echo "2 - backup now"
-         echo "3 - copy backups to external drive"
+         echo "2 - backup everything to local drive now"
+         echo "3 - copy all local backups to external drive"
+         echo "4 - backup MySQL databases to local drive"
+         echo "5 - Display last MySQL backup date on external drive"
+         echo "6 - Display last local MySQL backup date"
+         echo "7 - Display last data backup date on external drive"
          echo ""
          echo "0 - Exit program"
          echo ""
@@ -146,6 +173,10 @@ _NzMenuBackup() {
              1 ) _NzRunTree;;
              2 ) _NzBackupNow;;
              3 ) _NzDoPhysicalBackup;;
+             4 ) _NzBackupSqldb;;
+             5 ) _NzShowLastRemoteDbBackup;;
+             6 ) _NzShowLastLocalDbBackup;;
+             7 ) _NzShowLastRemoteBackup;;
              0 ) return 0;;
              * ) echo "Please enter a valid number"
          esac
