@@ -14,11 +14,13 @@ _NzCreateBackupDir() { #Create backup destination if it does not exist
 _NzRunTree() { #Create a list of files in user-specified directories ($IMPORTANT_DIRS)
     FILELIST="${BACKUP_LOCAL_STORAGE}/filelist-`date +%Y%m%d-%H\:%M\:%S`.txt"
 
+    echo "Writing file list to $FILELIST..."
     tree -alxhtC --dirsfirst  ${IMPORTANT_DIRS} >> ${FILELIST}
 
     if [ ${TREE_TO_HTML} = "1" ] #HTML output (disabled by default, set TREE_TO_HTML to 1 in nodezero.conf)
     then
         HTML_FILELIST="${BACKUP_LOCAL_STORAGE}/filelist-`date +%Y%m%d-%H\:%M\:%S`.html"
+        echo "Writing HTML file list to $HTML_FILELIST..."
         tree -alxhtC -H ./ --dirsfirst  ${IMPORTANT_DIR} >> ${HTML_FILELIST}
     fi
 }
