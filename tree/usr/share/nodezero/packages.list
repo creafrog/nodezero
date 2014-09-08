@@ -93,7 +93,7 @@ chkrootkit
 tiger
 debsums
 libdate-manip-perl
-obnam
+backintime-common
 #lnav #on jessie/sid only
 apt-file
 command-not-found
