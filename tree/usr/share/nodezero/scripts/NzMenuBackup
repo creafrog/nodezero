@@ -101,7 +101,9 @@ _NzShowLastLocalDbBackup() { #Display last local mysql databases backup date
 
 
 _NzShowLastRemoteBackup() { #Display last remote backup date
-    if [ -r $BACKUP_MOUNTPOINT_NAME/last_backup.txt ]
+    if [ -z "$BACKUP_MOUNTPOINT_NAME" ]
+        then echo "No external backup disk detected"
+    elif [ -r $BACKUP_MOUNTPOINT_NAME/last_backup.txt ]
         then
         LAST_REMOTE_BACKUP=$(cat "$BACKUP_MOUNTPOINT_NAME/last_backup.txt")
         echo "Last remote backup: $LAST_REMOTE_BACKUP"
