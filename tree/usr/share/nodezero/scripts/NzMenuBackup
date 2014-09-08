@@ -27,22 +27,21 @@ _NzRunTree() { #Create a list of files in user-specified directories ($IMPORTANT
 
 
 
-_NzBackupNow() { #Main backup routine #TODO TODO TODO
-    #TODO: check obnam configuration file
+_NzBackupNow() { #Main backup routine
+    #Old backup method using obnam:
     #Example: obnam backup --repository sftp://me@server.org/~/backups --quiet --keep 90d --compress-with gzip --log syslog --exclude '/home/somedir' /
-    #obnam backup ${IMPORTANT_DIRS} &&
-    #date +%c >| "$BACKUP_LOCAL_STORAGE/last_backup.txt"
+    #Example: obnam backup ${IMPORTANT_DIRS} &&
     #TODO: backups can take a long time so maybe this job should be muted/disowned?
 
-    #New backup routin using backintime
-
+    #New backup method using backintime
+    #TODO: backintime version in stable has very few options and config file does not work
+    #TODO: setup cron job: 0 */2 * * * nice -n 19 ionice -c2 -n7 /usr/bin/backintime --backup-job >/dev/null 2>&1
     #Create dirs
     mkdir -p "$BACKUP_LOCAL_STORAGE/backintime/nodezero/root/1"
 
-    #example cron:        0 */2 * * * nice -n 19 ionice -c2 -n7 /usr/bin/backintime --backup-job >/dev/null 2>&1
-
     #Main backup
     backintime --profile-id 1 --config "$NZ_PATH/backintime.conf" --backup
+    date +%c >| "$BACKUP_LOCAL_STORAGE/last_backup.txt"
 
 }
 
