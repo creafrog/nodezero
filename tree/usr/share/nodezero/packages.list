@@ -6,6 +6,7 @@ apache2-mpm-prefork
 ssl-cert
 libapache2-mod-php5
 libapache2-modsecurity
+libapache2-mod-evasive
 #libapache2-mod-security2 #on jessie/sid only
 mysql-server
 php5-mysql
