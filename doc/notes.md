@@ -87,5 +87,7 @@ Ces outils ne sont pas installés par défaut. Ils peuve néanmoins se révéler
  * [aide](http://packages.debian.org/wheezy/aide) - Système de détection d'intrusion avancé - binaire statique ([Site Officiel](http://aide.sourceforge.net))
  * [pagekite](http://packages.debian.org/wheezy/pagekite) - Make localhost servers publicly visible. ([Site Officiel](https://pagekite.net/))
  * [logtop](http://packages.debian.org/wheezy/logtop) - real time log line rate analyzer ([Site Officiel](http://github.com/JulienPalard/logtop))
+ * [shadowsocks](http://packages.debian.org/wheezy/shadowsocks) - Fast tunnel proxy that helps you bypass firewalls ([Site Officiel](https://github.com/clowwindy/shadowsocks))
+
 
 
