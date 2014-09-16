@@ -59,8 +59,47 @@ MiniDLNA est un serveur multimedia. Il sert des fichiers multimedia (musique, im
 
 
 ### Partage de fichiers Windows Samba
-| 📖 |    Not yet implemented       |
+| 📖 |    DEVELOPMENT       |
 |---------|---------|
+
+http://xmodulo.com/2014/08/samba-file-server-windows-clients.html
+@todo add a menu entry to start/stop samba server
+@todo add a menu entry to add/delete samba users
+@todo add a menu entry to config for each user
+
+#### Menu
+
+```
+   [1] List samba users
+   [2] Add samba user
+   [3] Delete samba user
+   [4] Change password for a samba user
+      [ ] Enter the name of the user you want to change the password for (prompt+check+smbpasswd)
+   [5] Set file access permissions for a samba user
+      [ ] Enter the name of the user (prompt+check)
+        [ ] Directories with read-only access (edit /etc/nodezero/samba/username-ro.conf)
+        [ ] Directories with read+write access (edit /etc/nodezero/samba/username-rw.conf)
+
+```
+
+
+```
+#### /etc/nodezero/samba/username-ro.txt
+## Enter a list of directories which $user will be able to read (only), including subdirectories
+## One directory path on each line
+/media/STORAGE/Programs
+/media/STORAGE/Music
+```
+
+```
+#### /etc/nodezero/samba/username-rw.txt
+## Enter a list of directories which $user will be able to read and write to including subdirectories
+## One directory path on each line
+/media/STORAGE/Downloads
+/media/STORAGE/Torrents
+```
+@todo ACLs: make sure the acl mount flag is enabled, when changing ro/rw directories list: make a copy of the original file, diff to the new, if it has changed remove ACLs for this user for all directories on old file, apply read only ACLs for dirs in ro.txt, rw ACLs for dirs in rw.txt
+
 
 
 ### Serveur OpenVPN
