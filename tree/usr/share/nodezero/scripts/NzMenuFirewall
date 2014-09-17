@@ -1,0 +1,9 @@
+#!/bin/bash
+
+_NzGetLANSubnet() { #Get the current LAN IP and subnet
+	ip addr show ${nz_net_iface} | egrep "inet " | awk -F" " '{print $2}'
+}
+
+_NzAllowFromLAN() { #Allow a port to be accessed from the LAN. Usage: _NzAllowFromLAN 135,139,445 tcp
+	ufw allow from $(_NzGetLANSubnet) to any port "$1" proto "$2"
+}
