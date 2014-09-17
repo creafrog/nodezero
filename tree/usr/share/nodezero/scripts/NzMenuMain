@@ -23,15 +23,14 @@ _NzMenuMain() {
          echo "3 - Backup menu"
          echo "4 - System maintenance and troubleshooting Menu"
          echo "5 - Edit main configuration file"
-         echo "6 - Prosody instant messaging server configuration"
-         echo "7 - Transmission-daemon bittorrent client/seedbox configuration"
-         echo "7 - Other services configuration"
-         echo "8 - Power off"
-         echo "9 - Reboot"
+         echo "6 - Services configuration"
+         echo "7 - Power off"
+         echo "8 - Reboot"
          echo ""
          echo "0 - Exit program"
          echo ""
-         echo -n "Enter Selection:"
+         echo -n "Enter Selection: "
+
          read selection
          echo ""
          case $selection in
@@ -40,10 +39,9 @@ _NzMenuMain() {
              3 ) source ${NZ_PATH}/scripts/NzMenuBackup; _NzMenuBackup;; #OK
              4 ) _NzMenuTroubleshooting;; #OK
              5 ) _NzEditConfig;;
-             6 ) _NzMenuProsody;; #OK
-             7 ) _NzMenuServices;; #OK
-             8 ) _NzPoweroff;; #TODO in common.sh
-             9 ) _NzReboot;; #TODO in common.sh
+             6 ) source ${NZ_PATH}/scripts/NzMenuServices; _NzMenuServices;;
+             7 ) source ${NZ_PATH}/scripts/NzMenuTroubleshooting; _NzPoweroff;;
+             8 ) source ${NZ_PATH}/scripts/NzMenuTroubleshooting; _NzReboot;;
              0 ) return 0;;
              * ) echo "Please enter a valid number"
          esac
