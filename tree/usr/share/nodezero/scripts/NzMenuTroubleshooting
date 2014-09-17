@@ -12,8 +12,9 @@ _NzFixPermissions() { #Fix permissions for transmission/apache files
 }
 
 _NzClearCaches() { #Clear dokuwiki and php-apc caches
-rm -r $APACHE_DOCUMENTROOT/dokuwiki/data/cache/*
-service apache2 restart #clear php-apc cache, so subtle
+	rm -r $APACHE_DOCUMENTROOT/dokuwiki/data/cache/*
+	service apache2 restart #clear php-apc cache, so subtle
+	#TODO: remove more caches (minigal, shaarli, owncloud deleted files...)
 }
 
 
@@ -47,8 +48,8 @@ _NzRegenCertificates() { #Regenerate TLS certificates for apache and prosody
 _NzReboot() { #Reboot
     read -p "Are you sure? This will reboot the machine [y/N]: " confirmation
     if [ "$confirmation" != "y" ]
-        then echo "Power off cancelled."
-        else poweroff
+        then echo "Reboot cancelled."
+        else reboot
     fi
 }
 
