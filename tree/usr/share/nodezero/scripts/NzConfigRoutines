@@ -1,5 +1,7 @@
 #!/bin/bash
-#Common config routines for nodezero
+#Description: Common config routines for nodezero (https://telecom.dmz.se/software/nodezero)
+#Copyright (c) 2014 nodiscc
+#License: MIT (http://opensource.org/licenses/MIT)
 
 
 _NzCheckRoot() { #Check if we are root
@@ -62,4 +64,8 @@ _NzSymlinkWebappDataDirs() { #Create symlinks to zenphoto and Dokuwiki data dirs
 
 _NzUserGetName() { #Get system's main user name (assume it was the first user created)
 	NZ_USER=$(getent passwd|grep 1000:1000|awk -F":" '{print $1}')
+}
+
+_NzGetLANSubnet() { #Get the current LAN IP and subnet
+	ip addr show ${nz_net_iface} | egrep "inet " | awk -F" " '{print $2}'
 }

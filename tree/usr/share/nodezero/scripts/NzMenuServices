@@ -1,52 +1,127 @@
 #!/bin/bash
-#Services Menu
+#Description: Services Menu for nodezero (https://telecom.dmz.se/software/nodezero)
+#Copyright (c) 2014 nodiscc
+#License: MIT (http://opensource.org/licenses/MIT)
+
 source /etc/nodezero/nodezero.conf
 set -e
 
-selection=
-until [ "$selection" = "0" ]; do
-echo "
-################################### SERVICES ###
-Apache2 Web Server:			
- [1][$APACHE2_ST_LED] $APACHE2_ST
- [2][$UFW_HTTP_INET_LED] Internet access allowed
- [3][$UFW_HTTP_LAN_LED] Only allow LAN access
+_NzMenuServices() { #Main services menu
+	source ${NZ_PATH}/scripts/NzMenuApache2; _NzServiceApacheCheck
+	source ${NZ_PATH}/scripts/NzMenuMysql; _NzServiceMysqlCheck
+	source ${NZ_PATH}/scripts/NzMenuProsody; _NzServiceProsodyCheck
+	source ${NZ_PATH}/scripts/NzMenuSSH; _NzServiceSSHCheck
+	source ${NZ_PATH}/scripts/NzMenuTransmission; _NzServiceTransmissionCheck
+	source ${NZ_PATH}/scripts/NzMenuMumble; _NzServiceMumbleCheck
+	source ${NZ_PATH}/scripts/NzMenuSamba; _NzServiceSambaCheck
 
-MYSQL database server
- [4][$MYSQLD_ST_LED] $MYSQLD_ST
+	selection=
+	until [ "$selection" = "0" ]; do
+		echo ""
+		echo "################################### SERVICES #############"
+		echo "#EDIT	#NAME			#STATUS		#ACCESS"
+		echo "$nz_menu_apache2_line"
+		echo "$nz_menu_mysql_line"
+		echo "$nz_menu_prosody_line"
+		echo "$nz_menu_ssh_line"
+		echo "$nz_menu_transmission_line"
+		echo "$nz_menu_mumble_line"
+		echo "$nz_menu_samba_line"
+		echo ""
+		echo "[Q] Exit ---- [0] Back to Main Menu"
+		echo ""
+		echo -n "Enter Selection: "
 
-Prosody Jabber/XMPP messaging server:
- [5][$XMPP_ST_LED] $XMPP_ST
- [6][$XMPP_INET_LED] Serve over the Internet
- [7][$XMPP_LAN_LED] Serve on LAN only
+		read selection
+		case $selection in
+		 1 ) _NzMenuApache2;;
+		 2 ) _NzMenuMysql;;
+		 3 ) _NzMenuProsody;;
+		 4 ) _NzMenuSSH;;
+		 5 ) _NzMenuTransmission;;
+		 6 ) _NzMenuMumble;;
+		 7 ) _NzMenuSamba;;
+		 Q ) exit 0;;
+		 0 ) return 0;;
+		 * ) echo "Please enter a valid number"
+		esac
+	done
+}
 
-OpenSSH Server:
- [8][$SSHD_ST_LED] $SSHD_ST
 
-Transmission Bittorrent client:
- [9][$SEEDBOX_ST_LED] $SEEDBOX_ST
+_NzServiceToggle() { #Start or stop a service, depending on it's status
+	if [ "$nz_service_toggle_action" = "Disable service" ]
+		then service $1 stop
+		else service $1 start
+	fi
+}
 
-Mumble VoIP server:
- [10][$MUMBLE_ST_LED] $MUMBLE_ST
 
-[S] Other services
-[B] Back to Main Menu
-[R] Reboot
-[P] Power Off
-[Q] Exit
-"
-     case $selection in
-         1 ) ;;
-         2 ) ;;
-         3 ) ;;
-         4 ) ;;
-         5 ) ;;
-         6 ) ;;
-         7 ) ;;
-         8 ) ;;
-         9 ) ;;
-         10 ) ;;
-         0 ) exit;;
-         * ) echo "Please enter a valid number"
-    esac
-done
+####### Firewall functions
+
+_NzAllowFromLAN() { #Allow a port to be accessed from the LAN. Usage: _NzAllowFromLAN 135,139,445 tcp
+	source ${NZ_PATH}/scripts/NzConfigRoutines
+	ufw allow from $(_NzGetLANSubnet) to any port "$1" proto "$2"
+}
+
+_NzFirewallDeny() { #Deny access to a port. Usage: _NzFirewallDeny 80,443 tcp
+	ufw deny $1/$2
+}
+
+_NzFirewallAllow() { #Allow all access to a port. Usage: _NzFirewallAllow 80,443 tcp
+	ufw deny $1/$2
+}
+
+
+############################################################
+### Menu mockups, TODO move this to scripts/NzMenuXxxxx
+
+
+_NzServiceSambaCheck() { #TODO
+}
+_NzMenuSamba() { #TODO
+#	## Selected service:
+#	Samba file sharing [running] [LAN Access only]
+#	 [1] Disable service
+#	 [2] Firewall: Allow access from Internet
+#	 [3] Firewall: Allow access from LAN only
+#	 [4] Firewall: Disallow all access
+#	 [5] Add/remove/manage samba users
+#	 [6] Add/manage/remove web applications
+#
+#	 [U] Uninstall service
+#	 [0] Back to main Menu
+}
+
+
+_NzServiceProsodyCheck() { #TODO
+}
+_NzMenuProsody() { #TODO
+#	## Selected service:
+#	Prosody XMPP server [stopped]	[Internet access]
+#	 [1] Disable service
+#	 [2] Firewall: Allow access from Internet
+#	 [3] Firewall: Allow access from LAN only
+#	 [4] Firewall: Disallow all access
+#	 [5] New account registration: [$PROSODY_REG_ENABLED]
+#	 [6] List user accounts
+#	 [7] Add a new account
+#	 [8] Delete an account
+#	 [9] Change an account password
+#
+#	 [U] Uninstall service
+#	 [0] Back to main Menu
+}
+
+
+_NzServiceMysqlCheck() { #TODO
+}
+
+_NzServiceSSHCheck() { #TODO
+}
+
+_NzServiceTransmissionCheck() { #TODO
+}
+
+_NzServiceMumbleCheck() { #TODO
+}
