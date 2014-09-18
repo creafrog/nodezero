@@ -118,7 +118,7 @@ _NzDoPhysicalBackup() { #Sync local backups to USB drive
             _NzShowLastLocalDbBackup
             _NzShowLastRemoteDbBackup
             echo "Starting backup synchronization to external drive"; sleep 2
-            rsync -avzP $BACKUP_LOCAL_STORAGE $BACKUP_MOUNTPOINT_NAME/ &&  #Sync backups to usb drive with rsync #TODO do not use rsync, use backintimedirectly
+            rsync -avzP $BACKUP_LOCAL_STORAGE $BACKUP_MOUNTPOINT_NAME/ &&  #Sync backups to usb drive with rsync #TODO do not use rsync, use backintimedirectly, TODO enable/disable local backups via a config flag. The 2 backup sets are completely separate. 
             echo "Your backup has been copied to the external drive."
         fi
     else
