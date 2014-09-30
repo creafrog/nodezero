@@ -8,6 +8,7 @@ _NzFixPermissions() { #Fix permissions for transmission/apache files
     chown debian-transmission:debian-transmission /var/log/debian-transmission.log
     chown -R debian-transmission:debian-transmission ${transmission_download_dir}
     chown -R $APACHE_USER:$APACHE_GROUP $APACHE_DOCUMENTROOT
+    chown daemon:daemon /var/log/debsecan
 }
 
 _NzClearCaches() { #Clear dokuwiki and php-apc caches

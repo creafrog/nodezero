@@ -115,6 +115,7 @@ hostname
 debconf-utils
 bridge-utils
 lm-sensors #TODO: display temperature in the client's overview dialog
+debsecan
 
 #Misc
 #logstalgia

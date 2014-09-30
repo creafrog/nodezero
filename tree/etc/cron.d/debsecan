@@ -1,0 +1,4 @@
+# cron entry for debsecan
+#MAILTO=root
+
+8 02 * * 0 daemon test -x /usr/bin/debsecan && /usr/bin/debsecan | grep "high urgency" >| /var/log/debsecan.log
