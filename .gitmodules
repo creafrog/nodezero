@@ -85,3 +85,6 @@
 [submodule "tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss-tumblr"]
 	path = tree/usr/share/nodezero/additions/tt-rss/plugins/tt-rss-tumblr
 	url = https://github.com/epyonavenger/tt-rss-tumblr
+[submodule "tree/usr/share/logwatch-modsec2"]
+	path = tree/usr/share/logwatch-modsec2
+	url = https://github.com/derhansen/logwatch-modsec2
