@@ -31,6 +31,8 @@ Owncloud est un projet de gestion de vos données sur internet. Ses fonctionnali
   * [Syncthing](http://syncthing.net/) - Syncthing replaces proprietary sync and cloud services with something open, trustworthy and decentralized.
   * [Git Annex](http://git-annex.branchable.com/assistant/quickstart/) - Synchronisation de fichiers entre ordinateurs, disques externes, serveurs...
   * [Seafile](http://seafile.com/en/home/) - File Syncing and Collaboration for Teams
+  * [SparkleShare](http://sparkleshare.org/) - Self hosted, instant, secure file sync
+  * Alternatives propriétaires: BTsync, Dropbox, Google Drive, SpiderOak, Box.net, SkyDrive...
 
 ####Gestion de fichiers texte/documents
   * [Jotter](https://github.com/yosko/jotter) - Jotter is a lightweight, no database, powerful web notebook that lets you create and manage notes online safely, quickly & easily. ([Demo](http://tools.yosko.net/demos/jotter/) - login/pass: demo/demo)

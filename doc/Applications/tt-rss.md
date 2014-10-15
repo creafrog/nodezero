@@ -18,7 +18,6 @@ Tiny Tiny RSS est un lecteur de flux [RSS](https://fr.wikipedia.org/wiki/RSS)/[A
 
 
 ![](images/tt-rss.png)
-
 ![](images/tt-rss-mobile.png)
 ![](images/tt-rss-mobile-2.png)
 
@@ -39,6 +38,7 @@ De plus, le RSS est simple à utiliser grâce à son format et ses spécificatio
 
 
 
+_Note: Si vous n'avez qu'un seul ordinateur, vous pouvez également utiliser un lecteur RSS de bureau (non-Web) comme [Liferea](http://lzone.de/liferea/)_
 
 
 
