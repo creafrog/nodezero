@@ -38,6 +38,7 @@ ntfs-3g
 usbmount
 
 ##MTA
+lsb-invalid-mta
 #postfix
 ##Other MTAS
 #mta
