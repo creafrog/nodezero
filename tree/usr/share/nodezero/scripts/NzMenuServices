@@ -86,11 +86,58 @@ _NzMenuSamba() { #TODO
 #	 [2] Firewall: Allow access from Internet
 #	 [3] Firewall: Allow access from LAN only
 #	 [4] Firewall: Disallow all access
-#	 [5] Add/remove/manage samba users
-#	 [6] Add/manage/remove web applications
+#	 [5] List samba users
+#	   [51] Add samba user
+#		[SUBMENU] name of new user? (twice) -> (check if it exists, if yes throw error,
+#							if no, adduser (unix) (#TODO: options?)
+#							(-s /dev/null -m -d /home/xmodulo xmodulo ??)
+#							smbpasswd -a,
+#							add following section in smb.conf:
+							## SAMBA SHARE
+							#[$username-share]
+							#path = /home/$username (?)
+							#available = yes
+							#valid users = $username
+							#read only = no
+							#browseable = yes
+							#public = yes
+							#writeable = yes
+#							run testparm
+#							display message on how to connect - smb://localip/$share-name on linux, \\$localip\$share-name on windows)
+							
+#	   [52] Remove samba user
+#	   [53] Change samba passwords
+#	    [SUBMENU] What user? (blank to cancel)
+#			New password (twice) -> smbpasswd -a username
+#	 [6] Set file access permissions
+#	   [SUBMENU] if acl fstab flag is not enabled on samba partition (@TODO add setting in nodezero.conf), throw error, return
+#          [SUBMENU] What user? (blank to cancel)
+#           [SUBMENU] Directories with read-only access (#TODO copy /etc/nodezero/samba/username-ro.conf to temp file,
+#							run editor, save, diff with previous file, if changed:
+#							for all directories in old file, remove ACLs for this user,
+#							apply read/exec ACLs for dirs in new ro.conf
+#							apply read-only ACLs for files in new ro.conf)
+#           [SUBMENU] Directories with read+write access (edit /etc/nodezero/samba/username-rw.conf
+#							same as previous method but set read/write/exec for dirs, rw for files)
 #
 #	 [U] Uninstall service
 #	 [0] Back to main Menu
+
+# FORMAT FOR PERMISSION SETTINGS
+# @TODO create these files from at templates when adding samba users. delete it when users are deleted
+#### /etc/nodezero/samba/username-ro.txt
+## Enter a list of directories which $user will be able to read (only), including subdirectories
+## One directory path on each line
+#/media/STORAGE/Programs
+#/media/STORAGE/Music
+
+#### /etc/nodezero/samba/username-rw.txt
+## Enter a list of directories which $user will be able to read and write to including subdirectories
+## One directory path on each line
+#/media/STORAGE/Downloads
+#/media/STORAGE/Torrents
+
+#TODO: quotas: http://xmodulo.com/samba-file-server-windows-clients.html
 }
 
 
