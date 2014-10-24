@@ -1,5 +1,5 @@
 ##YOURLS
-YOURLS est un ensemble de scripts PHP permettant de faire fonctionner votre propre [Raccourcisseur d'URL](https://fr.wikipedia.org/wiki/R%C3%A9duction_d%27URL) (comme bit.ly, t.co, ur1.ca ou tinyURL).Ses fonctions incluent:
+YOURLS permet de faire fonctionner votre propre [Raccourcisseur d'URL](https://fr.wikipedia.org/wiki/R%C3%A9duction_d%27URL) (comme bit.ly, t.co, ur1.ca ou tinyURL).Ses fonctions incluent:
 
   * Service public (ouvert à tous) ou privé (protégé par mot de passe)
   * Possibilité de personnaliser vos URLs courtes

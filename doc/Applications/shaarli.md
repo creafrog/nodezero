@@ -1,5 +1,5 @@
 ##Shaarli
-
+Partage/sauvegarde de liens et de marque pages.
 
   * [Site officiel](http://sebsauvage.net/wiki/doku.php?id=php:shaarli)
   * [Sources](https://github.com/sebsauvage/Shaarli)

@@ -1,5 +1,5 @@
 ##Owncloud
-
+Hébergement/partage/synchronisation de fichiers, calendriers, carnets d'adresses, édition de documents
 
 
 Owncloud est un projet de gestion de vos données sur internet. Ses fonctionnalités comprennent:

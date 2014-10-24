@@ -1,4 +1,6 @@
 ##Minigal Nano
+partage d'images, vidéos, fichiers multimédia
+
 miniBoardNano is a very simple image gallery. It adheres to the KISS principle and is very easy to install. miniBoardNano does not have a web admin interface: You just upload your images in the photo folder.
 
 | 💥 |  Les images placées dans le dossier `/var/www/images/photos/` ou `~/WebPhotos/` seront publiques!         |
