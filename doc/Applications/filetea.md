@@ -1,5 +1,5 @@
 ###Filetea
-Low friction, one-click anonymous file sharing.
+Transfert de fichier anonyme/temporaire en un clic.
 
 FileTea allows instantaneous file sharing using only a browser and standard HTTP. Users just drag-n-drop their files into a webpage and an URL is generated for each one. These URLs are then sent to recipients or just published somewhere, and allow direct download of the corresponding file.
 
