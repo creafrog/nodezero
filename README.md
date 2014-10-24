@@ -2,15 +2,15 @@
 
 Installation rapide et administration simplifiée de serveurs personnels (serveur auto-hébergé, _home server_), utilisant des alternatives [libres](https://fr.wikipedia.org/wiki/Logiciel_libre) aux services commerciaux/propriétaires sur Internet.
 
-## Aide/Documentation
- * [A propos/pourquoi/qu'est ce que c'est?](doc/notes.md)
- * [Manuel d'utilisation](doc/README.md)
+ * [A propos/pourquoi/qu'est ce que c'est?](doc/about.md)
  * [Bugs/Questions](https://telecom.dmz.se/bugs/nodezero/issues)
+ * [Notes](doc/notes.md) - general server administration and maintenance
+ * [Other tools](Othertools.md) - related/useful software
 
 ## Fonctionnalités
 ### Serveur Web
 Le logiciel libre Apache est le [serveur HTTP](https://fr.wikipedia.org/wiki/Serveur_HTTP) (serveur Web) le plus populaire du World Wide Web. [En savoir plus...](doc/apache.md)
- 
+
 
 ### Serveur de messagerie instantanée
 Prosody IM est un serveur XMPP (serveur de messagerie instantanée) simple à utiliser. Il est conçu pour être facilement extensible à l'aide de greffons, et nécessite peu de ressources. [En savoir plus...](doc/prosody.md)
@@ -23,7 +23,7 @@ SSH (_Secure Shell_) est un programme qui permet de se connecter à une machine 
 
 ### Console d'administration
 La console d'administration est un système de menus facilitant les tâches courantes sur le serveur. [En savoir plus...](doc/nodezero-admin.md)
- 
+
  * Surveillance de l'état du serveur: Usage disque, usage des ressources (RAM, CPU, réseau...), programmes en cours, tentatives de connection, informations de sécurité.
  * Sauvegardes: sauvegarde des données du serveur, des bases de données, des fichiers des utilisateurs
  * Installation, mise à jour et suppression de logiciels, activation/désactivation et configuration des services
