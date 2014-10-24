@@ -10,24 +10,6 @@ Installation rapide et administration simplifiée de serveurs personnels (serveu
 ## Fonctionnalités
 ### Serveur Web
 Le logiciel libre Apache est le [serveur HTTP](https://fr.wikipedia.org/wiki/Serveur_HTTP) (serveur Web) le plus populaire du World Wide Web. [En savoir plus...](doc/apache.md)
-
-#### Applications web
- * **Owncloud**: hébergement/partage/synchronisation de fichiers, calendriers,carnets d'adresses, édition de documents et plus [En savoir plus....](doc/applications/owncloud.md)
- * **Shaarli**: partage/sauvegarde de liens et de marque pages. [En savoir plus...](doc/shaarli.md)
- * **MinigalNano**: partage d'images, vidéos, fichiers multimédia. [En savoir plus...](doc/minigalnano.md)
- * **Tiny Tiny RSS**: receive news aund updates using RSS feeds, [read more](doc/tt-rss.md)
- * **Converse**: a web client for the XMPP (Jabber) instant messaging network, [read more](doc/applications/converse.md)
- * **Chyrp**: un moteur de blog léger et complet [En savoir plus...](doc/chyrp.md)
- * **MapBBCodeShare**: consultation de cartes géographiques, placement, sauvegarde et partage de repères, trajets et notes sur des cartes. [En savoir plus](doc/mapbbcodeshare.md) 
- * **Alltube**: service de téléchargement audio/vidéo depuis Youtube, Dailymotion, Soundcloud, Vimeo et plus de 100 autres sites. [En savoir plus](doc/alltube.md)
- * **Wallabag**: sauvegarde de pages web, liste de lecture, amélioration de la lisibilité et lecture hors ligne. [En savoir plus](doc/wallabag.md)
- * **Contact**: une page de contact simple et personnalisable. [En savoir plus...](doc/contact.md)
- * **YOURLS**: votre propre raccourcisseur d'URLs. [En savoir plus...](doc/yourls.md)
- * **Outils pour développeurs**
-   * **Gitlist**: a modern git repository viewer. [Learn more...](doc/gitlist.md)
-   * **Bumpy-Booby**: a modern task/bug tracking system. [Learn more...](doc/bumpy-booby.md)
-   * **Markdown Edit**: un éditeur de documents en ligne utilisant le format Markdown. [En savoir plus...](doc/markdown-edit.md)
-
  
 
 ### Serveur de messagerie instantanée
