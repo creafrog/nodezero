@@ -65,11 +65,11 @@ _NzAllowFromLAN() { #Allow a port to be accessed from the LAN. Usage: _NzAllowFr
 }
 
 _NzFirewallDeny() { #Deny access to a port. Usage: _NzFirewallDeny 80,443 tcp
-	ufw deny $1/$2
+	ufw deny log $1/$2
 }
 
 _NzFirewallAllow() { #Allow all access to a port. Usage: _NzFirewallAllow 80,443 tcp
-	ufw deny $1/$2
+	ufw allow $1/$2
 }
 
 
