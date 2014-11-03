@@ -12,6 +12,7 @@
  * [Airtime](http://www.sourcefabric.org/en/airtime/) - Free open source radio/webradio automation software
  * [Bootcamp](https://github.com/vitorfs/bootcamp) - An enterprise social network - http://trybootcamp.vitorfs.com
  * [Coinpunk](https://github.com/kyledrake/coinpunk) - Self-hosted Bitcoin wallet service web interface
+ * [Dolibarr](http://www.dolibarr.org/) - Web based software to manage a small company or foundation
 
 ### Moniteurs système (web)
  * [linux-dash](https://github.com/afaqurk/linux-dash) - A drop-in, low-overhead monitoring web dashboard for a linux machine ([Demo](http://afaq.dreamhosters.com/linux-dash/))

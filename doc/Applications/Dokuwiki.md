@@ -43,20 +43,7 @@ DokuWiki est un moteur de wiki libre sous licence GNU GPL conforme aux standards
 
 
 ###Alternatives
-####CMS
-  * [Pico](http://pico.dev7studios.com/index.html#) - A stupidly simple, blazing fast, flat file CMS. ([Sources on Github](https://github.com/gilbitron/Pico))
-  * [99ko CMS](https://github.com/99ko-project/99ko-cms) - 99ko est un CMS permettant de créer un site web en quelques minutes et sans connaissances particulières en programmation. Il fonctionne sans base de données et utilise de simples fichiers texte (format JSON) pour stocker vos données.
-  * [SPIP](http://www.spip.net/fr) - SPIP est un Système de Publication pour l’Internet.
-  * [Movable Type](https://movabletype.org/)
-  * [Drupal](https://drupal.org/) - open source content management platform
-  * [Joomal!](http://www.joomla.fr/) - un système de gestion de contenu (CMS)
-  * [CMS Made Simple](http://www.cmsmadesimple.org/) - open source content management system, faster and easier management of website contents, scalable for small businesses to large corporations.
-  * [GetSimple CMS](http://get-simple.info/) - The Simplest Content Management System. Ever.
-  * [Bolt](http://bolt.cm/) - Sophisticated, lightweight & simple CMS ([Github repository](https://github.com/bolt/bolt))
-  * [Concrete 5 CMS](http://www.concrete5.org/)
 
-
-####Wiki
   * [MdWiki](https://dynalon.github.io/mdwiki/#!index.md) - a Markdown CMS/Wiki completely built in HTML5/Javascript and runs 100% on the client
   * [Olelo/Gitwiki](https://github.com/minad/olelo) - ([Demo](http://www.gitwiki.org/)) - Olelo is a wiki that stores pages in a Git repository, supports many markup styles and has an extensible, hackable architecture! Features: Edit, move or delete pages; Page attribute editor; Support for hierarchical wikis (directory structure); File upload; History, commit and diff view; Locales (Czech, English, French, German); Support for many markup languages (Creole, Markdown, Textile, ...); RSS/Atom changelog for whole wiki or pages; Section editing for Creole; Embedded LaTeX formulas; Syntax highlighting; Image resizing, SVG to PNG/JPEG conversion; Auto-generated table of contents; Previews; View pages as S5 presentation; Privacy features: Access control lists, Private wiki, Read-only wiki.
   * [Gitit](https://github.com/jgm/gitit) - A wiki program that stores pages and uploaded files in a git repository, which can then be modified using the VCS command line tools or the wiki's web interface. Supported markups include pandoc's extended version of markdown, reStructuredText, LaTeX, and HTML. Pages can be exported in a number of different formats, including LaTeX, RTF, OpenOffice ODT, and MediaWiki markup. Other features include: plugins, syntax highlighting, caching, ATOM feeds...
@@ -70,9 +57,7 @@ DokuWiki est un moteur de wiki libre sous licence GNU GPL conforme aux standards
   * [Realms](https://github.com/scragg0x/realms-wiki) - a git-backed wiki inspired by Gollum
 
  
-####Static sites generators
-* [Static Site Generators](http://staticsitegenerators.net/) - The definitive listing of Static Site Generators 
-* [Staticgen](http://staticgen.com/) - Dynamic list of top-trending static site generators
+
 
 
 
