@@ -1,0 +1,4 @@
+[Prosody]
+title=Prosody XMPP Instant Messaging server
+description=Chat using the XMPP network protocol
+ports=5222,5269/tcp

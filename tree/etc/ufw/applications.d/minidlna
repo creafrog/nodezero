@@ -1,0 +1,4 @@
+[MiniDLNA]
+title=MiniDLNA uPnP media server
+description=Share media files over your local network
+ports=1900/udp|8200/tcp

@@ -1,0 +1,4 @@
+[Apache-HTTPS]
+title=Apache webserver (HTTPS)
+description=Serve web pages and applications (secure connections only)
+ports=443/tcp

@@ -1,0 +1,4 @@
+[SSH-823]
+title=OpenSSH secure shell server - port 823
+description=Control the server and access your files remotely
+ports=823/tcp
