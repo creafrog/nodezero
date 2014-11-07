@@ -16,7 +16,7 @@ Owncloud est un projet de gestion de vos données sur internet. Ses fonctionnali
   * [Documentation Ubuntu-fr](http://doc.ubuntu-fr.org/owncloud)
   * [Features | ownCloud.org](http://owncloud.org/features/)
 
-[![](../images/thumbs/owncloud-mobile._thumb.png)](../images/owncloud-mobile.png)
+![](_media/owncloud-mobile.png)
 
 ###Applications/modules
   * Storage charts - http://apps.owncloud.com/content/show.php?content=150004

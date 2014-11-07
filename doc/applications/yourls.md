@@ -8,10 +8,10 @@ YOURLS permet de faire fonctionner votre propre [Raccourcisseur d'URL](https://f
   * Interface simple et efficace
   * API, plugins, support jsonp...
 
-**Insert Screenshots here**
-
   * [Site Officiel](http://yourls.org/)
   * [Documentation](https://github.com/YOURLS/YOURLS/wiki)
+
+![](_media/yourls-admin-dashboard.gif) ![](_media/yourls-all-websites.png) ![]( _media/yourls-stats-anim.gif)
 
 ### Notes
  * Si vous perdez votre mot de passe, vous pourrez le modifier via [SSH](SSH.md) en modifiant le fichier `/var/www/yourls/user/config.php`, et plus particulièrement la valeur `$yourls_user_passwords` comme ceci:

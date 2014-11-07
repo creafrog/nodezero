@@ -6,8 +6,6 @@ An extra lightweight and extra awesome blogging engine
   * Traductions: https://www.transifex.com/projects/p/chyrp/
 
 
-**Insert screenshots here**
-
 ###Configuration Avancée
   * La manière la plus simple d'éditer la configuration du blog est de se rendre dans la zone **Admin** du blog.
   * Le fichier de configuration principal de chyrp est `/var/www/chyrp/includes/config.yaml.php`. Il contient les réglages tels que le nom du blog, les paramètres de la base de données, te thème, les modules actifs... Vous pouvez éventuellement éditer les réglages du blog depuis ce fichier.

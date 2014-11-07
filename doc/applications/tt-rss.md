@@ -16,9 +16,9 @@ Tiny Tiny RSS est un lecteur de flux [RSS](https://fr.wikipedia.org/wiki/RSS)/[A
   * [Framanews](http://framanews.org/) - Instance publique gratuite de Tiny Tiny RSS
 
 
-![](images/tt-rss.png)
-![](images/tt-rss-mobile.png)
-![](images/tt-rss-mobile-2.png)
+![](_media/tt-rss.png)
+![](_media/tt-rss-mobile.png)
+![](_media/tt-rss-mobile-2.png)
 
 
 
@@ -56,7 +56,7 @@ Il est possible de partager des liens sur différents réseaux (facebook, twitte
  * Quelques plugins permettant de partager des articles sont disponibles dans la page `Préférences` de tt-rss, sous le menu `Plugins`.
 Par exemple, si vous activez le plugin `twitter`, il sera possible de cliquer sur le bouton twitter dans chaque article pour le partager sur Twitter.
  * D'autres plugins intéressants sont disponibles sur http://tt-rss.org/redmine/projects/tt-rss/wiki/Plugins
- * Vous pouvez aussi vous rendre dans le flux spécial `Articles publiés` de votre installation Tiny Tiny RSS (qui regroupe tous les articles pour lesquels vous avez cliqué sur l'icône `Publier` puis sur l'icône ![](../images/rss.svg) en haut à droite (sous le menu `Actions...`), puis effectuer une action à parit de ce flux avec le service [IFTTT](https://ifttt.com). Voir [IFTTT : automatiser des tâches courantes sur le web](http://www.commentcamarche.net/faq/34648-ifttt-automatiser-des-taches-courantes-sur-le-web)
+ * Vous pouvez aussi vous rendre dans le flux spécial `Articles publiés` de votre installation Tiny Tiny RSS (qui regroupe tous les articles pour lesquels vous avez cliqué sur l'icône `Publier` puis sur l'icône ![](_media/rss.svg) en haut à droite (sous le menu `Actions...`), puis effectuer une action à parit de ce flux avec le service [IFTTT](https://ifttt.com). Voir [IFTTT : automatiser des tâches courantes sur le web](http://www.commentcamarche.net/faq/34648-ifttt-automatiser-des-taches-courantes-sur-le-web)
 
 
 ## Alternatives

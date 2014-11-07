@@ -5,7 +5,7 @@ DokuWiki est un moteur de wiki libre sous licence GNU GPL conforme aux standards
   * [Dokuwiki: trucs & astuces](Dokuwiki.md)
 
 
-![](images/screenshots/dokuwiki-mobile.png)
+![](_media/dokuwiki-mobile.png)
 
 ###Plugins Installés
   * Editx https://www.dokuwiki.org/plugin:editx

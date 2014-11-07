@@ -1,9 +1,8 @@
-# Converse
-Converse.js is a web based [XMPP/Jabber](http://xmpp.org) instant messaging client. It enables you to add chat functionality to your website
+# Contact
+A simple and customizable contact page. It includes the _Converse.js_ chat client
 
-## Features
-
-It has the following features:
+## COnverse.js
+Converse.js is a web based [XMPP/Jabber](http://xmpp.org) instant messaging client. It enables you to add chat functionality to your website. It has the following features:
 
   *  Single-user chat
   *  Multi-user chat in chatrooms
