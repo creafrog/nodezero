@@ -1,6 +1,0 @@
-AppName="FileTea"
-AppUrl="none"
-AppType="package"
-AppDescription="Anonymous, temporary file sharing service"
-AppPostInstallCommand="aptitude install filetea"
-AppWwwDir="filetea"

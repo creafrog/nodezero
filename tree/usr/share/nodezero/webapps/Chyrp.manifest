@@ -1,7 +1,0 @@
-AppName="Chyrp"
-AppUrl="https://github.com/chyrp/chyrp/"
-AppTag="v2.5.0"
-AppType="git"
-AppDescription="lightweight blog engine"
-AppPostInstallCommand=""
-AppWwwDir="blog"

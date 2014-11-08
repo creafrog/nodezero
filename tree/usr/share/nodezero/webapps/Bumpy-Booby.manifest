@@ -1,7 +1,0 @@
-AppName="Bumpy-Booby"
-AppUrl="https://github.com/piero-la-lune/Bumpy-Booby"
-AppTag="master"
-AppType="git"
-AppDescription="bug tracking system"
-AppPostInstallCommand=""
-AppWwwDir="bugs"

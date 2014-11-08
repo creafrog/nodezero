@@ -1,7 +1,0 @@
-AppName="RSS-Bridge"
-AppUrl="http://git.hoa.ro/arthur/rss-bridge-portal.git"
-AppTag="v1.0.1"
-AppType="git"
-AppDescription="RSS feed creator for popular services"
-AppPostInstallCommand=""
-AppWwwDir="rss-bridge"

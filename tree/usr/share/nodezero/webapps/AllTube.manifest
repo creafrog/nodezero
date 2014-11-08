@@ -1,7 +1,0 @@
-AppName="AllTube"
-AppUrl="https://github.com/Rudloff/alltube"
-AppTag="master"
-AppType="git"
-AppDescription="download video/music from hosting sites"
-AppPostInstallCommand="cp $NZ_PATH/additions/alltube/config.php $APACHE_DOCUMENTROOT/alltube/config.php"
-AppWwwDir="images"

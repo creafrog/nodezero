@@ -1,7 +1,0 @@
-AppName="Dokuwiki"
-AppUrl="https://github.com/splitbrain/dokuwiki"
-AppTag="release_stable_2013-12-08"
-AppType="git"
-AppDescription="wiki engine"
-AppPostInstallCommand=""
-AppWwwDir="wiki"

@@ -1,3 +1,0 @@
-#TODO: integrate this in the contact page
-#TODO: the sed/replace part can be removed, hardcode the config, and have the contactpage installer replace the boshurl
-#TODO: if boshurl is not reachable (does not return 200), omit the chat client

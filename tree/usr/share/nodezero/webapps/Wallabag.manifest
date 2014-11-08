@@ -1,7 +1,0 @@
-AppName="Wallabag"
-AppUrl="https://github.com/wallabag/wallabag"
-AppTag="1.6.1b"
-AppType="git"
-AppDescription="read-it-later application"
-AppPostInstallCommand=""
-AppWwwDir="wallabag"

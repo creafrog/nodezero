@@ -1,7 +1,0 @@
-AppName="MapBBCode"
-AppUrl="https://github.com/MapBBCode/share.mapbbcode.org"
-AppTag="master"
-AppType="git"
-AppDescription="map edition, sharing and conversion"
-AppPostInstallCommand=""
-AppWwwDir="maps"
