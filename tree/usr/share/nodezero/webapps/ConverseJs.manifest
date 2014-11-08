@@ -1,32 +1,3 @@
-#!/bin/bash
-set -e
-
-AppName="Converse.js"
-AppUrl="https://github.com/jcbrand/converse.js"
-AppTag="v0.7.4"
-AppType="git"
-AppDescription="XMPP webchat client"
-
-AppWwwDir="chat"
-
-AppReleasesFeed="https://github.com/jcbrand/converse.js/releases.atom"
-
-###############################################################################
-#Install/upgrade management
-
-
-_AppPostUpdate() { #Run after install/upgrade
-indexhtml="$APACHE_DOCUMENTROOT/$AppWwwDir/index.html"
-
-#Change config values
-orig_boshurl="            bosh_service_url: .*"
-new_boshurl="            bosh_service_url: '${APACHE_PROTO}://$NZ_FQDN/bosh/http_bind',"
-orig_locale="        i18n: locales\['en'\]"
-new_locale="        i18n: locales\['fr'\]"
-end_options="        });"
-add_options="        message_carbons: true,\n        roster_groups: true,\n        });"
-
-sed -i "s|$orig_boshurl|$new_boshurl|g" "$indexhtml"
-sed -i "s|$orig_locale|$new_locale|g" "$indexhtml"
-sed -i "s|$end_options|$add_options|g" "$indexhtml"
-}
+#TODO: integrate this in the contact page
+#TODO: the sed/replace part can be removed, hardcode the config, and have the contactpage installer replace the boshurl
+#TODO: if boshurl is not reachable (does not return 200), omit the chat client
