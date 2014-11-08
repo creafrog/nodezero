@@ -7,8 +7,12 @@ set -e
 _NzFixPermissions() { #Fix permissions for transmission/apache files
     chown debian-transmission:debian-transmission /var/log/debian-transmission.log
     chown -R debian-transmission:debian-transmission ${transmission_download_dir}
-    chown -R $APACHE_USER:$APACHE_GROUP $APACHE_DOCUMENTROOT
     chown daemon:daemon /var/log/debsecan
+    chown -R "$NZ_USER":"$APACHE_GROUP" "$APACHE_DOCUMENTROOT"
+    find "$APACHE_DOCUMENTROOT" -type d -print0 | xargs -0 chmod 750
+    find "$APACHE_DOCUMENTROOT" -type f -print0 | xargs -0 chmod 640
+    chmod -R g+w /var/www/links/{data,pagecache,cache,tmp}/ /var/www/bugs/{.htaccess,database}
+    chmod 600 /etc/ssl/private/ssl-cert-snakeoil.key
 }
 
 _NzClearCaches() { #Clear dokuwiki and php-apc caches
