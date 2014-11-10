@@ -2,6 +2,10 @@
 #Description: Common config routines for nodezero (https://telecom.dmz.se/software/nodezero)
 #Copyright (c) 2014 nodiscc
 #License: MIT (http://opensource.org/licenses/MIT)
+# ░░░░░█▀█
+# ░░░░░█░█
+# ░▀▀▀░▀▀▀
+
 
 
 _NzCheckRoot() { #Check if we are root
@@ -11,6 +15,12 @@ if [[ "$(/usr/bin/whoami)" != "root" ]]; then
 fi
 }
 
+
+_ArrayContainsElement () { #thanks https://stackoverflow.com/questions/3685970/
+  local e
+  for e in "${@:2}"; do [[ "$e" == "$1" ]] && return 0; done
+  return 1
+}
 
 _NzListFunctions() { #List all available Nodezero shell scripts
 grep -roh "^_.*()" $NZ_PATH/scripts/
@@ -27,6 +37,7 @@ _NzEditConfig() { #Edit and reload main nodezero config file
 _NzReloadConfig() { #Main config reload routine
 	_NzConfigUpdateFqdn
 	_NzRegenContactPage
+	_NzRegenHomePage
 }
 
 _NzConfigUpdateFqdn() {
@@ -50,12 +61,50 @@ _NzRegenContactPage() { #Generate web server contact page
 	if [ ! -z "$NZ_PUBLIC_SKYPE" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Skype\" href=\"$NZ_PUBLIC_SKYPE\"><i class=\"icon-skype\"></i></a>"; fi
 	if [ ! -z "$NZ_PUBLIC_BTC" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Bitcoin\" href=\"$NZ_PUBLIC_BTC\"><i class=\"icon-bitcoin\"></i></a>"; fi
 	if [ ! -z "$NZ_PUBLIC_MISC" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Misc\" href=\"$NZ_PUBLIC_MISC\"><i class=\"icon-blank\"></i></a>"; fi
-	#TODO: create webpage by concatenating HTML header + $ContactAddresses + footer, then write it to contact/index.html
 	HtmlHeader=$(cat $NZ_PATH/contact/header.html)
 	HtmlFooter=$(cat $NZ_PATH/contact/footer.html)
 	echo -e "$HtmlHeader" "$ContactAddresses" "$HtmlFooter" >| "$APACHE_DOCUMENTROOT/contact/index.html"
-	_NzSetWwwPermissions
+	_NzSetWwwPermissions #TODO check and use new permissions fix
 }
+
+_NzRegenHomePage() { #Generate the homepage
+	# print html header
+	cat "$NZ_PATH/homepage/header.html" | sed "s/nz_replace_host/$NZ_FQDN/g" >| "$APACHE_DOCUMENTROOT/index.html"
+
+	# Print web server title
+	pretty_fqdn=$("$NZ_FQDN" | sed "s/\./\.\<br\/\>/g")
+	cat "$NZ_PATH/homepage/servername.html" | sed "s/nz_replace_host/$pretty_fqdn/g" >> "$APACHE_DOCUMENTROOT/index.html"
+
+	########### Print HTTPS box TODO: use javascript
+	# <!-- Box to switch to HTTPS -->
+	# <a class="title" href="https://<?php echo $_SERVER['HTTP_HOST'] ?>" style="background-image:url(img/secure.png); background-color:#000">
+	# <div class="app">
+	# <h1>HTTPS</h1>
+	# <p>Connection sécurisée au site</p>
+	# </div>
+	# </a>
+
+
+	for manifest in $(find "$NZ_PATH/webapps/" -name "*.manifest" -type f | xargs readlink -f);
+	do
+		source "$manifest"
+		# for each installed web app, if it is not in the nz_webapp_notshow config array
+		if [ -d $APACHE_DOCUMENTROOT/$webappdir && ! $(_ArrayContainsElement "$appname" "${nz_webapp_notshow[@]}") ]
+			# print it's html box
+			then cat $NZ_PATH/webapps/$appname.index.html >> "$APACHE_DOCUMENTROOT/index.html"
+		fi
+	done
+
+
+	# print footer
+	cat "$NZ_PATH/homepage/footer.html" | sed "s/nz_replace_host/$NZ_FQDN/g" >> "$APACHE_DOCUMENTROOT/index.html"
+
+}
+
+
+
+
+
 
 _NzSymlinkWebappDataDirs() { #Create symlinks to zenphoto and Dokuwiki data dirs in the main user's (UID 1000) home directory
 	echo "Not yet implemented." #TODO: Not called from anywhere, add this to a menu
