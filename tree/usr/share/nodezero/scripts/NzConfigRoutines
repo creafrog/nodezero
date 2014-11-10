@@ -104,9 +104,9 @@ _NzRegenHomePage() { #Generate the homepage
 	do
 		source "$manifest"
 		# for each installed web app, if it is not in the nz_webapp_notshow config array
-		if [ -d $APACHE_DOCUMENTROOT/$webappdir && ! $(_ArrayContainsElement "$appname" "${nz_webapp_notshow[@]}") ]
+		if [ -d $APACHE_DOCUMENTROOT/$AppWwwDir && ! $(_ArrayContainsElement "$AppName" "${nz_webapp_notshow[@]}") ]
 			# print it's html box
-			then cat $NZ_PATH/webapps/$appname.index.html >> "$APACHE_DOCUMENTROOT/index.html"
+			then cat $NZ_PATH/webapps/$AppName.index.html >> "$APACHE_DOCUMENTROOT/index.html"
 		fi
 	done
 
