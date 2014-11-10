@@ -25,12 +25,3 @@ set -o nounset
 # fi
 
 # }
-
-_NzInstallWebapp() { #Install a web application
-	AppToInstall="$1"
-	"$NZ_PATH/webapps/$AppToInstall.sh" install
-
-	_NzRegenHomepage
-	#_NzFixPermissions TODO re-enable when it's verified
-}
-

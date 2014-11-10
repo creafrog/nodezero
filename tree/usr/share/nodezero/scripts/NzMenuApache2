@@ -3,7 +3,7 @@
 #Copyright (c) 2014 nodiscc
 #License: MIT (http://opensource.org/licenses/MIT)
 
-_NzMenuApache2() { #TODO
+_NzMenuApache2() { #Main apache2 menu
 	source ${NZ_PATH}/scripts/NzMenuServices
 
 	selection=
@@ -23,7 +23,7 @@ _NzMenuApache2() { #TODO
 	
 			read selection
 			case $selection in
-		 		I ) #TODO;;
+		 		I ) false;; #TODO
 				0 ) return 0;;
 				* ) echo "Please enter a valid number"
 			esac
@@ -38,8 +38,11 @@ _NzMenuApache2() { #TODO
 			echo " [3] Firewall: Allow access from LAN only"
 			echo " [4] Firewall: Disallow all access"
 			echo " [5] Edit password protected directories"
-			echo " [6] Add/manage/remove web applications"
-			echo " [7] Regenerate homepage"
+			echo " [6] List available web applications"
+			echo " [7] List installed web applications"
+			echo " [8] Install Web application"
+			echo " [9] Remove Web application"
+			echo " [10] Regenerate homepage"
 			echo ""
 			echo " [U] Uninstall service"
 			echo " [0] Back to main Menu"
@@ -49,13 +52,16 @@ _NzMenuApache2() { #TODO
 			read selection
 			case $selection in
 	 		1 ) _NzServiceToggle apache2;;
-			2 ) _NzFirewallAllow 80,443 tcp;;
+			2 ) _NzFirewallAllow 80,443 tcp;; #TODO use ufw application rulesets
 			3 ) _NzFirewallDeny 80,443 tcp;_NzAllowFromLAN 80,443 tcp;;
 			4 ) _NzFirewallDeny 80,443 tcp;;
-			5 ) #TODO;;
-			6 ) #TODO;;
-			7 ) _NzRegenHomepage;;
-			U ) #TODO;;
+			5 ) false ;; #TODO
+			6 ) false ;; #TODO
+			7 ) false ;; #TODO
+			8 ) _NzInstallWebappPrompt;; 
+			9 ) source "$NZ_PATH/scripts/NzConfigRoutines"; _NzRegenHomepage;;
+			10 ) source "$NZ_PATH/scripts/NzConfigRoutines"; _NzRegenHomepage;;
+			U ) false ;; #TODO
 			0 ) return 0;;
 			* ) echo "Please enter a valid number"
 			esac
@@ -97,4 +103,20 @@ _NzServiceApacheCheck() { #Checks for apache2 status and network access
 		nz_menu_apache2_line=" [1]	Apache web server	[$nz_apache2_status]	[$nz_apache2_firewall]"
 		nz_apache2_installed="yes"
 	fi
+}
+
+
+
+
+_NzInstallWebappPrompt() { #Prompt user for app name to install
+	read -p "Install what app? " apptoinstall
+	_NzInstallWebApp "$apptoinstall"
+}
+
+_NzInstallWebapp() { #Install a web application
+	AppToInstall="$1"
+	"$NZ_PATH/webapps/$AppToInstall.sh" install
+
+	_NzRegenHomepage
+	#_NzFixPermissions TODO re-enable when it's verified
 }
