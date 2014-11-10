@@ -39,6 +39,7 @@ _NzMenuApache2() { #TODO
 			echo " [4] Firewall: Disallow all access"
 			echo " [5] Edit password protected directories"
 			echo " [6] Add/manage/remove web applications"
+			echo " [7] Regenerate homepage"
 			echo ""
 			echo " [U] Uninstall service"
 			echo " [0] Back to main Menu"
@@ -53,6 +54,7 @@ _NzMenuApache2() { #TODO
 			4 ) _NzFirewallDeny 80,443 tcp;;
 			5 ) #TODO;;
 			6 ) #TODO;;
+			7 ) _NzRegenHomepage;;
 			U ) #TODO;;
 			0 ) return 0;;
 			* ) echo "Please enter a valid number"
