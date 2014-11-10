@@ -34,7 +34,7 @@ _NzMenuApt() {
          echo ""
          case $selection in
              1 ) _NzClearCaches;; #OK
-             2 ) _NzFixPermissions;; #OK
+             2 ) source "${NZ_PATH}/scripts/NzConfigRoutines"; _NzFixPermissions;; #OK
              3 ) _NzClearApcCache;;
              4 ) _NzEditVarwwwSshKeys;;
              5 ) _NzCleanupStaleFiles;;

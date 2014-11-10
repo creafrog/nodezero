@@ -60,7 +60,7 @@ _NzServiceToggle() { #Start or stop a service, depending on it's status
 ####### Firewall functions
 
 _NzAllowFromLAN() { #Allow a port to be accessed from the LAN. Usage: _NzAllowFromLAN 135,139,445 tcp
-	source ${NZ_PATH}/scripts/NzConfigRoutines
+	source "${NZ_PATH}/scripts/NzConfigRoutines"
 	ufw allow from $(_NzGetLANSubnet) to any port "$1" proto "$2"
 }
 

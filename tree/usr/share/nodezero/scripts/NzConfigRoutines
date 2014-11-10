@@ -38,11 +38,24 @@ _NzReloadConfig() { #Main config reload routine
 	_NzConfigUpdateFqdn
 	_NzRegenContactPage
 	_NzRegenHomePage
+	_NzFixPermissions
 }
 
 _NzConfigUpdateFqdn() {
 	echo "$NZ_FQDN" >| /etc/hostname
 	hostname "$NZ_FQDN"
+}
+
+
+_NzFixPermissions() { #Fix permissions for transmission/apache files
+    chown debian-transmission:debian-transmission /var/log/debian-transmission.log
+    chown -R debian-transmission:debian-transmission ${transmission_download_dir}
+    chown daemon:daemon /var/log/debsecan
+    chown -R "$NZ_USER":"$APACHE_GROUP" "$APACHE_DOCUMENTROOT"
+    find "$APACHE_DOCUMENTROOT" -type d -print0 | xargs -0 chmod 750
+    find "$APACHE_DOCUMENTROOT" -type f -print0 | xargs -0 chmod 640
+    chmod -R g+w /var/www/links/{data,pagecache,cache,tmp}/ /var/www/bugs/{.htaccess,database}
+    chmod 600 /etc/ssl/private/ssl-cert-snakeoil.key
 }
 
 _NzRegenContactPage() { #Generate web server contact page
@@ -64,7 +77,7 @@ _NzRegenContactPage() { #Generate web server contact page
 	HtmlHeader=$(cat $NZ_PATH/contact/header.html)
 	HtmlFooter=$(cat $NZ_PATH/contact/footer.html)
 	echo -e "$HtmlHeader" "$ContactAddresses" "$HtmlFooter" >| "$APACHE_DOCUMENTROOT/contact/index.html"
-	_NzSetWwwPermissions #TODO check and use new permissions fix
+	_NzFixPermissions
 }
 
 _NzRegenHomePage() { #Generate the homepage
