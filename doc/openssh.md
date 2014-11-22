@@ -4,4 +4,8 @@ SSH (_Secure Shell_) est un programme qui permet de se connecter à une machine 
 
 ![](images/nodezero-sftp.png)
 
+
+_Note: Unlike FTP, SFTP is a **secure** file transfer protocol. Transfers and authentication are encrypted over the network, menaning an attacker can not sniff your password or transferred data over the network. Secure mechanisms for FTP transfers also exist, but SFTP is remarkably easier to configure. See http://mywiki.wooledge.org/FtpMustDie_
+
  * [Explication détaillée de l'authentification par clé SSH (en)](https://we.riseup.net/debian/ssh-key-authentication)
+

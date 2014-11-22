@@ -4,4 +4,9 @@ MiniDLNA est un serveur multimedia. Il sert des fichiers multimedia (musique, im
 
 _Note: your media player may take some time to scan the media server if you have a lot of shared files_
 
+_Note: If you add new files to your media directory, you will need to restart MiniDLNA to be able to see them. If you want MiniDLNA to rescan directories automatically, uncomment `inotify=yes` in the file `/etc/minidlna.conf` (this consumes more resources on your server)_
+
 _Note: Pensez à éteindre ce service lorsque vous êtes sur un réseau local public (hôtel, hotspot...)_
+
+##### Alternatives
+ * [mediatomb](https://packages.debian.org/jessie/mediatomb)

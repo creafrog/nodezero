@@ -36,10 +36,18 @@ DokuWiki est un moteur de wiki libre sous licence GNU GPL conforme aux standards
   * OpenLayersMap https://www.dokuwiki.org/plugin:openlayersmap
   * Lightbox v2 https://www.dokuwiki.org/plugin:lightboxv2
   * Flattr https://www.dokuwiki.org/plugin:flattr
+  * Vshare http://www.dokuwiki.org/plugin:vshare
   * Search Text https://www.dokuwiki.org/plugin:searchtext
     * Text Export/Render https://www.dokuwiki.org/plugin:text (requis)
   * AuthOwncloud https://www.dokuwiki.org/plugin:authowncloud
   * Bookcreator https://www.dokuwiki.org/plugin:bookcreator
+  * Bookmarkme https://www.dokuwiki.org/plugin:bookmarkme
+  * Dokubookmark https://www.dokuwiki.org/plugin:dokubookmark
+  * Cloud https://www.dokuwiki.org/plugin:cloud
+  * OSM https://www.dokuwiki.org/plugin:osm
+  * MozShot https://www.dokuwiki.org/plugin:mozshot
+  * Divalign2 https://www.dokuwiki.org/plugin:divalign2
+  * Mnml-blog template https://andreashaerter.com/projects/dokuwiki-template-mnml-blog
 
 
 ###Alternatives
