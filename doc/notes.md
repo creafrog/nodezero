@@ -22,6 +22,8 @@ Si votre installation subit une coupure de courant, votre serveur s'éteint. Il 
 ## Connection au réseau
 Préférez une connection filaire (câble Ethernet) si possible. Une connection Wifi est acceptable, mais veillez à la qualité de la réception.
 
+_Attention: Si vous utilisez une connection via un réseau sans fil, pensez à utiliser le mode de chiffrement WPA2 et une phrase de passe solide pour ce réseau. Une connection via WEP n'offre quasiment **aucune sécurité**_
+
 ## Boîtier
 Si vous n'avez pas de boîtier, vous pouvez toujours vous en fabriquer un!
 
