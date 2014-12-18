@@ -54,7 +54,9 @@ _NzFixPermissions() { #Fix permissions for transmission/apache files
     chown -R "$NZ_USER":"$APACHE_GROUP" "$APACHE_DOCUMENTROOT"
     find "$APACHE_DOCUMENTROOT" -type d -print0 | xargs -0 chmod 750
     find "$APACHE_DOCUMENTROOT" -type f -print0 | xargs -0 chmod 640
-    chmod -R g+w /var/www/links/{data,pagecache,cache,tmp}/ /var/www/bugs/{.htaccess,database}
+    chmod -R g+w /var/www/links/{data,pagecache,cache,tmp}/ \
+    	/var/www/bugs/{.htaccess,database} \
+    	/var/www/tt-rss/{cache/export/,cache/images/,feed-icons/,lock/,cache/upload/,cache/js/}
     chmod 600 /etc/ssl/private/ssl-cert-snakeoil.key
 }
 
