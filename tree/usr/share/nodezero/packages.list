@@ -117,6 +117,7 @@ debconf-utils
 bridge-utils
 lm-sensors #TODO: display temperature in the client's overview dialog
 debsecan
+#scanlogd
 
 #Misc
 #logstalgia
