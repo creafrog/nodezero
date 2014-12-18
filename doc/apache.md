@@ -10,3 +10,5 @@ Le logiciel libre Apache est le [serveur HTTP](https://fr.wikipedia.org/wiki/Ser
 ### Applications web
 
 TODO: populate this with short summaries of applications in applications/
+TODO: A screenshot, Name of the application, general description, read more link poiting to the app readme
+TODO: update upstream applications READMEs if necessary
