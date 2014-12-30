@@ -9,7 +9,7 @@ lynis -c -q
 }
 
 _NZRunDfc() {
-dfc
+dfc -p -udev,tmpfs
 }
 
 _NzRunHtop() {
