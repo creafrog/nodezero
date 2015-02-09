@@ -46,4 +46,5 @@ Enfin, quand vos mails sont chez GMail, s'il y a une panne quelconque, c'est à 
    * [Syncloud](http://syncloud.org/raspberrypi.html) - Build your own online storage on a Raspberry Pi
    * [Piratebox](http://piratebox.aod-rpg.de/dokuwiki/doku.php) - a self-contained mobile communication and file sharing device. Simply turn it on to transform any space into a free and open communications and file sharing network
    * [Personal Clouds](http://personal-clouds.org/wiki/Main_Page)
+   * [Sandstorm](https://sandstorm.io/) - an open source platform for personal servers
 
