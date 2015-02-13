@@ -33,7 +33,8 @@ Enfin, quand vos mails sont chez GMail, s'il y a une panne quelconque, c'est à 
  * [Planet auto-hébergement](http://planet.auto-hebergement.fr/)
  * [alternative-internet](https://github.com/redecentralize/alternative-internet) - A collection of interesting new networks and tech aiming at decentralisation (in some form).
  * [Servers - Plateformes - PRISM Break](https://prism-break.org/fr/categories/servers/)
- * [pourquoidecentraliser - Décentralisation](http://decentralisation.framasoft.org/doku.php?id=pourquoidecentraliser)
+ * [Pourquoi décentraliser - Décentralisation](http://decentralisation.framasoft.org/doku.php?id=pourquoidecentraliser)
+ * [Autre initiatives de décentralisation d'Internet](http://decentralisation.framasoft.org/doku.php?id=autresinitiatives)
 
 
 ## Autres projets
