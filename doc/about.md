@@ -37,6 +37,7 @@ Enfin, quand vos mails sont chez GMail, s'il y a une panne quelconque, c'est à 
  * [Web, Online and Self-Hosted Software - AlternativeTo.net](http://alternativeto.net/?platform=self-hosted)
  * [FreedomBox/LeavingTheCloud - Debian Wiki](https://wiki.debian.org/FreedomBox/LeavingTheCloud)
  * [pourquoidecentraliser - Décentralisation](http://decentralisation.framasoft.org/doku.php?id=pourquoidecentraliser)
+ * [Autre initiatives de décentralisation d'Internet](http://decentralisation.framasoft.org/doku.php?id=autresinitiatives)
 
 
 ## Autres projets
