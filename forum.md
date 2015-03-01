@@ -8,4 +8,5 @@ FluxBB is fast, light, user-friendly forum software for your website. FluxBB is 
 ###Alternatives
  * [PhpBB](http://www.phpbb.com/) phpBB is an Internet forum package written in the PHP scripting language.
  * [Vanilla](http://www.vanillaforums.org/) Vanilla is a light weight Internet forum package written in the PHP scripting language.
+ * [Flarum](https://github.com/flarum/core) -  Beautiful open-source forum software built for the modern web
  * [Coordino](http://coordino.com/) - opensource question & answer system ([Sources on Github](https://github.com/Datawalke/Coordino))
