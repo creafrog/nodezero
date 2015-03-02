@@ -8,5 +8,10 @@ _Note: If you add new files to your media directory, you will need to restart Mi
 
 _Note: Pensez à éteindre ce service lorsque vous êtes sur un réseau local public (hôtel, hotspot...)_
 
-##### Alternatives
+
+#### Documentation
+
+  [ReadyMedia - ArchWiki](https://wiki.archlinux.org/index.php/ReadyMedia)
+
+#### Alternatives
  * [mediatomb](https://packages.debian.org/jessie/mediatomb)
