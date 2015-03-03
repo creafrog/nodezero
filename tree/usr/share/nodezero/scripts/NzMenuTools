@@ -3,6 +3,10 @@
 source /etc/nodezero/nodezero.conf
 set -e
 
+_NzRunGlances() {
+    glances --disable-process-extended
+}
+
 
 _NzRunLynis () {
 lynis -c -q
@@ -54,28 +58,32 @@ _NzRunGoAccess() {
     echo "Latest statistics saved to $GoAccess_Outfile"
 }
 
+_NzRunIotop() {
+    iotop
+}
 
 selection=
 until [ "$selection" = "0" ]; do
      echo ""
      echo "========== TOOLS MENU =========="
-     echo "1 - dfc - display disk usage"
-     echo "2 - htop - system monitor"
-     echo "3 - ncdu - disk usage analyzer"
-     echo "4 - last - display user login history"
-     echo "5 - lastb - display failed login attempts"
-     echo "6 - nethogs - display network usage by programs"
-     echo "7 - iftop - display network usgae by connection"
-     echo "8 - ranger - explore filesystem"
-     echo "9 - Display system information"
-     echo "10 - Edit maintenance message"
-     echo "11 - lynis - Security Audit"
+     echo "1 - glances - general system statistics"
+     echo "2 - dfc - display disk usage"
+     echo "3 - htop - system monitor"
+     echo "4 - ncdu - disk usage analyzer"
+     echo "5 - last - display user login history"
+     echo "6 - lastb - display failed login attempts"
+     echo "7 - nethogs - display network usage by programs"
+     echo "8 - iftop - display network usgae by connection"
+     echo "9 - ranger - explore filesystem"
+     echo "10 - Display system message of the day"
+     echo "11 - Edit message of te day"
+     echo "12 - lynis - Security Audit"
      #echo "12 - Purge old configuration files"
      #echo "13 - Clear packages cache"
      #echo "14 - aptitude - manage software packages/updates"
      #echo "15 - Update installed software now"
-     echo "16 - goaccess - analyze and display web server logs"
-     echo "17 - lnav - view system log files"
+     echo "13 - goaccess - analyze and display web server logs"
+     echo "14 - lnav - view system log files"
      echo ""
      echo "0 - Exit program"
      echo ""
@@ -83,23 +91,25 @@ until [ "$selection" = "0" ]; do
      read selection
      echo ""
      case $selection in
-         1 ) _NzRunDfc;;
-         2 ) _NzRunHtop;;
-         3 ) _NzRunNcdu;;
-         4 ) _NzRunLast;;
-	     5 ) _NzRunLastb;;
-	     6 ) _NzRunNethogs;;
-	     7 ) _NzRunIftop;;
-    	 8 ) _NzRunRanger;;
-    	 9 ) _NzShowMotd;;
-    	 10 ) _NzEditMotd;;
-    	 11 ) _NzRunLynis;;
+         1 ) _NzRunGlances;;
+         2 ) _NzRunDfc;;
+         3 ) _NzRunHtop;;
+         4 ) _NzRunNcdu;;
+         5 ) _NzRunLast;;
+	     6 ) _NzRunLastb;;
+	     7 ) _NzRunNethogs;;
+	     8 ) _NzRunIftop;;
+    	 9 ) _NzRunRanger;;
+    	 10 ) _NzShowMotd;;
+    	 11 ) _NzEditMotd;;
+    	 12 ) _NzRunLynis;;
     	 #12 ) _NzAptitudePurge;; #TODO: move to NzAptFunctions menu,rename aptfunctions to menuapt
     	 #13 ) _NzAptitudeClean;;
     	 #14 ) _NzRunAptitude;;
     	 #15 ) _NzAptUpgrade;;
-    	 16 ) _NzRunGoAccess;;
-         17 ) lnav;;
+    	 13 ) _NzRunGoAccess;;
+         14 ) lnav;;
+         15 ) _NzRunIotop;;
          0 ) exit;;
          * ) echo "Please enter a valid number"
      esac

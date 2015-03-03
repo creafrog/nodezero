@@ -33,7 +33,10 @@ Enfin, quand vos mails sont chez GMail, s'il y a une panne quelconque, c'est à 
  * [Planet auto-hébergement](http://planet.auto-hebergement.fr/)
  * [alternative-internet](https://github.com/redecentralize/alternative-internet) - A collection of interesting new networks and tech aiming at decentralisation (in some form).
  * [Servers - Plateformes - PRISM Break](https://prism-break.org/fr/categories/servers/)
- * [Pourquoi décentraliser - Décentralisation](http://decentralisation.framasoft.org/doku.php?id=pourquoidecentraliser)
+ * [Reddit - Self-Hosted Alternatives to Popular Services](https://www.reddit.com/r/selfhosted/)
+ * [Web, Online and Self-Hosted Software - AlternativeTo.net](http://alternativeto.net/?platform=self-hosted)
+ * [FreedomBox/LeavingTheCloud - Debian Wiki](https://wiki.debian.org/FreedomBox/LeavingTheCloud)
+ * [pourquoidecentraliser - Décentralisation](http://decentralisation.framasoft.org/doku.php?id=pourquoidecentraliser)
  * [Autre initiatives de décentralisation d'Internet](http://decentralisation.framasoft.org/doku.php?id=autresinitiatives)
 
 
@@ -43,7 +46,6 @@ Enfin, quand vos mails sont chez GMail, s'il y a une panne quelconque, c'est à 
    * [arkOS](https://arkos.io/) - Your data, your rules. - A project to help users self-host their websites, email, files and more. Decentralize your web and reclaim your privacy rights while keeping the conveniences you need
    * [Sovereign](https://github.com/al3x/sovereign) - A set of Ansible playbooks to build and maintain your own private cloud: email, calendar, contacts, file sync, IRC bouncer, VPN, and more.
    * [FreedomBox](https://wiki.debian.org/FreedomBox/) - The FreedomBox Project is a community project to develop, design and promote personal servers running free software for private, personal, communications. 
-     * https://wiki.debian.org/FreedomBox/LeavingTheCloud
    * [streisand](https://github.com/jlund/streisand) - Streisand sets up a new server running L2TP/IPsec, OpenSSH, OpenVPN, Shadowsocks, Stunnel, and a Tor bridge. It also generates custom configuration instructions for all of these services
    * [Syncloud](http://syncloud.org/raspberrypi.html) - Build your own online storage on a Raspberry Pi
    * [Piratebox](http://piratebox.aod-rpg.de/dokuwiki/doku.php) - a self-contained mobile communication and file sharing device. Simply turn it on to transform any space into a free and open communications and file sharing network
