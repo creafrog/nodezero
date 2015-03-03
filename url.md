@@ -22,3 +22,6 @@ $yourls_user_passwords = array(
 ```
  * Il n'existe pas de moyen de modifier le mot de passe depuis l'interface web.
 
+### Alternatives
+
+ * [Polr](https://github.com/Cydrobolt/polr) - A modern, minimalist, modular, and lightweight URL shortener - http://project.polr.me/

@@ -25,3 +25,4 @@ An extra lightweight and extra awesome blogging engine
  * [blosxom :: the zen of blogging ::](http://blosxom.sourceforge.net/) -  a lightweight yet feature-packed weblog application designed from the ground up with simplicity, usability, and interoperability in mind. 
  * [htmly](https://github.com/danpros/htmly) - Databaseless Blogging Platform (Flat-File Blog) ([Demo](http://www.htmly.com/demo/))
  * [PluXml](http://www.pluxml.org/) - Blog ou Cms à l'Xml !
+ * [Anchor CMS](https://github.com/anchorcms/anchor-cms) -  Anchor is a free, lightweight, faster-than-a-bullet, simple blogging system, made for art–directed posts. - http://anchorcms.com/
