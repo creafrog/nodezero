@@ -1,6 +1,0 @@
-export AppName="shaarli"
-export AppType="git"
-export AppGitUrl="https://github.com/shaarli/shaarli"
-export AppGitTag="master"
-export AppDescription='Liens | Marque-pages | +'
-export AppWwwDir="links"
