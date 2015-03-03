@@ -102,6 +102,7 @@ apt-file
 command-not-found
 unattended-upgrades
 htop
+glances
 iotop
 iftop
 ncdu
