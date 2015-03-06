@@ -1,0 +1,4 @@
+[Mumble-Server]
+title=Mumble VoIP Server
+description=Relay voice chat over the Internet
+ports=64738/udp|64738/tcp
