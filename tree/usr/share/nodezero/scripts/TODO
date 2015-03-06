@@ -1,0 +1,393 @@
+#!/bin/bash
+#Description: Services Menu for nodezero (https://telecom.dmz.se/software/nodezero)
+#Copyright (c) 2014 nodiscc
+#License: MIT (http://opensource.org/licenses/MIT)
+#####################################
+#####################################
+
+#TODO MAIN SCRIPT
+source /etc/nodezero/nodezero.conf
+set -e
+#TODO: run _NzMenuMain
+
+
+#####################################
+#####################################
+
+#TODO! Check if selection is set to "" before each menu
+#TODO: add bleachbit to maintenance menu
+#TODO: password change mechanism
+
+
+#####################################
+#TODOS: missing functions
+
+
+_NzCleanupStaleFiles() { #Detect stale/dangerous files (install.php...) that should be deleted
+#TODO: add tt-rss pre-upgrade dirs cleanup
+#TODO: more cleanup
+echo "Not yet implemented."
+}
+
+_NzServiceMysqlCheck() { #TODO
+}
+
+_NzServiceSSHCheck() { #TODO
+}
+
+_NzServiceTransmissionCheck() { #TODO
+}
+
+_NzServiceMumbleCheck() { #TODO
+}
+
+_NzServiceProsodyCheck() { #TODO
+}
+
+_NzSetConfigVariable() { #TODO Set a variable in a file
+	variable="$1"
+	value="$2"
+	file="$3"
+	#TODO: Make this a generic config edit routine (not just this config file)
+	sed -i "s/^media_dir=/^media_dir=$UPNP_MEDIA_DIR/g" /etc/minidlna/minidlna.conf
+	service minidlna restart
+}
+
+_NzRegenContactPage() { #Generate web server contact page #####TODO MOVE THIS TO A SEPARATE GENERATOR SCRIPT
+	ContactAddresses=""
+	if [ ! -z "$NZ_PUBLIC_MAIL" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Email\" href=\"mailto:$NZ_PUBLIC_MAIL\"><i class=\"icon-mail-alt\"></i></a>"; fi
+	if [ ! -z "$NZ_PUBLIC_IM" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"IM\" href=\"xmpp:$NZ_PUBLIC_IM\"><i class=\"icon-comment\"></i></a>"; fi
+	if [ ! -z "$NZ_PUBLIC_PHONE" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Git\" href=\"$NZ_PUBLIC_PHONE\"><i class=\"icon-phone-squared\"></i></a>"; fi
+	if [ ! -z "$NZ_PUBLIC_TWITTER" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Twitter\" href=\"https://twitter.com/$NZ_PUBLIC_TWITTER\"><i class=\"icon-twitter-squared\"></i></a>"; fi
+	if [ ! -z "$NZ_PUBLIC_GPLUS" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Google+\" href=\"$NZ_PUBLIC_GPLUS\"><i class=\"icon-gplus-squared\"></i></a>"; fi
+	if [ ! -z "$NZ_PUBLIC_FACEBOOK" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Facebook\" href=\"$NZ_PUBLIC_FACEBOOK\"><i class=\"icon-facebook-squared\"></i></a>"; fi
+	if [ ! -z "$NZ_PUBLIC_TUMBLR" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Tumblr\" href=\"$NZ_PUBLIC_TUMBLR\"><i class=\"icon-tumblr-squared\"></i></a>"; fi
+	if [ ! -z "$NZ_PUBLIC_INSTAGRAM" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Instagram\" href=\"$NZ_PUBLIC_INSTAGRAM\"><i class=\"icon-instagramm\"></i></a>"; fi
+	if [ ! -z "$NZ_PUBLIC_YOUTUBE" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Youtube\" href=\"$NZ_PUBLIC_YOUTUBE\"><i class=\"icon-youtube-play\"></i></a>"; fi
+	if [ ! -z "$NZ_PUBLIC_GITHUB" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Github\" href=\"https://github.com/$NZ_PUBLIC_GITHUB\"><i class=\"icon-github-squared\"></i></a>"; fi
+	if [ ! -z "$NZ_PUBLIC_LINKEDIN" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"LinkedIn\" href=\"$NZ_PUBLIC_LINKEDIN\"><i class=\"icon-linkedin-squared\"></i></a>"; fi
+	if [ ! -z "$NZ_PUBLIC_SKYPE" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Skype\" href=\"$NZ_PUBLIC_SKYPE\"><i class=\"icon-skype\"></i></a>"; fi
+	if [ ! -z "$NZ_PUBLIC_BTC" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Bitcoin\" href=\"$NZ_PUBLIC_BTC\"><i class=\"icon-bitcoin\"></i></a>"; fi
+	if [ ! -z "$NZ_PUBLIC_MISC" ]; then ContactAddresses="$ContactAddresses \n <a data-toggle=\"tooltip\" title=\"Misc\" href=\"$NZ_PUBLIC_MISC\"><i class=\"icon-blank\"></i></a>"; fi
+	HtmlHeader=$(cat $NZ_PATH/contact/header.html)
+	HtmlFooter=$(cat $NZ_PATH/contact/footer.html)
+	echo -e "$HtmlHeader" "$ContactAddresses" "$HtmlFooter" >| "$APACHE_DOCUMENTROOT/contact/index.html"
+	_NzFixPermissions
+}
+
+
+_NzRecreateUserSymlinks() { #Create symlinks to zenphoto and Dokuwiki data dirs in the main user's (UID 1000) home directory
+	echo "Not yet implemented." #TODO: Not called from anywhere, add this to a menu
+}
+
+
+_NzRegenHomePage() { #Generate the homepage #TODO rework this shit
+	# print html header
+	cat "$NZ_PATH/homepage/header.html" | sed "s/nz_replace_host/$NZ_FQDN/g" >| "$APACHE_DOCUMENTROOT/index.html"
+
+	# Print web server title
+	pretty_fqdn=$("$NZ_FQDN" | sed "s/\./\.\<br\/\>/g")
+	cat "$NZ_PATH/homepage/servername.html" | sed "s/nz_replace_host/$pretty_fqdn/g" >> "$APACHE_DOCUMENTROOT/index.html"
+
+	########### Print HTTPS box TODO: use javascript
+	# <!-- Box to switch to HTTPS -->
+	# <a class="title" href="https://<?php echo $_SERVER['HTTP_HOST'] ?>" style="background-image:url(img/secure.png); background-color:#000">
+	# <div class="app">
+	# <h1>HTTPS</h1>
+	# <p>Connection sécurisée au site</p>
+	# </div>
+	# </a>
+
+
+	for manifest in $(find "$NZ_PATH/webapps/" -name "*.manifest" -type f | xargs readlink -f);
+	do
+		source "$manifest"
+		# for each installed web app, if it is not in the nz_webapp_notshow config array
+		if [ -d $APACHE_DOCUMENTROOT/$AppWwwDir && ! $(_ArrayContainsElement "$AppName" "${nz_webapp_notshow[@]}") ]
+			# print it's html box
+			then cat $NZ_PATH/webapps/$AppName.index.html >> "$APACHE_DOCUMENTROOT/index.html"
+		fi
+	done
+
+
+	# print footer
+	cat "$NZ_PATH/homepage/footer.html" | sed "s/nz_replace_host/$NZ_FQDN/g" >> "$APACHE_DOCUMENTROOT/index.html"
+
+}
+
+
+
+
+
+_NzServiceSambaCheck() { #TODO
+}
+
+
+
+
+###############################################################
+##################### BACKUP FUNCTIONS
+################### TODO REWRIIITE THIS SHT
+################### FIND A WORKING BACKUP FLOW
+####################################################################
+####################################################################
+
+_NzCreateBackupDir() { #Create backup destination if it does not exist
+    if [ ! -d "${BACKUP_LOCAL_STORAGE}" ]
+    then mkdir -p "${BACKUP_LOCAL_STORAGE}"
+    fi
+}
+
+
+_NzRunTree() { #Create a list of files in user-specified directories ($IMPORTANT_DIRS)
+    FILELIST="${BACKUP_LOCAL_STORAGE}/filelist-`date +%Y%m%d-%H\:%M\:%S`.txt"
+
+    echo "Writing file list to $FILELIST..."
+    tree -alxhtC --dirsfirst  ${IMPORTANT_DIRS} >> ${FILELIST}
+
+    if [ ${TREE_TO_HTML} = "1" ] #HTML output (disabled by default, set TREE_TO_HTML to 1 in nodezero.conf)
+    then
+        HTML_FILELIST="${BACKUP_LOCAL_STORAGE}/filelist-`date +%Y%m%d-%H\:%M\:%S`.html"
+        echo "Writing HTML file list to $HTML_FILELIST..."
+        tree -alxhtC -H ./ --dirsfirst  ${IMPORTANT_DIR} >> ${HTML_FILELIST}
+    fi
+}
+
+
+
+_NzBackupNow() { #Main backup routine
+    #Old backup method using obnam:
+    #Example: obnam backup --repository sftp://me@server.org/~/backups --quiet --keep 90d --compress-with gzip --log syslog --exclude '/home/somedir' /
+    #Example: obnam backup ${IMPORTANT_DIRS} &&
+    #TODO: backups can take a long time so maybe this job should be muted/disowned?
+
+    #New backup method using backintime
+    #TODO: backintime version in stable has very few options and config file does not work
+    #TODO: setup cron job: 0 */2 * * * nice -n 19 ionice -c2 -n7 /usr/bin/backintime --backup-job >/dev/null 2>&1
+    #Create dirs
+    mkdir -p "$BACKUP_LOCAL_STORAGE/backintime/nodezero/root/1"
+
+    #Main backup
+    backintime --profile-id 1 --config "$NZ_PATH/backintime.conf" --backup
+    date +%c >| "$BACKUP_LOCAL_STORAGE/last_backup.txt"
+
+}
+
+_NzBackupSqldb() { #Backup an SQL database
+    mysql_backup_date=$(date +%Y%m%d-%H\:%M\:%S)
+    mysqldump -u root --all-databases > ${BACKUP_LOCAL_STORAGE}/mysqldump-"$mysql_backup_date".sql
+    echo $mysql_backup_date >| "$BACKUP_LOCAL_STORAGE/last_db_backup.txt"
+}
+
+_NzRestoreSqldb() { #Restore an sql database #TODO
+echo "NOT YET IMPLEMENTED"
+#From: http://stackoverflow.com/questions/1013852/:
+#RESTORE A DB TABLE FROM A FULL DUMP: sed -n -e '/CREATE TABLE.*mytable/,/CREATE TABLE/p' mysql.dump > mytable.dump
+}
+
+
+_NzShowLastRemoteDbBackup() { #Display last remote databases backup date
+    if [ -r $BACKUP_MOUNTPOINT_NAME/last_db_backup.txt ]
+    then
+        LAST_REMOTE_DB_BACKUP=$(cat "$BACKUP_MOUNTPOINT_NAME/last_db_backup.txt")
+        echo "Last remote MySQL database backup: $LAST_REMOTE_DB_BACKUP"
+    else
+        echo "No remote MySQL database backups detected."
+    fi
+}
+
+
+_NzShowLastLocalDbBackup() { #Display last local mysql databases backup date
+    if [ -r $BACKUP_LOCAL_STORAGE/last_db_backup.txt ]
+    then
+        LAST_LOCAL_DB_BACKUP=$(cat "$BACKUP_LOCAL_STORAGE/last_db_backup.txt")
+        echo "Last local MySql databases backup: $LAST_LOCAL_DB_BACKUP"
+    else
+        echo "No local MySql database backups detected."
+    fi
+}
+
+
+_NzShowLastRemoteBackup() { #Display last remote backup date
+    if [ -z "${BACKUP_MOUNTPOINT_NAME:-}" ]
+        then echo "No external backup disk detected"
+    elif [ -r $BACKUP_MOUNTPOINT_NAME/last_backup.txt ]
+        then
+        LAST_REMOTE_BACKUP=$(cat "$BACKUP_MOUNTPOINT_NAME/last_backup.txt")
+        echo "Last remote backup: $LAST_REMOTE_BACKUP"
+    else
+        echo "No remote backups detected."
+    fi
+}
+
+
+
+_NzDoPhysicalBackup() { #Sync local backups to USB drive
+    #Show prompt and detect newly plugged usb drive #TODO moe this to separate function
+    echo "You have 60 seconds to insert your USB backup drive...."
+    BACKUP_MOUNTPOINT_NAME=`inotifywait --quiet --timeout 60 /var/run/usbmount --format %w%f --event create`
+
+    #If mountpoint is created by usbmount and is detected
+    if [ -d "$BACKUP_MOUNTPOINT_NAME" ]
+    then
+        echo "Backup drive detected on $BACKUP_MOUNTPOINT_NAME"
+        echo "Calculating disk space..."
+        BACKUP_VOLUME_SIZE=`lsblk -b | grep "$BACKUP_MOUNTPOINT_NAME" |awk -F " " '{print $4}'` #Check backup drive capacity
+        BACKUP_FILES_SIZE=`du -abc $BACKUP_LOCAL_STORAGE | tail -n 1 | awk -F " " '{print $1}'` #Check backup files size
+
+        if [[ "$BACKUP_FILES_SIZE" -gt "$BACKUP_VOLUME_SIZE" ]]
+        then
+            #If drive is too small, throw an error.
+            echo "Error: Backup drive is too small to contain your backup files\! Aborting."
+        else
+            #Check and display last backup dates
+            _NzShowLastRemoteBackup
+            _NzShowLastLocalBackup
+            _NzShowLastLocalDbBackup
+            _NzShowLastRemoteDbBackup
+            echo "Starting backup synchronization to external drive"; sleep 2
+            rsync -avzP $BACKUP_LOCAL_STORAGE $BACKUP_MOUNTPOINT_NAME/ &&  #Sync backups to usb drive with rsync #TODO do not use rsync, use backintimedirectly, TODO enable/disable local backups via a config flag. The 2 backup sets are completely separate. 
+            echo "Your backup has been copied to the external drive."
+        fi
+    else
+        echo "No valid mountpoint found. You may want to format the backup drive." #If no mountpoint was detected, or detection times out, throw an error
+    fi
+
+}
+
+
+
+
+############################################################
+############################################################
+### TODO: other Menus
+############################################################
+############################################################
+
+
+_NzMenuSamba() { #TODO
+#	## Selected service:
+#	Samba file sharing [running] [LAN Access only]
+#	 [1] Disable service
+#	 [2] Firewall: Allow access from Internet
+#	 [3] Firewall: Allow access from LAN only
+#	 [4] Firewall: Disallow all access
+#	 [5] List samba users
+#	   [51] Add samba user
+#		[SUBMENU] name of new user? (twice) -> (check if it exists, if yes throw error,
+#							if no, adduser (unix) (#TODO: options?)
+#							(-s /dev/null -m -d /home/xmodulo xmodulo ??)
+#							smbpasswd -a,
+#							add following section in smb.conf:
+							## SAMBA SHARE
+							#[$username-share]
+							#path = /home/$username (?)
+							#available = yes
+							#valid users = $username
+							#read only = no
+							#browseable = yes
+							#public = yes
+							#writeable = yes
+#							run testparm
+#							display message on how to connect - smb://localip/$share-name on linux, \\$localip\$share-name on windows)
+							
+#	   [52] Remove samba user
+#	   [53] Change samba passwords
+#	    [SUBMENU] What user? (blank to cancel)
+#			New password (twice) -> smbpasswd -a username
+#	 [6] Set file access permissions
+#	   [SUBMENU] if acl fstab flag is not enabled on samba partition (@TODO add setting in nodezero.conf), throw error, return
+#          [SUBMENU] What user? (blank to cancel)
+#           [SUBMENU] Directories with read-only access (#TODO copy /etc/nodezero/samba/username-ro.conf to temp file,
+#							run editor, save, diff with previous file, if changed:
+#							for all directories in old file, remove ACLs for this user,
+#							apply read/exec ACLs for dirs in new ro.conf
+#							apply read-only ACLs for files in new ro.conf)
+#           [SUBMENU] Directories with read+write access (edit /etc/nodezero/samba/username-rw.conf
+#							same as previous method but set read/write/exec for dirs, rw for files)
+#
+#	 [U] Uninstall service
+#	 [0] Back to main Menu
+
+# FORMAT FOR PERMISSION SETTINGS
+# @TODO create these files from at templates when adding samba users. delete it when users are deleted
+#### /etc/nodezero/samba/username-ro.txt
+## Enter a list of directories which $user will be able to read (only), including subdirectories
+## One directory path on each line
+#/media/STORAGE/Programs
+#/media/STORAGE/Music
+
+#### /etc/nodezero/samba/username-rw.txt
+## Enter a list of directories which $user will be able to read and write to including subdirectories
+## One directory path on each line
+#/media/STORAGE/Downloads
+#/media/STORAGE/Torrents
+
+#TODO: quotas: http://xmodulo.com/samba-file-server-windows-clients.html
+}
+
+
+
+_NzMenuProsody() { #TODO
+#	## Selected service:
+#	Prosody XMPP server [stopped]	[Internet access]
+#	 [1] Disable service
+#	 [2] Firewall: Allow access from Internet
+#	 [3] Firewall: Allow access from LAN only
+#	 [4] Firewall: Disallow all access
+#	 [5] New account registration: [$PROSODY_REG_ENABLED]
+#	 [6] List user accounts
+#	 [7] Add a new account
+#	 [8] Delete an account
+#	 [9] Change an account password
+#
+#	 [U] Uninstall service
+#	 [0] Back to main Menu
+}
+
+
+
+
+
+###############################################################
+##################### BACKUP MENU
+################### TODO REWRIIITE THIS SHT
+################### FIND A WORKING BACKUP FLOW
+####################################################################
+####################################################################
+
+_NzMenuBackup() {
+    _NzCreateBackupDir
+    _NzShowLastRemoteBackup
+
+    selection=
+    until [ "$selection" = "0" ]; do
+         echo ""
+         echo "========== BACKUP MENU =========="
+         echo "WARNING: UNFINISHED SECTION"
+         echo "1 - tree - generate a list of your important files"
+         echo "2 - backup everything to local drive now"
+         echo "3 - copy all local backups to external drive"
+         echo "4 - backup MySQL databases to local drive"
+         echo "5 - Display last MySQL backup date on external drive"
+         echo "6 - Display last local MySQL backup date"
+         echo "7 - Display last data backup date on external drive"
+         echo ""
+         echo "0 - Exit program"
+         echo ""
+         echo -n "Enter Selection:"
+         read selection
+         echo ""
+         case $selection in
+             1 ) _NzRunTree;;
+             2 ) _NzBackupNow;;
+             3 ) _NzDoPhysicalBackup;;
+             4 ) _NzBackupSqldb;;
+             5 ) _NzShowLastRemoteDbBackup;;
+             6 ) _NzShowLastLocalDbBackup;;
+             7 ) _NzShowLastRemoteBackup;;
+             0 ) return 0;;
+             * ) echo "Please enter a valid number"
+         esac
+    done
+}

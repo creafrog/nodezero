@@ -1,7 +1,0 @@
-#!/bin/bash
-#Update minidlna media directory from main config
-source /etc/nodezero/nodezero.conf
-set -e
-
-sed -i "s/^media_dir=/^media_dir=$UPNP_MEDIA_DIR/g" /etc/minidlna/minidlna.conf
-service minidlna restart
