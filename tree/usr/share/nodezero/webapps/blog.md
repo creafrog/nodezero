@@ -1,4 +1,4 @@
-##Chyrp
+## Chyrp
 An extra lightweight and extra awesome blogging engine
 
   * Roadmap: http://chyrp.net/about/roadmap
@@ -15,8 +15,7 @@ An extra lightweight and extra awesome blogging engine
 
 
 ###Alternatives
- * [Dotclear](http://dotclear.org/)
- * [Movable Type](https://movabletype.org/)
+ * [Dotclear](http://dotclear.org/) - Take control over your blog!
  * [Wordpress](https://wordpress.org/) - WordPress is web software you can use to create a beautiful website or blog.
   * [BuddyPress](http://buddypress.org/about/) - BuddyPress is a powerful plugin that takes your WordPress.org powered site beyond the blog with social-network features like user profiles, activity streams, user groups, and more.
  * [Blogotext](http://lehollandaisvolant.net/blogotext/fr/) - un moteur de blog privilégiant SQLite. Ceci vous offre une simplicité d’installation inégalée, couplée à d’excellentes performances.

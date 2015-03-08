@@ -1,4 +1,4 @@
-# Bumpy Booby
+## Bumpy Booby
 a simple, responsive and highly customizable PHP bug tracking system.
 
 

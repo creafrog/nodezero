@@ -12,3 +12,5 @@ GitList allows you to browse repositories using your favorite browser, viewing f
   * [Repo.js](http://darcyclarke.me/dev/repojs/) - A plugin to embed Github repos on your site [Github project](https://github.com/darcyclarke/Repo.js)
   * [GitLab: Self Hosted Git Management Application](http://gitlab.org/) - GitLab is open source software to collaborate on code. Manage git repositories with fine grained access controls that keep your code secure. Perform code reviews and enhance collaboration with merge requests. Each project can also have an issue tracker and a wiki
   * [Gogs](https://github.com/gogits/gogs) - a painless self-hosted Git Service written in Go. ([Demo](http://try.gogits.org))
+  * [Github Alternatives pages - Jboy's collections](http://jboy.silk.co/explore/table/collection/github%20alternatives)
+  * [gitbucket](https://github.com/takezoe/gitbucket) - The easily installable GitHub clone powered by Scala - http://takezoe.github.io/gitbucket/

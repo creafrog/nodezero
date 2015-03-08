@@ -62,36 +62,23 @@ Par exemple, si vous activez le plugin `twitter`, il sera possible de cliquer su
 ## Alternatives
 
   * [Leed](http://projet.idleman.fr/leed/) - Leed (contraction de Light Feed) est un agrégatteur RSS libre et minimaliste qui permet la consultation de flux RSS de manière rapide et non intrusive ([Dépôt Github](https://github.com/ldleman/Leed))
-    * - Nécessite MySQL
   * [FreshRSS](http://freshrss.org/) - Un agrégateur de flux RSS à auto-héberger ([Demo](http://demo.freshrss.org/i/), [Dépôt Github](https://github.com/marienfressinaud/FreshRSS)]
   * [Selfoss](http://selfoss.aditu.de/) - The new multipurpose rss reader, live stream, mashup, aggregation web application ([Github project](https://github.com/SSilence/selfoss))
-    * + Léger
-    * + Interface agréable
-    * - Pas de protection par mot de passe
   * [Creaky Coot](https://github.com/piero-la-lune/Creaky-Coot) - Minimalist and responsive RSS reader and links saver
-    * + Léger
-    * - Pas de classement par catégories/tags
   * [Miniflux](http://miniflux.net/) - Miniflux is a minimalist and open source news reader. ([Github repository](https://github.com/fguillot/miniflux)
-    * + Léger
-    * + Interface lisible
-    * - Pas de classement par catégories/tags/flux
   * [Kriss Feed](http://tontof.net/kriss/feed/) - A simple and smart (or stupid) feed reader
 ([Demo](http://tontof.net/feed/), [Github repository](https://github.com/tontof/kriss_feed/))
-    * - Interface difficile
   * [Liled](https://github.com/ypo/liled) - Liled is an aggregator, capable of reading Atom and RSS feeds ([Demo](http://liled.alwaysdata.net/app/index.php) - username/password: guest/guest)
   * [Stringer](https://github.com/swanson/stringer) - A [work-in-progress] self-hosted, anti-social RSS reader.
-    * - Install difficile
   * [Feedbin](https://github.com/feedbin/feedbin) - a simple, fast and nice looking RSS reader. ([Site officiel](https://feedbin.me))
-    * - Install difficile
   * [NewsBlur](https://github.com/samuelclay/NewsBlur) - NewsBlur is a personal news reader that brings people together to talk about the world. A new sound of an old instrument
-    * - Install difficile
   * [FeedHQ](https://feedhq.org/) - FeedHQ is a web-based feed reader ([Github repository](https://github.com/feedhq/feedhq))
-    * - Install difficile
   * [CommaFeed](https://github.com/Athou/commafeed) - Google Reader inspired self-hosted RSS reader ([Site officiel](https://www.commafeed.com/))
-    * - Install difficile
   * [RSSminer](http://rssminer.net/) -An online rss reader written in clojure & javascript & java ([Github repository](https://github.com/shenfeng/rssminer))
-    * - Install difficile
   * [Leselys](https://github.com/socketubs/leselys) - your very elegant RSS reader
-    * - Install difficile
+  * [Lite-Reader](https://github.com/cubny/lite-reader) - Read your feeds on your own machine with a simple and lite application. - http://cubny.com/lite-reader/
+  * [Reader-Self](https://github.com/readerself/readerself) Self-hosted rss reader (php / mysql or sqlite) - Google Reader alternative - http://readerself.com/
+  * [Readr](https://github.com/pabloprieto/Readr) - A clean & simple, self-hosted RSS reader
+
 
 
