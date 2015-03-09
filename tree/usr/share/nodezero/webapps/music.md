@@ -17,3 +17,6 @@ A self-hosted, web-based application for stream your music, everywhere.
  * Enjoy a clean, easy to use interface and modern player.
  * Add titles, albums and artists to your playlists. Listen to them according to your mood.
  * Sonerezh gives you a user management system with two access levels so that your friends could enjoy your music too.
+
+### Alternatives:
+ * [cloudtunes](https://github.com/jakubroztocil/cloudtunes) -  Web-based music player for the cloud

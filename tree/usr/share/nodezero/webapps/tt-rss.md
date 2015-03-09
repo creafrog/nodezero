@@ -1,4 +1,6 @@
 #Tiny Tiny RSS
+Lecteur de flux RSS/ATOM
+
 Tiny Tiny RSS est un lecteur de flux [RSS](https://fr.wikipedia.org/wiki/RSS)/[Atom](https://fr.wikipedia.org/wiki/Atom) libre, vous permettant de lire des actualités et mises à jour de sites depuis n'importe quel endroit, avec une expérience proche des lecteurs de flux de bureau (comme [Liferea](?id=rxtx:internet#liferea). Ses fonctionnalités incluent:
 
   * Application sur le serveur, nécessitant juste un navigateur web

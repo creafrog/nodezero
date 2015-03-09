@@ -1,4 +1,6 @@
 ##Dokuwiki
+Wiki simple et complet
+
 DokuWiki est un moteur de wiki libre sous licence GNU GPL conforme aux standards, simple à utiliser, dont le but principal est de créer des documentations de toute sorte. Il a une syntaxe simple qui assure la lisibilité des fichiers de données en dehors du Wiki, et facilite la création de textes structurés. Toutes les données sont stockées dans des fichiers texte, et donc aucune base de données n’est nécessaire.
 
   * [Site officiel](http://www.splitbrain.org/projects/dokuwiki)

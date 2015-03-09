@@ -1,5 +1,5 @@
 ## Bumpy Booby
-a simple, responsive and highly customizable PHP bug tracking system.
+A simple, responsive and highly customizable PHP bug tracking system.
 
 
   * Homepage/Demo: http://bumpy-booby.derivoile.fr/
