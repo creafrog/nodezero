@@ -40,3 +40,5 @@ If so, it sets the web app status to `upgradeable`.
 Tags in nz-webapps.ini have to be manually updated with `git describe --tags $(git rev-list --tags --max-count=1)` in each submodule (which should return the latest tag across all branches).
 
 TODO: makefile to generate the list automatically: `for file in $(find ./ -iname README.md -prune -o -name '*.md' -print); do title=$(head --quiet -n1 $file | sed -e 's/^#*\s*//g'); descr=$(sed -n 2p $file); echo " * [$title]($(basename $file)) - $descr"; done | clipboard`
+
+TODO: move this to the doc directory

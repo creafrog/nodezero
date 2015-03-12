@@ -11,6 +11,7 @@ miniBoardNano is a very simple image gallery. It adheres to the KISS principle a
   * [Github repository](https://github.com/sebsauvage/MinigalNano)
   
 ###Alternatives
+  * [Shot.io](https://github.com/AliasIO/Shot.io) - Mobile optimised photo publishing platform (self-hosted Flickr alternative) - http://shot.io/
   * [Mediacrush](https://mediacru.sh/) - a website you can upload images, audio, and video to, and receive a link to share it with your friends ([Sources on Github](https://github.com/MediaCrush/MediaCrush))
   * [Openphoto](http://theopenphotoproject.org/)
   * [Gallery](http://gallery.menalto.com/)

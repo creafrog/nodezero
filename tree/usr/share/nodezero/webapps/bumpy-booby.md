@@ -22,6 +22,7 @@ Features:
 
 
 ###Alternatives
+  * [92five](https://github.com/chintanbanugaria/92five) - Self hosted project management application - http://92fiveapp.com/
   * [Flyspray](http://www.flyspray.org/) - uncomplicated, web-based bug tracking system ([Github repository](https://github.com/Flyspray/flyspray))
   * [Tinyissue](https://github.com/mikelbring/tinyissue) - Simple Issue Tracking for Teams
   * [Kanboard - A simple and open source visual task board](http://kanboard.net/)
