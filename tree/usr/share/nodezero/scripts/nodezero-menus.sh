@@ -80,17 +80,20 @@ _NzMenuTools() {
          echo "6 - lastb - display failed login attempts"
          echo "7 - nethogs - display network usage by programs"
          echo "8 - iftop - display network usgae by connection"
-         echo "9 - ranger - explore filesystem"
-         echo "10 - Display system message of the day"
-         echo "11 - Edit message of te day"
-         echo "12 - lynis - Security Audit"
+         echo "9 - netstat - display open network connections"
+         echo "10 - ranger - explore filesystem"
+         echo "11 - Display system message of the day"
+         echo "12 - Edit message of the day"
+         echo "13 - lynis - Security Audit"
          #echo "12 - Purge old configuration files"
          #echo "13 - Clear packages cache"
          #echo "14 - aptitude - manage software packages/updates"
          #echo "15 - Update installed software now"
-         echo "13 - goaccess - analyze and display web server logs"
-         echo "14 - lnav - view system log files"
-         echo "15 - iotop - monitor disk IO"
+         echo "14 - goaccess - analyze and display web server logs"
+         echo "15 - lnav - view system log files"
+         echo "16 - iotop - monitor disk IO"
+         echo "17 - Go to package management menu"
+         echo "18 - Go to maintenance tools menu"
          echo ""
          echo "0 - Exit program"
          echo ""
@@ -106,17 +109,20 @@ _NzMenuTools() {
     	     6 ) _NzRunLastb;;
     	     7 ) _NzRunNethogs;;
     	     8 ) _NzRunIftop;;
-        	 9 ) _NzRunRanger;;
-        	 10 ) _NzShowMotd;;
-        	 11 ) _NzEditMotd;;
-        	 12 ) _NzRunLynis;;
+             9 ) _NzRunNetstat;;
+        	 10 ) _NzRunRanger;;
+        	 11 ) _NzShowMotd;;
+        	 12 ) _NzEditMotd;;
+        	 13 ) _NzRunLynis;;
         	 #12 ) _NzAptitudePurge;; #TODO: move to NzAptFunctions menu,rename aptfunctions to menuapt
         	 #13 ) _NzAptitudeClean;;
         	 #14 ) _NzRunAptitude;;
         	 #15 ) _NzAptUpgrade;;
-        	 13 ) _NzRunGoAccess;;
-             14 ) lnav;;
-             15 ) _NzRunIotop;;
+        	 14 ) _NzRunGoAccess;;
+             15 ) lnav;;
+             16 ) _NzRunIotop;;
+             17 ) _NzMenuApt;;
+             18 ) _NzMenuTroubleshooting;;
              0 ) exit;;
              * ) echo "Please enter a valid number"
          esac
