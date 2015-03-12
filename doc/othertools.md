@@ -17,6 +17,8 @@
 ### Moniteurs système (web)
  * [linux-dash](https://github.com/afaqurk/linux-dash) - A drop-in, low-overhead monitoring web dashboard for a linux machine ([Demo](http://afaq.dreamhosters.com/linux-dash/))
  * [pyDash](https://github.com/k3oni/pydash) - Small web-based monitoring dashboard for linux ([Demo](http://pydash.hostechs.com/main/) - _admin/admin_)
+ * [psdash](https://github.com/Jahaja/psdash) - A linux system information web dashboard using psutils and flask
+
 
 
 
@@ -24,6 +26,11 @@
  * [Libre Projects](http://libreprojects.net/) - Les services web que vous trouverez sur cette page ont pour objectif principal la liberté d’usage et la collaboration
  * [Php - Logiciels libres - Framasoft](http://www.framasoft.net/mot57.html) - Une liste d'applis web en php
  * [PRISM Break](https://prism-break.org/#fr) - Refusez PRISM, le programme de surveillance globale des données de la NSA. Arrêtez de déclarer vos activités en ligne au gouvernement américain avec ces alternatives libres aux logiciels propriétaires
+ * [Servers - Plateformes - PRISM Break](https://prism-break.org/fr/categories/servers/)
+ * [Reddit - Self-Hosted Alternatives to Popular Services](https://www.reddit.com/r/selfhosted/)
+ * [Web, Online and Self-Hosted Software - AlternativeTo.net](http://alternativeto.net/?platform=self-hosted)
+ * [FreedomBox/LeavingTheCloud - Debian Wiki](https://wiki.debian.org/FreedomBox/LeavingTheCloud)
+
 
 
 ## Outils divers

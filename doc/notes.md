@@ -48,7 +48,7 @@ Currently, no support for a self-hosted "social networking" service is planned. 
  * [Gnu Social](http://gnu.io/social/) - social communication software for both public and private communications
  * [Pump.io](http://pump.io/) - stream server that does most of what people really want from a social network ([SOurce](https://github.com/e14n/pump.io))
  * [twister](http://twister.net.co/) -  P2P microblogging platform
- 
+
 ### CMS (content management systems)
 CMS are a practical way to setup a website with many features. CMS often come with third party plugins, themes and functionality that is easy to add and customize to your needs. Currently, adding a CMS is not planned. You can achieve CMS-like results with a wiki, a blog, ... If you need a CMS for a particular purpose, have a look at the projects below:
 
@@ -63,11 +63,11 @@ CMS are a practical way to setup a website with many features. CMS often come wi
   * [GetSimple CMS](http://get-simple.info/) - The Simplest Content Management System. Ever.
   * [Bolt](http://bolt.cm/) - Sophisticated, lightweight & simple CMS ([Github repository](https://github.com/bolt/bolt))
   * [Concrete 5 CMS](http://www.concrete5.org/)
-    
+
 ##### Static site generators
 Static site generators provide an alternative to complex CMS. They are easier to setup and maintain, often prviding less features. Choose wisely in the lists below:
 
-* [Static Site Generators](http://staticsitegenerators.net/) - The definitive listing of Static Site Generators 
+* [Static Site Generators](http://staticsitegenerators.net/) - The definitive listing of Static Site Generators
 * [Staticgen](http://staticgen.com/) - Dynamic list of top-trending static site generators
 
 ##### See also

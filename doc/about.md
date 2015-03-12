@@ -32,10 +32,6 @@ Enfin, quand vos mails sont chez GMail, s'il y a une panne quelconque, c'est à 
   * [général:avantages_et_inconvénients - wiki Auto-hébergement](http://wiki.auto-hebergement.fr/g%C3%A9n%C3%A9ral/avantages_et_inconv%C3%A9nients)
  * [Planet auto-hébergement](http://planet.auto-hebergement.fr/)
  * [alternative-internet](https://github.com/redecentralize/alternative-internet) - A collection of interesting new networks and tech aiming at decentralisation (in some form).
- * [Servers - Plateformes - PRISM Break](https://prism-break.org/fr/categories/servers/)
- * [Reddit - Self-Hosted Alternatives to Popular Services](https://www.reddit.com/r/selfhosted/)
- * [Web, Online and Self-Hosted Software - AlternativeTo.net](http://alternativeto.net/?platform=self-hosted)
- * [FreedomBox/LeavingTheCloud - Debian Wiki](https://wiki.debian.org/FreedomBox/LeavingTheCloud)
  * [pourquoidecentraliser - Décentralisation](http://decentralisation.framasoft.org/doku.php?id=pourquoidecentraliser)
  * [Autre initiatives de décentralisation d'Internet](http://decentralisation.framasoft.org/doku.php?id=autresinitiatives)
 
