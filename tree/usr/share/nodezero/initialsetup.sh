@@ -120,7 +120,19 @@ _NzSetupMain() {
 	service prosody start
 	service transmission-daemon start
 
+echo "
+	Generating locales..."
     locale-gen
+
+echo "
+	Updating rkhunter databases, running initial scan..." #TODO move this to a common function
+    rkhunter --update
+    rkhunter --propupd
+    rkhunter --skip-keypress --report-warnings-only
+    #TODO configure rkhunter in /etc/rkhunter.conf
+    #TODO setup and run chkrottkit http://linuxfr.org/news/un-peu-plus-de-securite-sous-linux
+    #TODO setup and run lynis https://cisofy.com/documentation/lynis/ --- lynis --check-all --quick
+    #TODO setup debsums: debsums --all --silent
 
 	echo "Ready to roll. Run nodezero-admin to administrate your server."
 }
