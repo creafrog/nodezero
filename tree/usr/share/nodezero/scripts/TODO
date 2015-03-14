@@ -1,6 +1,6 @@
 #!/bin/bash
 #Description: Services Menu for nodezero (https://telecom.dmz.se/software/nodezero)
-#Copyright (c) 2014 nodiscc
+#Copyright (c) 2014-2015 nodiscc
 #License: MIT (http://opensource.org/licenses/MIT)
 #####################################
 #####################################
@@ -83,11 +83,15 @@ _NzRecreateUserSymlinks() { #Create symlinks to zenphoto and Dokuwiki data dirs 
 
 _NzRegenHomePage() { #Generate the homepage #TODO rework this shit
 	# print html header
-	cat "$NZ_PATH/homepage/header.html" | sed "s/nz_replace_host/$NZ_FQDN/g" >| "$APACHE_DOCUMENTROOT/index.html"
-
-	# Print web server title
-	pretty_fqdn=$("$NZ_FQDN" | sed "s/\./\.\<br\/\>/g")
-	cat "$NZ_PATH/homepage/servername.html" | sed "s/nz_replace_host/$pretty_fqdn/g" >> "$APACHE_DOCUMENTROOT/index.html"
+	html=""
+    html_head=$(cat "$NZ_PATH/homepage/header.html" | sed "s/nz_replace_host/$NZ_FQDN/g")
+    pretty_fqdn=$("$NZ_FQDN" | sed "s/\./\.\<br\/\>/g")
+    html_fqdn=$(cat "$NZ_PATH/homepage/servername.html" | sed "s/nz_replace_host/$pretty_fqdn/g")
+    #OK SO FAR
+    #then print each installed webapp box
+    #then print the footer
+    #everything below is crap
+    # >| "$APACHE_DOCUMENTROOT/index.html")
 
 	########### Print HTTPS box TODO: use javascript
 	# <!-- Box to switch to HTTPS -->
@@ -263,7 +267,9 @@ _NzDoPhysicalBackup() { #Sync local backups to USB drive
 ### TODO: other Menus
 ############################################################
 ############################################################
-
+_NzMenuMurmur() {
+    #change password: murmurd -supw "password"
+}
 
 _NzMenuSamba() { #TODO
 #	## Selected service:
