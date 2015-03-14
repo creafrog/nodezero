@@ -1,0 +1,13 @@
+Source: nodezero-lamp-server
+Section: misc
+Priority: optional
+Maintainer: nodiscc <nodiscc@gmail.com>
+Build-Depends: debhelper (>= 7.0.0)
+Standards-Version: 3.9.4
+
+Package: nodezero-lamp-server
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, apache2-mpm-prefork, ssl-cert, libapache2-mod-php5, libapache2-modsecurity, modsecurity-crs, libapache2-mod-evasive, mysql-server, php5-mysql, php5, php-apc, php5-gd, php5-sqlite, php5-curl ,php5-cli, php5-imagick ,php5-intl ,php5-mcrypt
+Description: Web/MySQL server metapackage for nodezero
+ Installs a web/mysql server on nodezero.
+ .

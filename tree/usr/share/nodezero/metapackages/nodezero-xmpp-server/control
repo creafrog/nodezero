@@ -1,0 +1,13 @@
+Source: nodezero-xmpp-server
+Section: misc
+Priority: optional
+Maintainer: nodiscc <nodiscc@gmail.com>
+Build-Depends: debhelper (>= 7.0.0)
+Standards-Version: 3.9.4
+
+Package: nodezero-xmpp-server
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, prosody, lua-sec
+Description: XMPP server metapackage for nodezero
+ Install your XMPP server on nodezero.
+ .

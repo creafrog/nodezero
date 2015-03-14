@@ -1,32 +1,9 @@
-## Mumble server 
+## Mumble server
 mumble-server
 
-## Web server
-apache2-mpm-prefork
-ssl-cert
-libapache2-mod-php5
-libapache2-modsecurity
-modsecurity-crs
-libapache2-mod-evasive
-#libapache2-mod-security2 #on jessie/sid only
-mysql-server
-php5-mysql
-php5
-php-apc
-php5-gd
-php5-sqlite
-php5-curl
-php5-cli
-php5-imagick
-php5-intl
-php5-mcrypt
 
 ## SSH Server
 openssh-server
-
-## XMPP Server
-prosody
-lua-sec
 
 ## Transmission Bittorrent client/seedbox
 transmission-daemon
