@@ -22,6 +22,7 @@ Features:
 
 
 ###Alternatives
+  * [Phproject](http://www.phproject.org/) - A high performance full-featured project management system ([Github repository](https://github.com/Alanaktion/phproject), [Demo](http://demo.phproject.org/))
   * [92five](https://github.com/chintanbanugaria/92five) - Self hosted project management application - http://92fiveapp.com/
   * [Flyspray](http://www.flyspray.org/) - uncomplicated, web-based bug tracking system ([Github repository](https://github.com/Flyspray/flyspray))
   * [Tinyissue](https://github.com/mikelbring/tinyissue) - Simple Issue Tracking for Teams
