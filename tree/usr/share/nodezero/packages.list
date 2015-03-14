@@ -78,6 +78,7 @@ ranger
 atool
 unzip
 highlight
+
 bash-completion
 elinks
 mlocate
@@ -119,6 +120,14 @@ bridge-utils
 lm-sensors #TODO: display temperature in the client's overview dialog
 debsecan
 #scanlogd
+#auditd
 
 #Misc
 #logstalgia
+
+
+#Pulseaudio server
+pulseaudio-module-zeroconf
+avahi-daemon
+pulseaudio-utils
+pulseaudio
