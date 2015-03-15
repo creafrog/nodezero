@@ -1,0 +1,3 @@
+#!/bin/bash
+a2dismod cgi
+a2dismod autoindex
