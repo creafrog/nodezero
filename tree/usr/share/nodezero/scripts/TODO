@@ -87,6 +87,7 @@ _NzRegenHomePage() { #Generate the homepage #TODO rework this shit
     html_head=$(cat "$NZ_PATH/homepage/header.html" | sed "s/nz_replace_host/$NZ_FQDN/g")
     pretty_fqdn=$("$NZ_FQDN" | sed "s/\./\.\<br\/\>/g")
     html_fqdn=$(cat "$NZ_PATH/homepage/servername.html" | sed "s/nz_replace_host/$pretty_fqdn/g")
+    homepage_banner='<span style="padding-bottom: 50px; float: left; text-align: center; width: 100%;" class="message">$NZ_HOMEPAGE_BANNER</span>'
     #OK SO FAR
     #then print each installed webapp box
     #then print the footer
