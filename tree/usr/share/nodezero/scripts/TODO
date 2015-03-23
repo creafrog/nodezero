@@ -76,6 +76,25 @@ _NzRegenContactPage() { #Generate web server contact page #####TODO MOVE THIS TO
 }
 
 
+# #URLs for contact page
+# #CAUTION These addresses will appear **publicly** on the contact page on your web server
+# #It is recommended that you add at least one valid contact address.
+# #If you handle other people's personal data on your server, this may be a legal requirement.
+# export NZ_PUBLIC_MAIL="" #Your public email address
+# export NZ_PUBLIC_IM="" #Your public XMPP/Jabber Instant Messaging address
+# export NZ_PUBLIC_PHONE="" #Your public phone number
+# export NZ_PUBLIC_TWITTER="" #Your public twitter username
+# export NZ_PUBLIC_GPLUS="" #Your public Google Plus username
+# export NZ_PUBLIC_FACEBOOK="" #Your public Facebook username
+# export NZ_PUBLIC_TUMBLR="" #Your public Tumblr username
+# export NZ_PUBLIC_INSTAGRAM="" #Your public Instagram username
+# export NZ_PUBLIC_YOUTUBE="" #Your public youtube username
+# export NZ_PUBLIC_GITHUB="" #Your public github username
+# export NZ_PUBLIC_LINKEDIN="" #Your public LinkedIn username
+# export NZ_PUBLIC_SKYPE="" #Your public Skype username
+# export NZ_PUBLIC_BTC="" #Your public bitcoin wallet
+# export NZ_PUBLIC_MISC="" #You can enter another URL here
+
 _NzRecreateUserSymlinks() { #Create symlinks to zenphoto and Dokuwiki data dirs in the main user's (UID 1000) home directory
 	echo "Not yet implemented." #TODO: Not called from anywhere, add this to a menu
 }
