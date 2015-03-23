@@ -50,6 +50,7 @@ Owncloud est un projet de gestion de vos données sur internet. Ses fonctionnali
   * [tasks.php](https://github.com/RaymiiOrg/tasks.php) - A simple task/todo list manager
   * [egroupware](http://www.egroupware.org/) - calendrier, répertoire, bloc notes,  planning, outils de gestion de projets, solution de gestion de la relation client, outil de gestion des connaissances, Wiki, CMS.
   * [TaskBoard](https://github.com/kiswa/TaskBoard) - A Kanban-inspired app for keeping track of things that need to get done. - http://taskboard.matthewross.me/
+ * [bulldog](https://github.com/infews/bulldog) - HTML5 task manager, built on todo.txt
 
 ####Stockage de fichiers
   * [Dropcenter](http://projet.idleman.fr/dropcenter/) - Uploadez des fichiers par simple glisser-déposer.

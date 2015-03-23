@@ -18,7 +18,7 @@ An extra lightweight and extra awesome blogging engine
  * [Dotclear](http://dotclear.org/) - Take control over your blog!
  * [Wordpress](https://wordpress.org/) - WordPress is web software you can use to create a beautiful website or blog.
   * [BuddyPress](http://buddypress.org/about/) - BuddyPress is a powerful plugin that takes your WordPress.org powered site beyond the blog with social-network features like user profiles, activity streams, user groups, and more.
- * [Blogotext](http://lehollandaisvolant.net/blogotext/fr/) - un moteur de blog privilégiant SQLite. Ceci vous offre une simplicité d’installation inégalée, couplée à d’excellentes performances.
+ * [Blogotext](https://github.com/timovn/blogotext) - un moteur de blog privilégiant SQLite. Ceci vous offre une simplicité d’installation inégalée, couplée à d’excellentes performances. ([Site officiel](http://lehollandaisvolant.net/blogotext/fr/))
  * [WeblogMatrix - Compare them all](http://www.weblogmatrix.org/)
  * [Ghost](http://ghost.org/) - Just a blogging platform
  * [blosxom :: the zen of blogging ::](http://blosxom.sourceforge.net/) -  a lightweight yet feature-packed weblog application designed from the ground up with simplicity, usability, and interoperability in mind. 

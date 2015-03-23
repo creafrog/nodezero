@@ -54,9 +54,10 @@ DokuWiki est un moteur de wiki libre sous licence GNU GPL conforme aux standards
 
 ###Alternatives
 
-  * [MdWiki](https://dynalon.github.io/mdwiki/#!index.md) - a Markdown CMS/Wiki completely built in HTML5/Javascript and runs 100% on the client
+  * [MdWiki]([mdwiki](https://github.com/Dynalon/mdwiki)) - a Markdown CMS/Wiki completely built in HTML5/Javascript and runs 100% on the client ([Site officiel](https://dynalon.github.io/mdwiki/#!index.md))
   * [Olelo/Gitwiki](https://github.com/minad/olelo) - ([Demo](http://www.gitwiki.org/)) - Olelo is a wiki that stores pages in a Git repository, supports many markup styles and has an extensible, hackable architecture! Features: Edit, move or delete pages; Page attribute editor; Support for hierarchical wikis (directory structure); File upload; History, commit and diff view; Locales (Czech, English, French, German); Support for many markup languages (Creole, Markdown, Textile, ...); RSS/Atom changelog for whole wiki or pages; Section editing for Creole; Embedded LaTeX formulas; Syntax highlighting; Image resizing, SVG to PNG/JPEG conversion; Auto-generated table of contents; Previews; View pages as S5 presentation; Privacy features: Access control lists, Private wiki, Read-only wiki.
   * [Gitit](https://github.com/jgm/gitit) - A wiki program that stores pages and uploaded files in a git repository, which can then be modified using the VCS command line tools or the wiki's web interface. Supported markups include pandoc's extended version of markdown, reStructuredText, LaTeX, and HTML. Pages can be exported in a number of different formats, including LaTeX, RTF, OpenOffice ODT, and MediaWiki markup. Other features include: plugins, syntax highlighting, caching, ATOM feeds...
+  * [Wikitten](https://github.com/victorstanciu/Wikitten) - Wikitten is a small, fast, PHP wiki, and the perfect place to store your notes, code snippets, ideas, and so on.
   * [Mediawiki](https://www.mediawiki.org/wiki/MediaWiki)
   * [Wikimatrix - Compare wikis](http://www.wikimatrix.org/)
   * [Blazekiss](https://github.com/ldleman/blazekiss) - BlazeKiss est un wiki basé sur le principe Kiss : Keep It Simple Stupid, c'est à dire la simplicité et la fonctionnalité avant tout
@@ -68,7 +69,7 @@ DokuWiki est un moteur de wiki libre sous licence GNU GPL conforme aux standards
   * [commonplace](https://github.com/fredoliveira/commonplace) - A server for your markdown files. Give it a directory, and Commonplace gives you a url, pretty pages, and quick editing.
   * [Realms](https://github.com/scragg0x/realms-wiki) - a git-backed wiki inspired by Gollum
   * [Gruik](https://github.com/grena/gruik) - Gruik ! An open-source markdown note-taking web app - http://gruik.io/
- 
+  * [daux.io](https://github.com/justinwalsh/daux.io) - Daux.io is an documentation generator that uses a simple folder structure and Markdown files to create custom documentation on the fly. It helps you create great looking documentation in a developer friendly way.
 
 
 

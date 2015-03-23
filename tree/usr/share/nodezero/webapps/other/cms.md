@@ -3,7 +3,7 @@ CMS are a practical way to setup a website with many features. CMS often come wi
 
   * [Wordpress](https://wordpress.org/) - WordPress is web software you can use to create a beautiful website or blog. ([Source code mirror](https://github.com/WordPress/WordPress))
   * [Pico](http://pico.dev7studios.com/index.html#) - A stupidly simple, blazing fast, flat file CMS. ([Sources on Github](https://github.com/gilbitron/Pico))
-  * [99ko CMS](https://github.com/99ko-project/99ko-cms) - 99ko est un CMS permettant de créer un site web en quelques minutes et sans connaissances particulières en programmation. Il fonctionne sans base de données et utilise de simples fichiers texte (format JSON) pour stocker vos données.
+  * [99ko CMS](https://github.com/99ko-project/99ko-cms) - 99ko est un CMS permettant de créer un site web en quelques minutes et sans connaissances particulières en programmation. Il fonctionne sans base de données et utilise de simples fichiers texte (format JSON) pour stocker vos données. ([Site officiel](http://99ko.hellojo.fr))
   * [SPIP](http://www.spip.net/fr) - SPIP est un Système de Publication pour l’Internet.
   * [Movable Type](https://movabletype.org/)
   * [Drupal](https://drupal.org/) - open source content management platform

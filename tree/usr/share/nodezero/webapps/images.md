@@ -1,7 +1,7 @@
 ##Minigal Nano
 Partage public d'images, vidéos, fichiers multimédia
 
-miniBoardNano is a very simple image gallery. It adheres to the KISS principle and is very easy to install. miniBoardNano does not have a web admin interface: You just upload your images in the photo folder.
+MinigalNano is a very simple image gallery. It adheres to the KISS principle and is very easy to install. MinigalNano does not have a web admin interface: You just upload your images in the photo folder on your server (using FTP, SFTP...).
 
 | 💥 |  Les images placées dans le dossier `/var/www/images/photos/` ou `~/WebPhotos/` seront publiques!         |
 |---------|---------|
@@ -27,3 +27,5 @@ miniBoardNano is a very simple image gallery. It adheres to the KISS principle a
   * [PhotoLight](https://github.com/thibaud-rohmer/PhotoLight) - The easiest photo gallery there is
   * [Lychee](http://lychee.electerious.com/) - Lychee is a easy to use and great looking photo-management-system you can run on your server, to manage and share photos ([Github repository](https://github.com/electerious/Lychee))
   * [UberGallery](http://www.ubergallery.net) - U berGallery is an easy to use, simple to manage, web photo gallery. UberGallery does not require a database and supports JPEG, GIF and PNG file types. Simply upload your images and UberGallery will automatically generate thumbnails and output HTML. ([Github repository](https://github.com/UberGallery/UberGallery))
+  * [phog](https://github.com/hillman/phog) - Static photo gallery generator with S3 uploader
+  * [sigal](https://github.com/saimn/sigal) - yet another simple static gallery generator
