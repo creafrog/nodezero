@@ -76,7 +76,8 @@ _NzSetupMain() {
 	adduser $NZ_USER video
 	adduser $NZ_USER audio
 	adduser $NZ_USER fuse
-	#TODO: fix file permissions at the end
+
+    _NzFixPermissions
 
 	#Set random password for transmission
 	#TODO: ask for a web interface password at beginning, store it in nodezero.conf, use it instead.
