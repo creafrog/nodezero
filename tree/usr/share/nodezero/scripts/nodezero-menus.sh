@@ -331,7 +331,8 @@ _NzMenuApache2() {
                 echo " [7] List installed web applications"
                 echo " [8] Install Web application"
                 echo " [9] Remove Web application"
-                echo " [10] Regenerate homepage"
+                echo " [10] Upgrade Web application"
+                echo " [11] Regenerate homepage"
                 echo ""
                 echo " [U] Uninstall service"
                 echo " [0] Back to main Menu"
@@ -348,8 +349,9 @@ _NzMenuApache2() {
                     6 ) false ;; #TODO
                     7 ) false ;; #TODO
                     8 ) _NzInstallWebappPrompt;;
-                    9 ) source "$NZ_PATH/scripts/NzConfigRoutines"; _NzRegenHomepage;;
+                    9 ) _NzUpgradeWebappPrompt;;
                     10 ) source "$NZ_PATH/scripts/NzConfigRoutines"; _NzRegenHomepage;;
+                    11 ) source "$NZ_PATH/scripts/NzConfigRoutines"; _NzRegenHomepage;;
                     U ) false ;; #TODO
                     0 ) return 0;;
                     * ) echo "Please enter a valid number"

@@ -291,6 +291,15 @@ _NzInstallWebapp() { #Install a web application
 	#_NzFixPermissions TODO re-enable when it's verified
 }
 
+_NzUpgradeWebappPrompt() { #Prompt user for app name to upgrade
+	read -p "Upgrade what app? " apptoupgrade
+	_NzUpgradeWebApp "$apptoupgrade"
+}
+
+_NzUpgradeWebapp() { #Upgrade a web application
+	AppToUpgrade="$1"
+	"$NZ_PATH/webapps/$AppToUpgrade.sh" upgrade
+}
 
 #░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 #░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
