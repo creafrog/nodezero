@@ -2,8 +2,10 @@
 CMS are a practical way to setup a website with many features. CMS often come with third party plugins, themes and functionality that is easy to add and customize to your needs. Currently, adding a CMS is not planned. You can achieve CMS-like results with a wiki, a blog, ... If you need a CMS for a particular purpose, have a look at the projects below:
 
   * [Wordpress](https://wordpress.org/) - WordPress is web software you can use to create a beautiful website or blog. ([Source code mirror](https://github.com/WordPress/WordPress))
-  * [Pico](http://pico.dev7studios.com/index.html#) - A stupidly simple, blazing fast, flat file CMS. ([Sources on Github](https://github.com/gilbitron/Pico))
+  * [Pico](http://picocms.org/) - A stupidly simple, blazing fast, flat file CMS. ([Sources on Github](https://github.com/gilbitron/Pico))
   * [99ko CMS](https://github.com/99ko-project/99ko-cms) - 99ko est un CMS permettant de créer un site web en quelques minutes et sans connaissances particulières en programmation. Il fonctionne sans base de données et utilise de simples fichiers texte (format JSON) pour stocker vos données. ([Site officiel](http://99ko.hellojo.fr))
+  * [Baun](https://github.com/BaunCMS/Baun) - A modern, lightweight, extensible CMS for PHP - http://bauncms.com/
+  * [october](https://github.com/octobercms/october) - Free, open-source, self-hosted CMS platform based on the Laravel PHP Framework. - http://octobercms.com/
   * [SPIP](http://www.spip.net/fr) - SPIP est un Système de Publication pour l’Internet.
   * [Movable Type](https://movabletype.org/)
   * [Drupal](https://drupal.org/) - open source content management platform
