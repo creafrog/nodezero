@@ -34,6 +34,9 @@ Owncloud est un projet de gestion de vos données sur internet. Ses fonctionnali
   * [SparkleShare](http://sparkleshare.org/) - Self hosted, instant, secure file sync
   * Alternatives propriétaires: BTsync, Dropbox, Google Drive, SpiderOak, Box.net, SkyDrive...
 
+#### Dépôt/upload d'images
+ * [Jirafeau](https://gitlab.com/mojo42/Jirafeau/wikis/home) - Jirafeau is a web site permitting to upload a file in a simple way and give an unique link to it. (Demo](http://jirafeau.net/))
+
 ####Gestion de fichiers texte/documents
   * [Jotter](https://github.com/yosko/jotter) - Jotter is a lightweight, no database, powerful web notebook that lets you create and manage notes online safely, quickly & easily. ([Demo](http://tools.yosko.net/demos/jotter/) - login/pass: demo/demo)
   * [Laverna](https://laverna.cc/) - Laverna is a JavaScript note taking application with Markdown editor and encryption support. Consider it like open source alternative to Evernote ([SOurce on Github](https://github.com/Laverna/laverna), [Demo](https://laverna.cc/index.html#notes))

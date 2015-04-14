@@ -27,3 +27,4 @@ $yourls_user_passwords = array(
 ### Alternatives
 
  * [Polr](https://github.com/Cydrobolt/polr) - A modern, minimalist, modular, and lightweight URL shortener - http://project.polr.me/
+ * [Lstu](https://github.com/ldidry/lstu) - _Let's SHorten That Url_ - Lightweight URL shortener

@@ -12,3 +12,6 @@ OpenSondage an online service for planning an appointment or make a decision qui
  * [Demo publique](http://framadate.org/)
  * [Exemple de sondage/création d'évènement](https://framadate.org/aqg259dth55iuhwm)
  * [Sources on Github](https://github.com/leblanc-simon/OpenSondage)
+
+## Alternatives
+ * [Kyélà](http://kyela.net/) -  Participation polls for group events  - ([Sources](https://github.com/abienvenu/Kyela), [Demo](http://kyela.net/55232734237c8/))

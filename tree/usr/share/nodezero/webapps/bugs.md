@@ -27,6 +27,7 @@ Features:
   * [Flyspray](http://www.flyspray.org/) - uncomplicated, web-based bug tracking system ([Github repository](https://github.com/Flyspray/flyspray))
   * [Tinyissue](https://github.com/mikelbring/tinyissue) - Simple Issue Tracking for Teams
   * [Kanboard - A simple and open source visual task board](http://kanboard.net/)
+  * [Taiga.io](https://taiga.io/) - Your Agile, Free and Open Source Project Management Tool ([Github repository](https://github.com/taigaio))
   * [Gaskit](https://github.com/bkeepers/gaskit) - a git-backed issue tracker. It uses a branch in your local git database to store the tickets.
   * [Redmine](http://www.redmine.org/) - Redmine is a flexible project management web application
   * [Apache Bloodhound](https://bloodhound.apache.org/) - Manage software products, Keep track of features, tasks and bugs
