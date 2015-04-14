@@ -1,5 +1,10 @@
-mod_blocking.lua mod_block_registrations.lua are liensed under the MIT license
+Files: mod_blocking.lua,
+       mod_block_registrations.lua,
+       mod_roster_command.lua
+License: MIT license
 
+
+---------------------------------------------------
 The MIT License (MIT)
 
 Copyright (c) 2013 Kim Alvefur
